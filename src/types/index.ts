@@ -230,7 +230,7 @@ export interface ContactForm {
 }
 
 // API Types
-export interface ApiResponse<T = any> {
+export interface ApiResponse<T = unknown> {
   success: boolean
   data?: T
   message?: string
@@ -277,7 +277,7 @@ export interface SortParams {
 // Analytics Types
 export interface AnalyticsEvent {
   event: string
-  properties?: Record<string, any>
+  properties?: Record<string, unknown>
   userId?: string
   sessionId?: string
   timestamp?: string
@@ -535,7 +535,7 @@ export interface UseLocalStorageResult<T> {
 // Global Window Extensions
 declare global {
   interface Window {
-    gtag?: (...args: any[]) => void
-    dataLayer?: any[]
+    gtag?: (...args: unknown[]) => void
+    dataLayer?: unknown[]
   }
 }

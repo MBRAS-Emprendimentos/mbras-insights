@@ -67,7 +67,6 @@ export function RegistrationForm() {
     register,
     handleSubmit,
     formState: { errors },
-    watch,
     reset
   } = useForm<RegistrationFormData>({
     resolver: zodResolver(registrationSchema),
@@ -75,8 +74,6 @@ export function RegistrationForm() {
       interests: []
     }
   })
-
-  const watchedInterests = watch('interests') || []
 
   const onSubmit = async (data: RegistrationFormData) => {
     setIsSubmitting(true)
@@ -89,7 +86,7 @@ export function RegistrationForm() {
       setIsSuccess(true)
       toast.success('Cadastro realizado com sucesso!')
       reset()
-    } catch (error) {
+    } catch {
       toast.error('Erro no cadastro. Tente novamente.')
     } finally {
       setIsSubmitting(false)
