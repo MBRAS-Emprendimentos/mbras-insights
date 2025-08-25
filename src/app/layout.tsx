@@ -22,13 +22,13 @@ const playfair = Playfair_Display({
 });
 
 export const metadata = {
-  title: "MBRAS Insights | O essencial, antes do consenso",
+  title: "MBRAS Conecta | O essencial, antes do consenso",
   description:
     "Hub de inteligência exclusiva do mercado imobiliário de alto padrão",
   keywords:
     "real estate, luxury, insights, São Paulo, Faria Lima, investimento",
   openGraph: {
-    title: "MBRAS Insights",
+    title: "MBRAS Conecta",
     description: "Inteligência exclusiva que move mercados",
     images: ["/og-image.jpg"],
   },

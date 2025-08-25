@@ -123,7 +123,7 @@ export function HeroActions() {
                   Demonstração da Plataforma
                 </h3>
                 <p className="text-white/70">
-                  Vídeo em breve - Conheça os recursos premium da MBRAS Insights
+                  Vídeo em breve - Conheça os recursos premium da MBRAS Conecta
                 </p>
               </div>
             </div>

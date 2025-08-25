@@ -1,4 +1,4 @@
-# MBRAS Insights Platform
+# MBRAS Conecta Platform
 
 Uma plataforma de análise premium desenvolvida com Next.js 15, Tailwind CSS 4, e sistema de design proprietário MBRAS.
 

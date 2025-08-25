@@ -73,7 +73,7 @@ export async function POST(request: NextRequest) {
 
 export async function GET() {
   return NextResponse.json({
-    message: "API de registro MBRAS Insights",
+    message: "API de registro MBRAS Conecta",
     endpoints: {
       POST: "/api/register - Registrar novo usuário",
     },

@@ -137,7 +137,7 @@ export async function GET(request: NextRequest) {
           id: "evt_001",
           event: "page_view",
           timestamp: "2024-01-15T10:30:00Z",
-          page: { url: "https://mbras-insights.com/", title: "MBRAS Insights" },
+          page: { url: "https://mbras-insights.com/", title: "MBRAS Conecta" },
           properties: { section: "hero" },
         },
         {
@@ -146,7 +146,7 @@ export async function GET(request: NextRequest) {
           timestamp: "2024-01-15T10:35:00Z",
           page: {
             url: "https://mbras-insights.com/#register",
-            title: "MBRAS Insights",
+            title: "MBRAS Conecta",
           },
           properties: { form_type: "newsletter_signup" },
         },
@@ -154,7 +154,7 @@ export async function GET(request: NextRequest) {
           id: "evt_003",
           event: "cta_click",
           timestamp: "2024-01-15T10:32:00Z",
-          page: { url: "https://mbras-insights.com/", title: "MBRAS Insights" },
+          page: { url: "https://mbras-insights.com/", title: "MBRAS Conecta" },
           properties: { cta_text: "Saiba Mais", section: "formats" },
         },
       ],

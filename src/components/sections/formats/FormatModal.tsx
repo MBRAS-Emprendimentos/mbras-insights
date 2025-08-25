@@ -329,7 +329,7 @@ export function FormatModal({ format, isOpen, onClose }: FormatModalProps) {
                     </p>
                     {format.premium && (
                       <p className="text-xs text-muted-foreground mt-1">
-                        Faça parte do programa premium da MBRAS Insights
+                        Faça parte do programa premium da MBRAS Conecta
                       </p>
                     )}
                   </div>

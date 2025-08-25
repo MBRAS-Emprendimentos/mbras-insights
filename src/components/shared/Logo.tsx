@@ -98,7 +98,7 @@ export function Logo({ className, variant = 'full', animated = true }: LogoProps
         MBRAS
       </span>
       <span className="text-sm font-display font-medium text-mbras-gold tracking-wider">
-        INSIGHTS
+        CONECTA
       </span>
     </motion.div>
   )

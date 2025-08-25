@@ -194,7 +194,7 @@ export async function GET(request: NextRequest) {
 
   // Informações gerais da API
   return NextResponse.json({
-    message: "API de Newsletter MBRAS Insights",
+    message: "API de Newsletter MBRAS Conecta",
     endpoints: {
       POST: "/api/newsletter - Cadastrar email na newsletter",
       DELETE: "/api/newsletter?email=user@email.com - Descadastrar email",

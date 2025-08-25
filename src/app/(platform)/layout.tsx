@@ -24,7 +24,7 @@ export default function PlatformLayout({
       <div className="flex-1 space-y-4 p-8 pt-6">
         <div className="flex items-center justify-between space-y-2">
           <h2 className="text-3xl font-display font-bold tracking-tight">
-            MBRAS Insights Platform
+            MBRAS Conecta Platform
           </h2>
         </div>
         <main className="flex-1 space-y-4">

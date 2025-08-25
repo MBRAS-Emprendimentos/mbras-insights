@@ -283,7 +283,7 @@ text-9xl   /* 128px */
   <div className="absolute inset-0 bg-navy-mesh opacity-50"></div>
   <div className="relative glass p-12 m-8 rounded-2xl">
     <h1 className="text-6xl font-luxury text-gradient-gold mb-6">
-      MBRAS Insights
+      MBRAS Conecta
     </h1>
     <p className="text-xl text-mbras-cream">
       Plataforma de análise premium
@@ -338,5 +338,5 @@ O arquivo `tailwind.config.ts` já está configurado com todas as cores e utilit
 
 ---
 
-**Criado para MBRAS Insights Platform**  
+**Criado para MBRAS Conecta Platform**  
 *Sistema de Design proprietário v1.0*

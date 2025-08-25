@@ -1,5 +1,5 @@
 // Application Constants
-export const APP_NAME = 'MBRAS Insights'
+export const APP_NAME = 'MBRAS Conecta'
 export const APP_DESCRIPTION = 'Plataforma premium de análise e insights para o mercado imobiliário brasileiro'
 export const APP_VERSION = '1.0.0'
 export const APP_URL = 'https://mbras-insights.com'
@@ -332,8 +332,8 @@ export const SUCCESS_MESSAGES = {
 
 // SEO Meta Tags
 export const SEO = {
-  defaultTitle: 'MBRAS Insights - Análise Premium do Mercado Imobiliário',
-  titleTemplate: '%s | MBRAS Insights',
+  defaultTitle: 'MBRAS Conecta - Análise Premium do Mercado Imobiliário',
+  titleTemplate: '%s | MBRAS Conecta',
   defaultDescription: APP_DESCRIPTION,
   keywords: [
     'mercado imobiliário',
