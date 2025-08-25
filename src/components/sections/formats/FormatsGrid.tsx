@@ -245,7 +245,7 @@ export function FormatsGrid() {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-luxury font-bold text-foreground mb-6">
             Formatos <span className="text-gradient-gold">Exclusivos</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
             Inteligência em múltiplos formatos, adaptada às suas necessidades e
             ritmo de decisão
           </p>
@@ -359,7 +359,7 @@ export function FormatsGrid() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-center"
         >
-          <p className="text-muted-foreground mb-4">
+          <p className="text-foreground/80 mb-4">
             Precisa de um formato personalizado?
           </p>
           <motion.button

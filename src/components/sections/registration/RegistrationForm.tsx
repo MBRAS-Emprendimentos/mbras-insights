@@ -268,11 +268,11 @@ export function RegistrationForm() {
               />
               <span className="text-sm text-mbras-navy">
                 Concordo com os{' '}
-                <a href="#" className="text-mbras-gold hover:underline font-semibold">
+                <a href="#" className="text-mbras-navy hover:underline font-semibold underline">
                   termos de uso
                 </a>{' '}
                 e{' '}
-                <a href="#" className="text-mbras-gold hover:underline font-semibold">
+                <a href="#" className="text-mbras-navy hover:underline font-semibold underline">
                   política de privacidade
                 </a>
               </span>

@@ -159,9 +159,10 @@ export function Hero() {
                   animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                   exit={{ opacity: 0, y: -20, filter: "blur(10px)" }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="text-xl sm:text-2xl lg:text-3xl font-light text-mbras-pearl/90 font-display"
                 >
-                  {taglines[taglineIndex]}
+                  <p className="text-2xl sm:text-3xl lg:text-4xl font-light text-white font-display">
+                    {taglines[taglineIndex]}
+                  </p>
                 </motion.p>
               </AnimatePresence>
             </div>
@@ -170,7 +171,7 @@ export function Hero() {
           {/* Description */}
           <motion.p
             variants={itemVariants}
-            className="max-w-3xl mx-auto text-lg sm:text-xl text-mbras-pearl/80 leading-relaxed font-sans"
+            className="max-w-3xl mx-auto text-lg sm:text-xl text-white leading-relaxed font-sans"
           >
             Hub de inteligência exclusiva que conecta líderes do alto padrão
             através de análises proprietárias e insights acionáveis do mercado
@@ -230,7 +231,7 @@ export function Hero() {
                 <p className="text-3xl sm:text-4xl font-bold text-mbras-gold font-display">
                   {stat.value}
                 </p>
-                <p className="text-sm text-mbras-pearl/70 font-sans mt-1">
+                <p className="text-sm text-white/90 font-sans mt-1">
                   {stat.label}
                 </p>
               </motion.div>
@@ -248,7 +249,7 @@ export function Hero() {
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-            className="flex flex-col items-center text-mbras-pearl/60 cursor-pointer"
+            className="flex flex-col items-center text-white/80 cursor-pointer"
             onClick={() => {
               const nextSection = document.querySelector("#formats");
               if (nextSection) {

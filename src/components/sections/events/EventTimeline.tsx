@@ -226,7 +226,7 @@ export function EventTimeline() {
                       {event.title}
                     </h3>
 
-                    <p className="text-white/80 leading-relaxed mb-4">
+                    <p className="text-white leading-relaxed mb-4">
                       {event.description}
                     </p>
 

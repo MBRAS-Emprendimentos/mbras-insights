@@ -5,7 +5,6 @@ import Image from "next/image";
 import {
   ArrowRight,
   Sparkles,
-  Building2,
   Users,
   TrendingUp,
   Shield,

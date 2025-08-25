@@ -10,7 +10,7 @@ export const COMPANY = {
   email: 'contato@mbras.com',
   phone: '+55 (11) 9999-9999',
   address: 'São Paulo, SP - Brasil',
-  cnpj: '12.345.678/0001-99',
+  cnpj: '16.955.602/0001-32',
   social: {
     linkedin: 'https://linkedin.com/company/mbras',
     instagram: 'https://instagram.com/mbras',

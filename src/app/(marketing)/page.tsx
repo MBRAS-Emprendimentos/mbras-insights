@@ -18,7 +18,7 @@ export default function MarketingPage() {
             <h2 className="text-4xl md:text-5xl font-luxury text-gradient-gold mb-6">
               Formatos de Conteúdo
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
               Descubra nossos formatos exclusivos de análise e insights para o mercado imobiliário
             </p>
           </div>
@@ -33,7 +33,7 @@ export default function MarketingPage() {
             <h2 className="text-4xl md:text-5xl font-luxury text-foreground mb-6">
               Pilares Editoriais
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
               Os fundamentos que orientam nossa produção de conteúdo premium
             </p>
           </div>
@@ -64,7 +64,7 @@ export default function MarketingPage() {
             <h2 className="text-4xl md:text-5xl font-luxury text-foreground mb-6">
               Métricas & Performance
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
               Dados em tempo real sobre o desempenho do mercado imobiliário
             </p>
           </div>
@@ -81,7 +81,7 @@ export default function MarketingPage() {
               <h2 className="text-4xl md:text-5xl font-luxury text-mbras-navy mb-6">
                 Acesso Exclusivo
               </h2>
-              <p className="text-xl text-mbras-navy/80 max-w-2xl mx-auto">
+              <p className="text-xl text-mbras-navy max-w-2xl mx-auto">
                 Cadastre-se para receber insights premium e análises exclusivas do mercado imobiliário
               </p>
             </div>

@@ -19,7 +19,7 @@
     --color-secondary-foreground: 44 87% 94%;
 
     --color-muted: 44 87% 94%; /* Cream */
-    --color-muted-foreground: 215 40% 40%;
+    --color-muted-foreground: 215 50% 20%;
 
     --color-accent: 38 87% 65%; /* Gold */
     --color-accent-foreground: 215 65% 15%;
@@ -85,7 +85,7 @@
       --color-secondary-foreground: 44 87% 94%;
 
       --color-muted: 215 50% 20%;
-      --color-muted-foreground: 44 60% 70%;
+      --color-muted-foreground: 44 70% 80%;
 
       --color-accent: 38 87% 65%; /* Gold */
       --color-accent-foreground: 215 65% 15%;
@@ -134,7 +134,7 @@
     --color-secondary-foreground: 44 87% 94%;
 
     --color-muted: 215 50% 20%;
-    --color-muted-foreground: 44 60% 70%;
+    --color-muted-foreground: 44 70% 80%;
 
     --color-accent: 38 87% 65%; /* Gold */
     --color-accent-foreground: 215 65% 15%;
