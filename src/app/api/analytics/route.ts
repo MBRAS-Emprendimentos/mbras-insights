@@ -46,7 +46,10 @@ export async function POST(request: NextRequest) {
       timestamp: validatedData.timestamp || new Date().toISOString(),
       user: {
         ...validatedData.user,
-        ip: request.headers.get("xip || request.headers.get("x-forwarded-for") || "127.0.0.1",
+        ip:
+          request.headers.get("x-forwarded-for") ||
+          request.headers.get("x-real-ip") ||
+          "127.0.0.1",
         userAgent: request.headers.get("user-agent") || "Unknown",
       },
       server: {
@@ -90,7 +93,7 @@ export async function POST(request: NextRequest) {
         {
           success: false,
           message: "Dados inválidos",
-          errors: error.errors.map((err) => ({
+          errors: (error as z.ZodError).errors.map((err) => ({
             field: err.path.join("."),
             message: err.message,
           })),
