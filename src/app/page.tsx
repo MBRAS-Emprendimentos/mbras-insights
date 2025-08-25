@@ -137,9 +137,9 @@ export default function Home() {
       </section>
 
       {/* Core Concept Section */}
-      <section className="py-32 lg:py-40 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-mbras-pearl via-white to-mbras-cream opacity-50" />
-        <div className="absolute inset-0 bg-gradient-radial from-mbras-gold/5 to-transparent" />
+      <section className="py-24 lg:py-36 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-mbras-navy/5 to-mbras-teal/5" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-transparent" />
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial="hidden"
@@ -336,10 +336,11 @@ export default function Home() {
       </section>
 
       {/* 360 Orchestration Section */}
-      <section className="py-24 lg:py-36 bg-gradient-to-br from-mbras-navy to-mbras-teal text-white relative">
+      <section className="py-28 lg:py-40 bg-gradient-to-br from-mbras-navy to-mbras-teal text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-navy-mesh opacity-20" />
-
-        <div className="container mx-auto px-6 relative">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+        
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -359,12 +360,12 @@ export default function Home() {
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-6 mb-12">
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
               {[
                 {
-                  from: "Podcast",
-                  to: "Newsletter",
-                  desc: "Insights dos episódios viram conteúdo exclusivo",
+                  from: "Conecta",
+                  to: "Podcast",
+                  desc: "Relatórios exclusivos transformam-se em episódios aprofundados",
                 },
                 {
                   from: "Vídeos",
@@ -384,8 +385,9 @@ export default function Home() {
               ].map((flow, index) => (
                 <motion.div
                   key={index}
-                  variants={fadeInUp}
-                  className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20"
+                  variants={index % 2 === 0 ? slideInLeft : slideInRight}
+                  whileHover={{ scale: 1.02 }}
+                  className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
                 >
                   <div className="flex items-center gap-3 mb-3">
                     <span className="text-mbras-gold font-semibold">
@@ -396,7 +398,7 @@ export default function Home() {
                       {flow.to}
                     </span>
                   </div>
-                  <p className="text-white/70 text-sm">{flow.desc}</p>
+                  <p className="text-white/80 text-sm leading-relaxed">{flow.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -539,13 +541,16 @@ export default function Home() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             variants={staggerContainer}
             className="max-w-5xl mx-auto"
           >
-            <motion.div variants={fadeInUp} className="text-center mb-16">
-              <h2 className="font-luxury text-4xl md:text-5xl text-white mb-4">
-                Notas Explicativas
+            <motion.div
+              variants={fadeInScale}
+              className="text-center mb-16"
+            >
+              <h2 className="font-luxury text-4xl md:text-5xl lg:text-6xl text-white mb-6">
+                Glossário Premium
               </h2>
               <p className="text-lg text-white/80">
                 Conceitos-chave que definem nossa abordagem premium
