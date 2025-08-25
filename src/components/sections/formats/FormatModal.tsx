@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import {
@@ -19,11 +19,11 @@ interface Format {
   id: string;
   title: string;
   description: string;
-  icon: string;
+  icon: React.ReactNode;
   features: string[];
   frequency: string;
   audience: string;
-  format: "pdf" | "interactive" | "video" | "webinar";
+  format: "pdf" | "interactive" | "video" | "webinar" | "dashboard";
   premium: boolean;
   color: "navy" | "teal" | "gold";
   previewImage?: string;
@@ -109,6 +109,11 @@ export function FormatModal({ format, isOpen, onClose }: FormatModalProps) {
         icon: <Calendar className="w-5 h-5" />,
         name: "Webinar ao Vivo",
         description: "Sessões interativas com especialistas",
+      },
+      dashboard: {
+        icon: <Eye className="w-5 h-5" />,
+        name: "Dashboard Interativo",
+        description: "Painel de controle com métricas em tempo real",
       },
     };
     return details[formatType as keyof typeof details];

@@ -1,61 +1,63 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { Crown, Download, Eye, Calendar, Users } from 'lucide-react'
+import React from "react";
+import { motion } from "framer-motion";
+import { Crown, Download, Eye, Calendar, Users } from "lucide-react";
 
 interface Format {
-  id: string
-  title: string
-  description: string
-  icon: string
-  features: string[]
-  frequency: string
-  audience: string
-  format: 'pdf' | 'interactive' | 'video' | 'webinar'
-  premium: boolean
-  color: 'navy' | 'teal' | 'gold'
-  previewImage?: string
+  id: string;
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+  features: string[];
+  frequency: string;
+  audience: string;
+  format: "pdf" | "interactive" | "video" | "webinar" | "dashboard";
+  premium: boolean;
+  color: "navy" | "teal" | "gold";
+  previewImage?: string;
 }
 
 interface FormatCardProps {
-  format: Format
-  onClick: () => void
+  format: Format;
+  onClick: () => void;
 }
 
 export function FormatCard({ format, onClick }: FormatCardProps) {
   const getColorClasses = (color: string, premium: boolean) => {
     const baseClasses = {
       navy: premium
-        ? 'border-mbras-navy/30 hover:border-mbras-navy/60 hover:shadow-navy-depth'
-        : 'border-mbras-navy/20 hover:border-mbras-navy/40',
+        ? "border-mbras-navy/30 hover:border-mbras-navy/60 hover:shadow-navy-depth"
+        : "border-mbras-navy/20 hover:border-mbras-navy/40",
       teal: premium
-        ? 'border-mbras-teal/30 hover:border-mbras-teal/60 hover:shadow-luxury'
-        : 'border-mbras-teal/20 hover:border-mbras-teal/40',
+        ? "border-mbras-teal/30 hover:border-mbras-teal/60 hover:shadow-luxury"
+        : "border-mbras-teal/20 hover:border-mbras-teal/40",
       gold: premium
-        ? 'border-mbras-gold/30 hover:border-mbras-gold/60 hover:shadow-gold-glow'
-        : 'border-mbras-gold/20 hover:border-mbras-gold/40'
-    }
-    return baseClasses[color as keyof typeof baseClasses]
-  }
+        ? "border-mbras-gold/30 hover:border-mbras-gold/60 hover:shadow-gold-glow"
+        : "border-mbras-gold/20 hover:border-mbras-gold/40",
+    };
+    return baseClasses[color as keyof typeof baseClasses];
+  };
 
   const getAccentColor = (color: string) => {
     const colors = {
-      navy: 'text-mbras-navy',
-      teal: 'text-mbras-teal',
-      gold: 'text-mbras-gold'
-    }
-    return colors[color as keyof typeof colors]
-  }
+      navy: "text-mbras-navy",
+      teal: "text-mbras-teal",
+      gold: "text-mbras-gold",
+    };
+    return colors[color as keyof typeof colors];
+  };
 
   const getFormatIcon = (formatType: string) => {
     const icons = {
       pdf: <Download className="w-4 h-4" />,
       interactive: <Eye className="w-4 h-4" />,
       video: <Eye className="w-4 h-4" />,
-      webinar: <Calendar className="w-4 h-4" />
-    }
-    return icons[formatType as keyof typeof icons]
-  }
+      webinar: <Calendar className="w-4 h-4" />,
+      dashboard: <Users className="w-4 h-4" />,
+    };
+    return icons[formatType as keyof typeof icons];
+  };
 
   return (
     <motion.div
@@ -90,7 +92,9 @@ export function FormatCard({ format, onClick }: FormatCardProps) {
         <div className="flex items-center gap-3">
           <div className="text-3xl">{format.icon}</div>
           <div>
-            <h3 className={`text-xl font-display font-bold ${getAccentColor(format.color)} group-hover:text-opacity-80 transition-colors`}>
+            <h3
+              className={`text-xl font-display font-bold ${getAccentColor(format.color)} group-hover:text-opacity-80 transition-colors`}
+            >
               {format.title}
             </h3>
           </div>
@@ -142,26 +146,31 @@ export function FormatCard({ format, onClick }: FormatCardProps) {
         whileTap={{ scale: 0.95 }}
         className="w-full"
       >
-        <button className={`
+        <button
+          className={`
           w-full py-3 px-4 rounded-lg font-display font-semibold text-sm
           transition-all duration-300 flex items-center justify-center gap-2
-          ${format.premium
-            ? 'bg-mbras-gold text-mbras-navy hover:bg-mbras-gold-dark shadow-gold-glow'
-            : 'bg-primary text-primary-foreground hover:bg-primary/90'
+          ${
+            format.premium
+              ? "bg-mbras-gold text-mbras-navy hover:bg-mbras-gold-dark shadow-gold-glow"
+              : "bg-primary text-primary-foreground hover:bg-primary/90"
           }
-        `}>
+        `}
+        >
           <Eye className="w-4 h-4" />
-          {format.premium ? 'Ver Detalhes Premium' : 'Ver Mais'}
+          {format.premium ? "Ver Detalhes Premium" : "Ver Mais"}
         </button>
       </motion.div>
 
       {/* Hover Glow Effect */}
-      <div className={`
+      <div
+        className={`
         absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none
-        ${format.color === 'gold' && 'bg-mbras-gold'}
-        ${format.color === 'navy' && 'bg-mbras-navy'}
-        ${format.color === 'teal' && 'bg-mbras-teal'}
-      `} />
+        ${format.color === "gold" && "bg-mbras-gold"}
+        ${format.color === "navy" && "bg-mbras-navy"}
+        ${format.color === "teal" && "bg-mbras-teal"}
+      `}
+      />
     </motion.div>
-  )
+  );
 }
