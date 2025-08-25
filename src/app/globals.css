@@ -1,5 +1,47 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: var(--font-inter), Inter, system-ui, sans-serif;
+  --font-display: var(--font-montserrat), Montserrat, system-ui, sans-serif;
+  --font-luxury: var(--font-playfair), "Playfair Display", Georgia, serif;
+
+  /* Brand colors */
+  --color-mbras-navy: 215 65% 15%;
+  --color-mbras-navy-dark: 215 65% 8%;
+  --color-mbras-navy-light: 215 65% 25%;
+  --color-mbras-teal: 189 36% 25%;
+  --color-mbras-teal-light: 189 36% 35%;
+  --color-mbras-teal-dark: 189 36% 15%;
+  --color-mbras-gold: 38 87% 65%;
+  --color-mbras-gold-light: 38 87% 75%;
+  --color-mbras-gold-dark: 38 87% 55%;
+  --color-mbras-cream: 44 87% 94%;
+  --color-mbras-pearl: 0 0% 98%;
+  --color-mbras-graphite: 0 0% 10%;
+  --color-mbras-charcoal: 0 0% 6%;
+
+  /* System colors */
+  --color-background: 0 0% 100%;
+  --color-foreground: 215 65% 15%;
+  --color-card: 0 0% 100%;
+  --color-card-foreground: 215 65% 15%;
+  --color-popover: 0 0% 100%;
+  --color-popover-foreground: 215 65% 15%;
+  --color-primary: 215 65% 15%;
+  --color-primary-foreground: 44 87% 94%;
+  --color-secondary: 189 36% 25%;
+  --color-secondary-foreground: 44 87% 94%;
+  --color-muted: 44 87% 94%;
+  --color-muted-foreground: 215 50% 20%;
+  --color-accent: 38 87% 65%;
+  --color-accent-foreground: 215 65% 15%;
+  --color-destructive: 0 84.2% 60.2%;
+  --color-destructive-foreground: 0 0% 98%;
+  --color-border: 44 30% 91%;
+  --color-input: 44 30% 91%;
+  --color-ring: 38 87% 65%;
+}
+
 @layer theme {
   :root {
     /* MBRAS Light Theme Variables */
@@ -334,6 +376,13 @@
       rgba(243, 186, 87, 0.7) 50%,
       transparent 60%
     );
+  }
+
+  .bg-grid-pattern {
+    background-image:
+      linear-gradient(to right, rgba(10, 30, 60, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(10, 30, 60, 0.08) 1px, transparent 1px);
+    background-size: 24px 24px;
   }
 
   .bg-gradient-radial {
