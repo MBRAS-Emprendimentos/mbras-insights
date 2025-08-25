@@ -3,101 +3,125 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start w-full">
+        <div className="w-full max-w-5xl space-y-16 text-left">
+          <header className="space-y-4">
+            <p className="uppercase tracking-widest text-xs text-mbras-teal-600">Blueprint</p>
+            <h1 className="font-luxury text-3xl md:text-5xl leading-tight text-foreground">
+              MBRAS Conecta
+            </h1>
+            <div className="h-[2px] w-24 bg-mbras-gold-500 rounded-full" />
+            <p className="text-muted-foreground max-w-3xl">
+              Ecossistema premium de conteúdo e relacionamento, transformando conexões em inteligência e inteligência em negócios confidenciais.
+            </p>
+          </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          <section className="space-y-6">
+            <h2 className="font-display text-xl md:text-2xl text-foreground">1. Conceito Central</h2>
+            <p className="text-base text-foreground/90">
+              MBRAS Conecta: ecossistema premium de conteúdo e relacionamento, transformando <strong>conexões</strong> em <strong>inteligência</strong> e <strong>inteligência</strong> em <strong>negócios confidenciais</strong>.
+            </p>
+            <div className="grid gap-4 sm:grid-cols-3">
+              <div className="rounded-xl bg-white/60 dark:bg-white/5 border border-border p-5 shadow-luxury">
+                <h3 className="font-semibold text-foreground">Exclusividade</h3>
+                <p className="text-sm text-muted-foreground">Acesso restrito a bastidores e convidados‑chave.</p>
+              </div>
+              <div className="rounded-xl bg-white/60 dark:bg-white/5 border border-border p-5 shadow-luxury">
+                <h3 className="font-semibold text-foreground">Inteligência Acionável</h3>
+                <p className="text-sm text-muted-foreground">Análise sem ruído.</p>
+              </div>
+              <div className="rounded-xl bg-white/60 dark:bg-white/5 border border-border p-5 shadow-luxury">
+                <h3 className="font-semibold text-foreground">Conexão Estratégica</h3>
+                <p className="text-sm text-muted-foreground">Trusted circles que geram pipeline off‑market.</p>
+              </div>
+            </div>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="font-display text-xl md:text-2xl text-foreground">Estrutura MBRAS Conecta</h2>
+            <div className="grid gap-4 md:grid-cols-2">
+              <div className="rounded-xl bg-white/60 dark:bg-white/5 border border-border p-5 shadow-luxury space-y-2">
+                <h3 className="font-semibold text-foreground">Podcast – “MBRAS Conecta: O Podcast”</h3>
+                <p className="text-sm text-foreground/90">Conversas Chatham House.</p>
+              </div>
+              <div className="rounded-xl bg-white/60 dark:bg-white/5 border border-border p-5 shadow-luxury space-y-2">
+                <h3 className="font-semibold text-foreground">Vídeos – “MBRAS Conecta: Insights”</h3>
+                <p className="text-sm text-foreground/90">Mini-documentários (5–8min).</p>
+              </div>
+              <div className="rounded-xl bg-white/60 dark:bg-white/5 border border-border p-5 shadow-luxury space-y-2">
+                <h3 className="font-semibold text-foreground">Eventos – “MBRAS Conecta: Experience”</h3>
+                <p className="text-sm text-foreground/90">20–50 convidados exclusivos.</p>              </div>
+              <div className="rounded-xl bg-white/60 dark:bg-white/5 border border-border p-5 shadow-luxury space-y-2">
+                <h3 className="font-semibold text-foreground">Newsletter – “MBRAS Conecta: Weekly Brief”</h3>
+                <p className="text-sm text-foreground/90">One-pager curado, minimalista.</p>
+              </div>
+            </div>
+          </section>
+
+          <section className="space-y-4">
+            <div className="flex items-center gap-2">
+              <Image aria-hidden src="/window.svg" alt="" width={20} height={20} />
+              <h2 className="font-display text-xl md:text-2xl text-foreground">Orquestração 360°</h2>
+            </div>
+            <ul className="list-disc pl-5 text-sm text-foreground/90 space-y-1">
+              <li>Podcast → Newsletter.</li>
+              <li>Vídeos → Eventos.</li>
+              <li>Eventos → Podcasts/Vídeos.</li>
+              <li>Newsletter → CRM.</li>
+            </ul>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="font-display text-xl md:text-2xl text-foreground">Métricas de Sucesso</h2>
+            <ul className="list-disc pl-5 text-sm text-foreground/90 space-y-1">
+              <li>audiência UHNWI/C-levels.</li>
+              <li>citações espontâneas mídia premium/ano.</li>
+            </ul>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="font-display text-xl md:text-2xl text-foreground">6. Roadmap de Implementação</h2>
+            <ul className="list-disc pl-5 text-sm text-foreground/90 space-y-1">
+              <li>0–3m: Podcast + Newsletter (MVP).</li>
+              <li>3–6m: Vídeos + 1º Evento.</li>
+              <li>6–12m: Ciclo 360° consolidado + expansão internacional.</li>
+            </ul>
+          </section>
+
+          <section className="space-y-3">
+            <p className="text-sm text-foreground/90">
+              O MBRAS Conecta se posiciona como hub premium de inteligência e relacionamento do real estate de luxo em SP, inspirando-se em benchmarks globais, mas adaptado à confidencialidade e curadoria exclusiva da MBRAS.
+            </p>
+          </section>
+
+          <section className="space-y-4">
+            <div className="flex items-center gap-2">
+              <Image aria-hidden src="/file.svg" alt="" width={20} height={20} />
+              <h2 className="font-display text-xl md:text-2xl text-foreground">Notas Explicativas</h2>
+            </div>
+            <div className="space-y-3 text-sm text-foreground/90">
+              <div>
+                <p className="font-semibold">Regra de Chatham House</p>
+                <p>
+                  Utilizada em fóruns e think tanks globais, permite que os participantes falem livremente e compartilhem informações sensíveis. O conteúdo (insights, visões, aprendizados) pode ser usado, mas a identidade de quem disse algo específico deve permanecer confidencial. Isso transmite exclusividade e confiança, criando um espaço seguro para discussões estratégicas.
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold">Trusted Circles</p>
+                <p>
+                  Conceito de círculos de confiança formados por UHNWI, C-levels e gestores, nos quais a informação circula de forma controlada, reforçando a credibilidade e fortalecendo as relações de longo prazo.
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold">Pipeline Off-Market</p>
+                <p>
+                  Oportunidades de negócios não publicamente listadas, acessíveis apenas por meio de relacionamentos estratégicos e curadoria discreta. Esse elemento é central para o posicionamento premium da MBRAS.
+                </p>
+              </div>
+            </div>
+          </section>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
