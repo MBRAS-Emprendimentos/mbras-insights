@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* MBRAS Light Theme */
+    --background: 0 0% 100%;
+    --foreground: 215 65% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 65% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 65% 15%;
+
+    --primary: 215 65% 15%; /* Navy */
+    --primary-foreground: 44 87% 94%; /* Cream */
+
+    --secondary: 189 36% 25%; /* Teal */
+    --secondary-foreground: 44 87% 94%;
+
+    --muted: 44 87% 94%; /* Cream */
+    --muted-foreground: 215 40% 40%;
+
+    --accent: 38 87% 65%; /* Gold */
+    --accent-foreground: 215 65% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 44 30% 91%;
+    --input: 44 30% 91%;
+    --ring: 38 87% 65%; /* Gold ring */
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* MBRAS Dark Theme */
+    --background: 215 65% 8%; /* Deep Navy */
+    --foreground: 44 87% 94%; /* Cream */
+
+    --card: 215 60% 10%;
+    --card-foreground: 44 87% 94%;
+
+    --popover: 215 60% 10%;
+    --popover-foreground: 44 87% 94%;
+
+    --primary: 38 87% 65%; /* Gold */
+    --primary-foreground: 215 65% 15%;
+
+    --secondary: 189 36% 35%; /* Teal Light */
+    --secondary-foreground: 44 87% 94%;
+
+    --muted: 215 50% 20%;
+    --muted-foreground: 44 60% 70%;
+
+    --accent: 38 87% 65%; /* Gold */
+    --accent-foreground: 215 65% 15%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 215 50% 20%;
+    --input: 215 50% 20%;
+    --ring: 38 87% 65%;
+  }
+
+  /* Custom MBRAS Utilities */
+  .gradient-gold {
+    background: linear-gradient(135deg, #f3ba57 0%, #f5c977 50%, #f3ba57 100%);
+  }
+
+  .gradient-navy {
+    background: linear-gradient(135deg, #0a1e3c 0%, #28515a 100%);
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(to right, #f3ba57, #f5c977, #f3ba57);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .glow-gold {
+    filter: drop-shadow(0 0 20px rgba(243, 186, 87, 0.5));
+  }
+}
+
+@layer utilities {
+  /* Glass Morphism */
+  .glass {
+    backdrop-filter: blur(16px);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .glass-dark {
+    backdrop-filter: blur(16px);
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  /* Luxury Shadows */
+  .shadow-luxury {
+    box-shadow:
+      0 10px 40px rgba(10, 30, 60, 0.1),
+      0 2px 10px rgba(10, 30, 60, 0.06);
+  }
+
+  /* Premium Borders */
+  .border-gradient-gold {
+    border-image: linear-gradient(45deg, #f3ba57, #f5c977) 1;
+  }
+}
