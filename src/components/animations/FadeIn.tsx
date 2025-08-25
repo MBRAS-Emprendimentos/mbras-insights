@@ -50,7 +50,6 @@ export function FadeIn({
       transition: {
         duration,
         delay,
-        ease: [0.25, 0.46, 0.45, 0.94],
       },
     },
   };
@@ -96,18 +95,6 @@ export function FadeInStagger({
     },
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: [0.25, 0.46, 0.45, 0.94],
-      },
-    },
-  };
-
   return (
     <motion.div
       initial="hidden"
@@ -136,7 +123,6 @@ export function FadeInStaggerItem({
       y: 0,
       transition: {
         duration: 0.5,
-        ease: [0.25, 0.46, 0.45, 0.94],
       },
     },
   };
