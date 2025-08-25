@@ -1,28 +1,71 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: "class",
   content: [
     "./src/pages/**/*.{ts,tsx}",
     "./src/components/**/*.{ts,tsx}",
     "./src/app/**/*.{ts,tsx}",
   ],
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
     extend: {
       colors: {
-        // MBRAS Brand Colors
+        // System colors using CSS variables
+        background: "hsl(var(--color-background))",
+        foreground: "hsl(var(--color-foreground))",
+        card: {
+          DEFAULT: "hsl(var(--color-card))",
+          foreground: "hsl(var(--color-card-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--color-popover))",
+          foreground: "hsl(var(--color-popover-foreground))",
+        },
+        primary: {
+          DEFAULT: "hsl(var(--color-primary))",
+          foreground: "hsl(var(--color-primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--color-secondary))",
+          foreground: "hsl(var(--color-secondary-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--color-muted))",
+          foreground: "hsl(var(--color-muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--color-accent))",
+          foreground: "hsl(var(--color-accent-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--color-destructive))",
+          foreground: "hsl(var(--color-destructive-foreground))",
+        },
+        border: "hsl(var(--color-border))",
+        input: "hsl(var(--color-input))",
+        ring: "hsl(var(--color-ring))",
+        sidebar: {
+          DEFAULT: "hsl(var(--color-sidebar))",
+          foreground: "hsl(var(--color-sidebar-foreground))",
+          primary: "hsl(var(--color-sidebar-primary))",
+          "primary-foreground": "hsl(var(--color-sidebar-primary-foreground))",
+          accent: "hsl(var(--color-sidebar-accent))",
+          "accent-foreground": "hsl(var(--color-sidebar-accent-foreground))",
+          border: "hsl(var(--color-sidebar-border))",
+          ring: "hsl(var(--color-sidebar-ring))",
+        },
+        chart: {
+          "1": "hsl(var(--color-chart-1))",
+          "2": "hsl(var(--color-chart-2))",
+          "3": "hsl(var(--color-chart-3))",
+          "4": "hsl(var(--color-chart-4))",
+          "5": "hsl(var(--color-chart-5))",
+        },
+        // MBRAS Brand Colors using CSS variables
         mbras: {
           navy: {
-            DEFAULT: "#0A1E3C",
-            dark: "#061428",
-            light: "#0F2847",
+            DEFAULT: "hsl(var(--color-mbras-navy))",
+            dark: "hsl(var(--color-mbras-navy-dark))",
+            light: "hsl(var(--color-mbras-navy-light))",
             50: "#E6EBF3",
             100: "#C2D0E3",
             200: "#9AB3D1",
@@ -35,9 +78,9 @@ const config: Config = {
             900: "#061428",
           },
           teal: {
-            DEFAULT: "#28515A",
-            light: "#32616B",
-            dark: "#1E3D45",
+            DEFAULT: "hsl(var(--color-mbras-teal))",
+            light: "hsl(var(--color-mbras-teal-light))",
+            dark: "hsl(var(--color-mbras-teal-dark))",
             50: "#E8F0F2",
             100: "#C7DDE1",
             200: "#A3C8CF",
@@ -50,9 +93,9 @@ const config: Config = {
             900: "#142930",
           },
           gold: {
-            DEFAULT: "#F3BA57",
-            light: "#F5C977",
-            dark: "#E9A83C",
+            DEFAULT: "hsl(var(--color-mbras-gold))",
+            light: "hsl(var(--color-mbras-gold-light))",
+            dark: "hsl(var(--color-mbras-gold-dark))",
             glow: "#FFD700",
             50: "#FEF9EC",
             100: "#FDF1D3",
@@ -65,45 +108,11 @@ const config: Config = {
             800: "#D7821E",
             900: "#B86D19",
           },
-          cream: "#FEF9EC",
-          pearl: "#FAFAFA",
-          graphite: "#1A1A1A",
-          charcoal: "#0F0F0F",
+          cream: "hsl(var(--color-mbras-cream))",
+          pearl: "hsl(var(--color-mbras-pearl))",
+          graphite: "hsl(var(--color-mbras-graphite))",
+          charcoal: "hsl(var(--color-mbras-charcoal))",
         },
-        // System Colors from CSS variables
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
@@ -232,6 +241,13 @@ const config: Config = {
         "gold-glow": "0 0 30px rgba(243, 186, 87, 0.3)",
         "navy-depth": "0 10px 40px rgba(10, 30, 60, 0.2)",
         luxury: "0 20px 60px rgba(0, 0, 0, 0.15)",
+      },
+      container: {
+        center: true,
+        padding: "2rem",
+        screens: {
+          "2xl": "1400px",
+        },
       },
     },
   },

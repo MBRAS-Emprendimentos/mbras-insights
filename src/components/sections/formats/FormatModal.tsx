@@ -1,110 +1,121 @@
-'use client'
+"use client";
 
-import { useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { X, Crown, Download, Eye, Calendar, Users, Check, Star, ArrowRight } from 'lucide-react'
+import { useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import {
+  X,
+  Crown,
+  Download,
+  Eye,
+  Calendar,
+  Users,
+  Check,
+  Star,
+  ArrowRight,
+} from "lucide-react";
 
 interface Format {
-  id: string
-  title: string
-  description: string
-  icon: string
-  features: string[]
-  frequency: string
-  audience: string
-  format: 'pdf' | 'interactive' | 'video' | 'webinar'
-  premium: boolean
-  color: 'navy' | 'teal' | 'gold'
-  previewImage?: string
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+  features: string[];
+  frequency: string;
+  audience: string;
+  format: "pdf" | "interactive" | "video" | "webinar";
+  premium: boolean;
+  color: "navy" | "teal" | "gold";
+  previewImage?: string;
 }
 
 interface FormatModalProps {
-  format: Format
-  isOpen: boolean
-  onClose: () => void
+  format: Format;
+  isOpen: boolean;
+  onClose: () => void;
 }
 
 export function FormatModal({ format, isOpen, onClose }: FormatModalProps) {
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden'
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset'
+      document.body.style.overflow = "unset";
     }
 
     return () => {
-      document.body.style.overflow = 'unset'
-    }
-  }, [isOpen])
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        onClose()
+      if (e.key === "Escape") {
+        onClose();
       }
-    }
+    };
 
     if (isOpen) {
-      document.addEventListener('keydown', handleEscape)
+      document.addEventListener("keydown", handleEscape);
     }
 
     return () => {
-      document.removeEventListener('keydown', handleEscape)
-    }
-  }, [isOpen, onClose])
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [isOpen, onClose]);
 
   const getColorClasses = (color: string) => {
     const colors = {
       navy: {
-        accent: 'text-mbras-navy',
-        bg: 'bg-mbras-navy/10',
-        border: 'border-mbras-navy/20',
-        gradient: 'from-mbras-navy/20 to-transparent'
+        accent: "text-mbras-navy",
+        bg: "bg-mbras-navy/10",
+        border: "border-mbras-navy/20",
+        gradient: "from-mbras-navy/20 to-transparent",
       },
       teal: {
-        accent: 'text-mbras-teal',
-        bg: 'bg-mbras-teal/10',
-        border: 'border-mbras-teal/20',
-        gradient: 'from-mbras-teal/20 to-transparent'
+        accent: "text-mbras-teal",
+        bg: "bg-mbras-teal/10",
+        border: "border-mbras-teal/20",
+        gradient: "from-mbras-teal/20 to-transparent",
       },
       gold: {
-        accent: 'text-mbras-gold',
-        bg: 'bg-mbras-gold/10',
-        border: 'border-mbras-gold/20',
-        gradient: 'from-mbras-gold/20 to-transparent'
-      }
-    }
-    return colors[color as keyof typeof colors]
-  }
+        accent: "text-mbras-gold",
+        bg: "bg-mbras-gold/10",
+        border: "border-mbras-gold/20",
+        gradient: "from-mbras-gold/20 to-transparent",
+      },
+    };
+    return colors[color as keyof typeof colors];
+  };
 
   const getFormatDetails = (formatType: string) => {
     const details = {
       pdf: {
         icon: <Download className="w-5 h-5" />,
-        name: 'Relatório PDF',
-        description: 'Documento completo em PDF para download'
+        name: "Relatório PDF",
+        description: "Documento completo em PDF para download",
       },
       interactive: {
         icon: <Eye className="w-5 h-5" />,
-        name: 'Dashboard Interativo',
-        description: 'Plataforma web com dados em tempo real'
+        name: "Dashboard Interativo",
+        description: "Plataforma web com dados em tempo real",
       },
       video: {
         icon: <Eye className="w-5 h-5" />,
-        name: 'Conteúdo em Vídeo',
-        description: 'Análises apresentadas em formato audiovisual'
+        name: "Conteúdo em Vídeo",
+        description: "Análises apresentadas em formato audiovisual",
       },
       webinar: {
         icon: <Calendar className="w-5 h-5" />,
-        name: 'Webinar ao Vivo',
-        description: 'Sessões interativas com especialistas'
-      }
-    }
-    return details[formatType as keyof typeof details]
-  }
+        name: "Webinar ao Vivo",
+        description: "Sessões interativas com especialistas",
+      },
+    };
+    return details[formatType as keyof typeof details];
+  };
 
-  const colorClasses = getColorClasses(format.color)
-  const formatDetails = getFormatDetails(format.format)
+  const colorClasses = getColorClasses(format.color);
+  const formatDetails = getFormatDetails(format.format);
 
   return (
     <AnimatePresence>
@@ -125,12 +136,14 @@ export function FormatModal({ format, isOpen, onClose }: FormatModalProps) {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              transition={{ type: 'spring', damping: 20, stiffness: 300 }}
+              transition={{ type: "spring", damping: 20, stiffness: 300 }}
               className="relative bg-background border border-border rounded-2xl shadow-luxury max-w-4xl w-full max-h-[90vh] overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Header */}
-              <div className={`relative p-6 pb-0 bg-gradient-to-r ${colorClasses.gradient}`}>
+              <div
+                className={`relative p-6 pb-0 bg-gradient-to-r ${colorClasses.gradient}`}
+              >
                 {/* Close Button */}
                 <button
                   onClick={onClose}
@@ -153,7 +166,9 @@ export function FormatModal({ format, isOpen, onClose }: FormatModalProps) {
                 <div className="flex items-center gap-4 mt-8">
                   <div className="text-5xl">{format.icon}</div>
                   <div>
-                    <h2 className={`text-3xl font-luxury ${colorClasses.accent} mb-2`}>
+                    <h2
+                      className={`text-3xl font-luxury ${colorClasses.accent} mb-2`}
+                    >
                       {format.title}
                     </h2>
                     <div className="flex items-center gap-4 text-sm text-muted-foreground">
@@ -219,7 +234,7 @@ export function FormatModal({ format, isOpen, onClose }: FormatModalProps) {
                       Prévia do conteúdo
                     </h3>
                     <div className="rounded-xl overflow-hidden border border-border">
-                      <img
+                      <Image
                         src={format.previewImage}
                         alt={`Prévia do ${format.title}`}
                         className="w-full h-64 object-cover"
@@ -231,7 +246,9 @@ export function FormatModal({ format, isOpen, onClose }: FormatModalProps) {
                     <h3 className="text-xl font-display font-semibold text-foreground mb-4">
                       Exemplo de conteúdo
                     </h3>
-                    <div className={`p-6 rounded-xl ${colorClasses.bg} ${colorClasses.border} border`}>
+                    <div
+                      className={`p-6 rounded-xl ${colorClasses.bg} ${colorClasses.border} border`}
+                    >
                       <div className="flex items-center gap-3 mb-3">
                         <Star className={`w-5 h-5 ${colorClasses.accent}`} />
                         <span className="font-display font-semibold text-foreground">
@@ -239,9 +256,11 @@ export function FormatModal({ format, isOpen, onClose }: FormatModalProps) {
                         </span>
                       </div>
                       <p className="text-muted-foreground leading-relaxed">
-                        Acesse análises detalhadas como: "O mercado imobiliário de São Paulo apresentou
-                        crescimento de 8,5% no último trimestre, impulsionado principalmente pela demanda
-                        por imóveis comerciais na região da Faria Lima..."
+                        Acesse análises detalhadas como: &ldquo;O mercado
+                        imobiliário de São Paulo apresentou crescimento de 8,5%
+                        no último trimestre, impulsionado principalmente pela
+                        demanda por imóveis comerciais na região da Faria
+                        Lima...&rdquo;
                       </p>
                     </div>
                   </div>
@@ -253,16 +272,19 @@ export function FormatModal({ format, isOpen, onClose }: FormatModalProps) {
                     <h4 className="text-lg font-display font-semibold text-foreground mb-3">
                       Ideal para
                     </h4>
-                    <div className={`p-4 rounded-lg ${colorClasses.bg} ${colorClasses.border} border`}>
+                    <div
+                      className={`p-4 rounded-lg ${colorClasses.bg} ${colorClasses.border} border`}
+                    >
                       <div className="flex items-center gap-2 mb-2">
                         <Users className={`w-4 h-4 ${colorClasses.accent}`} />
-                        <span className="font-medium text-foreground">{format.audience}</span>
+                        <span className="font-medium text-foreground">
+                          {format.audience}
+                        </span>
                       </div>
                       <p className="text-sm text-muted-foreground">
                         {format.premium
-                          ? 'Profissionais que buscam insights premium e análises exclusivas'
-                          : 'Profissionais que desejam acompanhar o mercado com informações confiáveis'
-                        }
+                          ? "Profissionais que buscam insights premium e análises exclusivas"
+                          : "Profissionais que desejam acompanhar o mercado com informações confiáveis"}
                       </p>
                     </div>
                   </div>
@@ -271,13 +293,20 @@ export function FormatModal({ format, isOpen, onClose }: FormatModalProps) {
                     <h4 className="text-lg font-display font-semibold text-foreground mb-3">
                       Frequência
                     </h4>
-                    <div className={`p-4 rounded-lg ${colorClasses.bg} ${colorClasses.border} border`}>
+                    <div
+                      className={`p-4 rounded-lg ${colorClasses.bg} ${colorClasses.border} border`}
+                    >
                       <div className="flex items-center gap-2 mb-2">
-                        <Calendar className={`w-4 h-4 ${colorClasses.accent}`} />
-                        <span className="font-medium text-foreground">{format.frequency}</span>
+                        <Calendar
+                          className={`w-4 h-4 ${colorClasses.accent}`}
+                        />
+                        <span className="font-medium text-foreground">
+                          {format.frequency}
+                        </span>
                       </div>
                       <p className="text-sm text-muted-foreground">
-                        Conteúdo atualizado regularmente para manter você sempre informado
+                        Conteúdo atualizado regularmente para manter você sempre
+                        informado
                       </p>
                     </div>
                   </div>
@@ -289,7 +318,9 @@ export function FormatModal({ format, isOpen, onClose }: FormatModalProps) {
                 <div className="flex flex-col sm:flex-row gap-4 justify-between items-center">
                   <div className="text-center sm:text-left">
                     <p className="text-sm text-muted-foreground">
-                      {format.premium ? 'Acesso exclusivo para membros premium' : 'Disponível gratuitamente'}
+                      {format.premium
+                        ? "Acesso exclusivo para membros premium"
+                        : "Disponível gratuitamente"}
                     </p>
                     {format.premium && (
                       <p className="text-xs text-muted-foreground mt-1">
@@ -314,13 +345,14 @@ export function FormatModal({ format, isOpen, onClose }: FormatModalProps) {
                       className={`
                         px-6 py-3 rounded-lg font-display font-semibold flex items-center gap-2
                         transition-all duration-300
-                        ${format.premium
-                          ? 'bg-mbras-gold text-mbras-navy hover:bg-mbras-gold-dark shadow-gold-glow'
-                          : 'bg-primary text-primary-foreground hover:bg-primary/90'
+                        ${
+                          format.premium
+                            ? "bg-mbras-gold text-mbras-navy hover:bg-mbras-gold-dark shadow-gold-glow"
+                            : "bg-primary text-primary-foreground hover:bg-primary/90"
                         }
                       `}
                     >
-                      {format.premium ? 'Solicitar Acesso' : 'Acessar Agora'}
+                      {format.premium ? "Solicitar Acesso" : "Acessar Agora"}
                       <ArrowRight className="w-4 h-4" />
                     </motion.button>
                   </div>
@@ -331,5 +363,5 @@ export function FormatModal({ format, isOpen, onClose }: FormatModalProps) {
         </>
       )}
     </AnimatePresence>
-  )
+  );
 }

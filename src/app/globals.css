@@ -1,102 +1,181 @@
 @import "tailwindcss";
 
-@layer base {
+@layer theme {
   :root {
     /* MBRAS Light Theme Variables */
-    --background: 0 0% 100%;
-    --foreground: 215 65% 15%;
+    --color-background: 0 0% 100%;
+    --color-foreground: 215 65% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 215 65% 15%;
+    --color-card: 0 0% 100%;
+    --color-card-foreground: 215 65% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 65% 15%;
+    --color-popover: 0 0% 100%;
+    --color-popover-foreground: 215 65% 15%;
 
-    --primary: 215 65% 15%; /* Navy */
-    --primary-foreground: 44 87% 94%; /* Cream */
+    --color-primary: 215 65% 15%; /* Navy */
+    --color-primary-foreground: 44 87% 94%; /* Cream */
 
-    --secondary: 189 36% 25%; /* Teal */
-    --secondary-foreground: 44 87% 94%;
+    --color-secondary: 189 36% 25%; /* Teal */
+    --color-secondary-foreground: 44 87% 94%;
 
-    --muted: 44 87% 94%; /* Cream */
-    --muted-foreground: 215 40% 40%;
+    --color-muted: 44 87% 94%; /* Cream */
+    --color-muted-foreground: 215 40% 40%;
 
-    --accent: 38 87% 65%; /* Gold */
-    --accent-foreground: 215 65% 15%;
+    --color-accent: 38 87% 65%; /* Gold */
+    --color-accent-foreground: 215 65% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --color-destructive: 0 84.2% 60.2%;
+    --color-destructive-foreground: 0 0% 98%;
 
-    --border: 44 30% 91%;
-    --input: 44 30% 91%;
-    --ring: 38 87% 65%; /* Gold ring */
+    --color-border: 44 30% 91%;
+    --color-input: 44 30% 91%;
+    --color-ring: 38 87% 65%; /* Gold ring */
 
     --radius: 0.5rem;
 
+    /* MBRAS Brand Colors */
+    --color-mbras-navy: 215 65% 15%;
+    --color-mbras-navy-dark: 215 65% 8%;
+    --color-mbras-navy-light: 215 65% 25%;
+    --color-mbras-teal: 189 36% 25%;
+    --color-mbras-teal-light: 189 36% 35%;
+    --color-mbras-teal-dark: 189 36% 15%;
+    --color-mbras-gold: 38 87% 65%;
+    --color-mbras-gold-light: 38 87% 75%;
+    --color-mbras-gold-dark: 38 87% 55%;
+    --color-mbras-cream: 44 87% 94%;
+    --color-mbras-pearl: 0 0% 98%;
+    --color-mbras-graphite: 0 0% 10%;
+    --color-mbras-charcoal: 0 0% 6%;
+
     /* shadcn Chart Colors */
-    --chart-1: 215 65% 15%; /* Navy */
-    --chart-2: 189 36% 25%; /* Teal */
-    --chart-3: 38 87% 65%; /* Gold */
-    --chart-4: 215 40% 40%; /* Navy Light */
-    --chart-5: 189 36% 35%; /* Teal Light */
+    --color-chart-1: 215 65% 15%; /* Navy */
+    --color-chart-2: 189 36% 25%; /* Teal */
+    --color-chart-3: 38 87% 65%; /* Gold */
+    --color-chart-4: 215 40% 40%; /* Navy Light */
+    --color-chart-5: 189 36% 35%; /* Teal Light */
 
     /* Sidebar Variables for shadcn components */
-    --sidebar: 0 0% 100%;
-    --sidebar-foreground: 215 65% 15%;
-    --sidebar-primary: 215 65% 15%;
-    --sidebar-primary-foreground: 44 87% 94%;
-    --sidebar-accent: 44 87% 94%;
-    --sidebar-accent-foreground: 215 65% 15%;
-    --sidebar-border: 44 30% 91%;
-    --sidebar-ring: 38 87% 65%;
+    --color-sidebar: 0 0% 100%;
+    --color-sidebar-foreground: 215 65% 15%;
+    --color-sidebar-primary: 215 65% 15%;
+    --color-sidebar-primary-foreground: 44 87% 94%;
+    --color-sidebar-accent: 44 87% 94%;
+    --color-sidebar-accent-foreground: 215 65% 15%;
+    --color-sidebar-border: 44 30% 91%;
+    --color-sidebar-ring: 38 87% 65%;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      /* MBRAS Dark Theme Variables */
+      --color-background: 215 65% 8%; /* Deep Navy */
+      --color-foreground: 44 87% 94%; /* Cream */
+
+      --color-card: 215 60% 10%;
+      --color-card-foreground: 44 87% 94%;
+
+      --color-popover: 215 60% 10%;
+      --color-popover-foreground: 44 87% 94%;
+
+      --color-primary: 38 87% 65%; /* Gold */
+      --color-primary-foreground: 215 65% 15%;
+
+      --color-secondary: 189 36% 35%; /* Teal Light */
+      --color-secondary-foreground: 44 87% 94%;
+
+      --color-muted: 215 50% 20%;
+      --color-muted-foreground: 44 60% 70%;
+
+      --color-accent: 38 87% 65%; /* Gold */
+      --color-accent-foreground: 215 65% 15%;
+
+      --color-destructive: 0 62.8% 30.6%;
+      --color-destructive-foreground: 0 0% 98%;
+
+      --color-border: 215 50% 20%;
+      --color-input: 215 50% 20%;
+      --color-ring: 38 87% 65%;
+
+      /* shadcn Chart Colors for Dark Mode */
+      --color-chart-1: 38 87% 65%; /* Gold */
+      --color-chart-2: 189 36% 35%; /* Teal Light */
+      --color-chart-3: 215 65% 25%; /* Navy Light */
+      --color-chart-4: 44 60% 70%; /* Cream Muted */
+      --color-chart-5: 189 30% 45%; /* Teal Lighter */
+
+      /* Sidebar Variables for Dark Mode */
+      --color-sidebar: 215 60% 10%;
+      --color-sidebar-foreground: 44 87% 94%;
+      --color-sidebar-primary: 38 87% 65%;
+      --color-sidebar-primary-foreground: 215 65% 15%;
+      --color-sidebar-accent: 215 50% 20%;
+      --color-sidebar-accent-foreground: 44 87% 94%;
+      --color-sidebar-border: 215 50% 20%;
+      --color-sidebar-ring: 38 87% 65%;
+    }
   }
 
   .dark {
     /* MBRAS Dark Theme Variables */
-    --background: 215 65% 8%; /* Deep Navy */
-    --foreground: 44 87% 94%; /* Cream */
+    --color-background: 215 65% 8%; /* Deep Navy */
+    --color-foreground: 44 87% 94%; /* Cream */
 
-    --card: 215 60% 10%;
-    --card-foreground: 44 87% 94%;
+    --color-card: 215 60% 10%;
+    --color-card-foreground: 44 87% 94%;
 
-    --popover: 215 60% 10%;
-    --popover-foreground: 44 87% 94%;
+    --color-popover: 215 60% 10%;
+    --color-popover-foreground: 44 87% 94%;
 
-    --primary: 38 87% 65%; /* Gold */
-    --primary-foreground: 215 65% 15%;
+    --color-primary: 38 87% 65%; /* Gold */
+    --color-primary-foreground: 215 65% 15%;
 
-    --secondary: 189 36% 35%; /* Teal Light */
-    --secondary-foreground: 44 87% 94%;
+    --color-secondary: 189 36% 35%; /* Teal Light */
+    --color-secondary-foreground: 44 87% 94%;
 
-    --muted: 215 50% 20%;
-    --muted-foreground: 44 60% 70%;
+    --color-muted: 215 50% 20%;
+    --color-muted-foreground: 44 60% 70%;
 
-    --accent: 38 87% 65%; /* Gold */
-    --accent-foreground: 215 65% 15%;
+    --color-accent: 38 87% 65%; /* Gold */
+    --color-accent-foreground: 215 65% 15%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --color-destructive: 0 62.8% 30.6%;
+    --color-destructive-foreground: 0 0% 98%;
 
-    --border: 215 50% 20%;
-    --input: 215 50% 20%;
-    --ring: 38 87% 65%;
+    --color-border: 215 50% 20%;
+    --color-input: 215 50% 20%;
+    --color-ring: 38 87% 65%;
 
     /* shadcn Chart Colors for Dark Mode */
-    --chart-1: 38 87% 65%; /* Gold */
-    --chart-2: 189 36% 35%; /* Teal Light */
-    --chart-3: 215 65% 25%; /* Navy Light */
-    --chart-4: 44 60% 70%; /* Cream Muted */
-    --chart-5: 189 30% 45%; /* Teal Lighter */
+    --color-chart-1: 38 87% 65%; /* Gold */
+    --color-chart-2: 189 36% 35%; /* Teal Light */
+    --color-chart-3: 215 65% 25%; /* Navy Light */
+    --color-chart-4: 44 60% 70%; /* Cream Muted */
+    --color-chart-5: 189 30% 45%; /* Teal Lighter */
 
     /* Sidebar Variables for Dark Mode */
-    --sidebar: 215 60% 10%;
-    --sidebar-foreground: 44 87% 94%;
-    --sidebar-primary: 38 87% 65%;
-    --sidebar-primary-foreground: 215 65% 15%;
-    --sidebar-accent: 215 50% 20%;
-    --sidebar-accent-foreground: 44 87% 94%;
-    --sidebar-border: 215 50% 20%;
-    --sidebar-ring: 38 87% 65%;
+    --color-sidebar: 215 60% 10%;
+    --color-sidebar-foreground: 44 87% 94%;
+    --color-sidebar-primary: 38 87% 65%;
+    --color-sidebar-primary-foreground: 215 65% 15%;
+    --color-sidebar-accent: 215 50% 20%;
+    --color-sidebar-accent-foreground: 44 87% 94%;
+    --color-sidebar-border: 215 50% 20%;
+    --color-sidebar-ring: 38 87% 65%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--color-border));
+  }
+
+  body {
+    background-color: hsl(var(--color-background));
+    color: hsl(var(--color-foreground));
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
   }
 
   /* Custom MBRAS Utilities */
@@ -117,18 +196,6 @@
 
   .glow-gold {
     filter: drop-shadow(0 0 20px rgba(243, 186, 87, 0.5));
-  }
-
-  /* Base styles for shadcn components */
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
-    font-feature-settings:
-      "rlig" 1,
-      "calt" 1;
   }
 }
 
@@ -242,6 +309,42 @@
 
   .animate-marquee2 {
     animation: marquee2 25s linear infinite;
+  }
+
+  /* Shadow utilities */
+  .shadow-gold-glow {
+    box-shadow: 0 0 30px rgba(243, 186, 87, 0.3);
+  }
+
+  .shadow-navy-depth {
+    box-shadow: 0 10px 40px rgba(10, 30, 60, 0.2);
+  }
+
+  /* Background patterns */
+  .bg-navy-mesh {
+    background-image:
+      radial-gradient(at 40% 20%, hsla(215, 65%, 15%, 1) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, hsla(189, 36%, 25%, 0.8) 0px, transparent 50%);
+  }
+
+  .bg-gold-shimmer {
+    background-image: linear-gradient(
+      105deg,
+      transparent 40%,
+      rgba(243, 186, 87, 0.7) 50%,
+      transparent 60%
+    );
+  }
+
+  .bg-gradient-radial {
+    background-image: radial-gradient(var(--tw-gradient-stops));
+  }
+
+  .bg-gradient-conic {
+    background-image: conic-gradient(
+      from 180deg at 50% 50%,
+      var(--tw-gradient-stops)
+    );
   }
 }
 
@@ -364,40 +467,4 @@
   100% {
     transform: translateX(0%);
   }
-}
-
-/* Background patterns */
-.bg-navy-mesh {
-  background-image:
-    radial-gradient(at 40% 20%, hsla(215, 65%, 15%, 1) 0px, transparent 50%),
-    radial-gradient(at 80% 0%, hsla(189, 36%, 25%, 0.8) 0px, transparent 50%);
-}
-
-.bg-gold-shimmer {
-  background-image: linear-gradient(
-    105deg,
-    transparent 40%,
-    rgba(243, 186, 87, 0.7) 50%,
-    transparent 60%
-  );
-}
-
-.bg-gradient-radial {
-  background-image: radial-gradient(var(--tw-gradient-stops));
-}
-
-.bg-gradient-conic {
-  background-image: conic-gradient(
-    from 180deg at 50% 50%,
-    var(--tw-gradient-stops)
-  );
-}
-
-/* Shadow utilities */
-.shadow-gold-glow {
-  box-shadow: 0 0 30px rgba(243, 186, 87, 0.3);
-}
-
-.shadow-navy-depth {
-  box-shadow: 0 10px 40px rgba(10, 30, 60, 0.2);
 }
