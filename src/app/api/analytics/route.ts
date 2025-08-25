@@ -93,7 +93,7 @@ export async function POST(request: NextRequest) {
         {
           success: false,
           message: "Dados inválidos",
-          errors: (error as z.ZodError).errors.map((err) => ({
+          errors: error.issues.map((err) => ({
             field: err.path.join("."),
             message: err.message,
           })),
@@ -192,7 +192,7 @@ export async function GET(request: NextRequest) {
         {
           success: false,
           message: "Parâmetros de consulta inválidos",
-          errors: error.errors.map((err) => ({
+          errors: error.issues.map((err) => ({
             field: err.path.join("."),
             message: err.message,
           })),
