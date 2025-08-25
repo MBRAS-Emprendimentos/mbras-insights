@@ -1,7 +1,7 @@
 "use client";
 
 // External imports
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 // Icon imports
 import { 
@@ -23,7 +23,7 @@ import {
 } from "lucide-react";
 
 // Animation variants with proper typing
-const fadeInUp: any = {
+const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: { 
     opacity: 1, 
@@ -32,7 +32,7 @@ const fadeInUp: any = {
   }
 };
 
-const fadeInScale: any = {
+const fadeInScale: Variants = {
   hidden: { opacity: 0, scale: 0.95 },
   visible: { 
     opacity: 1, 
@@ -41,7 +41,7 @@ const fadeInScale: any = {
   }
 }
 
-const slideInLeft: any = {
+const slideInLeft: Variants = {
   hidden: { opacity: 0, x: -30 },
   visible: { 
     opacity: 1, 
@@ -50,7 +50,7 @@ const slideInLeft: any = {
   }
 }
 
-const slideInRight: any = {
+const slideInRight: Variants = {
   hidden: { opacity: 0, x: 30 },
   visible: { 
     opacity: 1, 
@@ -59,7 +59,7 @@ const slideInRight: any = {
   }
 }
 
-const staggerContainer: any = {
+const staggerContainer: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -70,6 +70,18 @@ const staggerContainer: any = {
   },
 };
 
+const floatAnimation: Variants = {
+  initial: { y: 0 },
+  animate: {
+    y: [-10, 10, -10],
+    transition: {
+      duration: 6,
+      repeat: Infinity,
+      ease: "easeInOut"
+    }
+  }
+};
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-mbras-pearl via-white to-mbras-cream">
@@ -77,6 +89,22 @@ export default function Home() {
       <section className="relative overflow-hidden min-h-[90vh] flex items-center">
         <div className="absolute inset-0 bg-navy-mesh opacity-5" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-mbras-pearl/30 to-transparent" />
+        
+        {/* Floating decorative elements */}
+        <motion.div
+          variants={floatAnimation}
+          initial="initial"
+          animate="animate"
+          className="absolute top-20 right-10 w-64 h-64 bg-gradient-to-br from-mbras-gold/10 to-mbras-teal/10 rounded-full blur-3xl"
+        />
+        <motion.div
+          variants={floatAnimation}
+          initial="initial"
+          animate="animate"
+          style={{ animationDelay: "2s" }}
+          className="absolute bottom-20 left-10 w-96 h-96 bg-gradient-to-tr from-mbras-navy/10 to-mbras-gold/10 rounded-full blur-3xl"
+        />
+        
         <div className="container mx-auto px-6 py-24 lg:py-32 relative z-10">
           <motion.div
             initial="hidden"
@@ -104,11 +132,6 @@ export default function Home() {
               </span>
             </motion.h1>
 
-            <motion.div
-              variants={fadeInUp}
-              className="w-32 h-1 bg-gradient-to-r from-mbras-gold to-mbras-teal mx-auto mb-8 rounded-full"
-            />
-
             <motion.p
               variants={fadeInUp}
               className="text-lg md:text-xl lg:text-2xl text-mbras-navy/90 max-w-3xl mx-auto mb-12 font-light leading-relaxed"
@@ -120,17 +143,19 @@ export default function Home() {
               em um ecossistema exclusivo de oportunidades e conhecimento estratégico.
             </motion.p>
 
-            <motion.div
-              variants={fadeInUp}
-              className="flex flex-wrap gap-4 justify-center mt-12"
-            >
-              <button className="group px-8 py-4 bg-mbras-navy text-white rounded-lg font-display font-semibold hover:bg-mbras-navy-dark transition-all duration-300 flex items-center gap-2 shadow-luxury">
-                Acessar Ecossistema
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="px-8 py-4 border-2 border-mbras-navy text-mbras-navy rounded-lg font-display font-semibold hover:bg-mbras-navy hover:text-white transition-all duration-300">
+            <motion.div variants={fadeInUp} className="flex justify-center gap-4">
+              <motion.button 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+                className="px-8 py-4 bg-gradient-to-r from-mbras-gold to-mbras-gold-light text-white rounded-lg font-display font-semibold hover:shadow-luxury transition-all duration-300 hover:shadow-mbras-gold/20">
+                Tornar-se Sócio
+              </motion.button>
+              <motion.button 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+                className="px-8 py-4 border-2 border-mbras-navy text-mbras-navy rounded-lg font-display font-semibold hover:bg-mbras-navy hover:text-white transition-all duration-300">
                 Conhecer Blueprint
-              </button>
+              </motion.button>
             </motion.div>
           </motion.div>
         </div>
@@ -274,7 +299,7 @@ export default function Home() {
                     <h3 className="font-display text-xl font-bold text-mbras-navy mb-2">
                       Vídeos – &ldquo;MBRAS Conecta: Insights&rdquo;
                     </h3>
-                    <p className="text-mbras-navy/70">
+                    <p className="text-mbras-navy/80">
                       Mini-documentários (5-8min) com análises visuais e tours exclusivos de propriedades
                     </p>
                   </div>
@@ -406,62 +431,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Success Metrics Section */}
-      <section className="py-24 lg:py-36 bg-white">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="max-w-6xl mx-auto"
-          >
-            <motion.div variants={fadeInUp} className="text-center mb-16">
-              <h2 className="font-luxury text-4xl md:text-5xl text-mbras-navy mb-4">
-                Métricas de Sucesso
-              </h2>
-            </motion.div>
-
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
-              <motion.div variants={fadeInUp} className="text-center">
-                <div className="text-5xl font-luxury text-mbras-gold mb-4">
-                  500+
-                </div>
-                <p className="text-mbras-navy font-display font-semibold mb-2">
-                  Audiência UHNWI
-                </p>
-                <p className="text-mbras-navy/70 text-sm">
-                  C-levels e tomadores de decisão
-                </p>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} className="text-center">
-                <div className="text-5xl font-luxury text-mbras-teal mb-4">
-                  50+
-                </div>
-                <p className="text-mbras-navy font-display font-semibold mb-2">
-                  Citações Anuais
-                </p>
-                <p className="text-mbras-navy/70 text-sm">
-                  Em mídia premium espontânea
-                </p>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} className="text-center">
-                <div className="text-5xl font-luxury text-mbras-navy mb-4">
-                  95%
-                </div>
-                <p className="text-mbras-navy font-display font-semibold mb-2">
-                  Engajamento
-                </p>
-                <p className="text-mbras-navy/70 text-sm">
-                  Taxa de abertura e interação
-                </p>
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Roadmap Section */}
       <section className="py-24 lg:py-36 bg-gradient-to-b from-mbras-cream to-white">
@@ -599,17 +568,64 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 lg:py-36 bg-gradient-to-br from-mbras-gold via-mbras-gold-light to-mbras-cream relative">
+      <section className="py-32 lg:py-44 bg-gradient-to-br from-mbras-gold via-mbras-gold-light to-mbras-cream relative overflow-hidden">
         <div className="absolute inset-0 bg-gold-shimmer"></div>
+        
+        {/* Animated background elements */}
+        <motion.div
+          variants={floatAnimation}
+          initial="initial"
+          animate="animate"
+          className="absolute top-10 left-10 w-32 h-32 bg-white/20 rounded-full blur-2xl"
+        />
+        <motion.div
+          variants={floatAnimation}
+          initial="initial"
+          animate="animate"
+          style={{ animationDelay: "3s" }}
+          className="absolute bottom-10 right-10 w-48 h-48 bg-mbras-navy/10 rounded-full blur-2xl"
+        />
 
-        <div className="container mx-auto px-6 relative">
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             variants={staggerContainer}
             className="max-w-3xl mx-auto text-center"
           >
+            <motion.h2
+              variants={fadeInScale}
+              className="font-luxury text-5xl md:text-6xl lg:text-7xl text-white mb-8">
+              Seja Parte do <span className="text-mbras-navy">Top 9%</span>
+            </motion.h2>
+            <motion.p
+              variants={fadeInUp}
+              className="text-xl md:text-2xl text-white/90 mb-16 leading-relaxed">
+              Acesso exclusivo ao blueprint dos empreendimentos de alta performance
+            </motion.p>
+            
+            <motion.div
+              variants={fadeInUp}
+              className="flex gap-4 justify-center">
+              <motion.button
+                whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(0,0,0,0.15)" }}
+                whileTap={{ scale: 0.98 }}
+                className="group px-12 py-5 bg-white text-mbras-gold rounded-xl font-display font-bold text-lg shadow-lg hover:shadow-luxury transition-all duration-300">
+                Tornar-se Sócio
+                <ArrowRight className="inline-block ml-2 w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
+              </motion.button>
+            </motion.div>
+            
+            <motion.div
+              variants={fadeInUp}
+              className="mt-12">
+              <div className="inline-flex items-center gap-3 px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
+                <Sparkles className="w-5 h-5 text-white" />
+                <p className="text-white/90 font-medium">Vagas limitadas • Processo seletivo criterioso</p>
+              </div>
+            </motion.div>
+            
             <motion.div variants={fadeInUp}>
               <h2 className="font-luxury text-4xl md:text-5xl text-mbras-navy mb-6">
                 Faça Parte do Círculo
