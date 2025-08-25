@@ -3,18 +3,11 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  Crown,
-  Download,
-  Eye,
-  Calendar,
   Users,
-  Clock,
   TrendingUp,
   Award,
-  Lock,
   Zap,
   BarChart,
-  FileText,
 } from "lucide-react";
 import { FormatCard } from "./FormatCard";
 import { FormatModal } from "./FormatModal";
@@ -177,7 +170,8 @@ const formats: Format[] = [
 
 export function FormatsGrid() {
   const [selectedFormat, setSelectedFormat] = useState<Format | null>(null);
-  const [filter, setFilter] = useState<"all" | "free" | "premium">("all");
+  type FilterType = "all" | "free" | "premium";
+  const [filter, setFilter] = useState<FilterType>("all");
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
 
   const filteredFormats = formats.filter((format) => {
@@ -209,28 +203,7 @@ export function FormatsGrid() {
     },
   };
 
-  const getStatusBadge = (status: string) => {
-    const badges = {
-      popular: {
-        label: "Popular",
-        className: "bg-gradient-gold text-mbras-navy",
-      },
-      new: {
-        label: "Novo",
-        className: "bg-gradient-to-r from-green-500 to-emerald-500 text-white",
-      },
-      "coming-soon": {
-        label: "Em breve",
-        className: "bg-gradient-to-r from-purple-500 to-pink-500 text-white",
-      },
-      available: {
-        label: "Disponível",
-        className:
-          "bg-mbras-teal/20 text-mbras-teal border border-mbras-teal/30",
-      },
-    };
-    return badges[status as keyof typeof badges];
-  };
+  // Removed unused getStatusBadge helper to satisfy lint rules
 
   return (
     <section className="relative py-20 overflow-hidden">
@@ -286,22 +259,17 @@ export function FormatsGrid() {
           className="flex justify-center mb-12"
         >
           <div className="inline-flex p-2 glass rounded-2xl gap-2">
-            {[
-              { key: "all", label: "Todos", count: formats.length },
-              {
-                key: "free",
-                label: "Gratuitos",
-                count: formats.filter((f) => !f.premium).length,
-              },
-              {
-                key: "premium",
-                label: "Premium",
-                count: formats.filter((f) => f.premium).length,
-              },
-            ].map(({ key, label, count }) => (
+            {(() => {
+              const filterOptions: { key: FilterType; label: string; count: number }[] = [
+                { key: "all", label: "Todos", count: formats.length },
+                { key: "free", label: "Gratuitos", count: formats.filter((f) => !f.premium).length },
+                { key: "premium", label: "Premium", count: formats.filter((f) => f.premium).length },
+              ];
+              return filterOptions;
+            })().map(({ key, label, count }) => (
               <motion.button
                 key={key}
-                onClick={() => setFilter(key as any)}
+                onClick={() => setFilter(key)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className={cn(
@@ -362,8 +330,6 @@ export function FormatsGrid() {
                   <FormatCard
                     format={format}
                     onClick={() => setSelectedFormat(format)}
-                    isHovered={hoveredCard === format.id}
-                    statusBadge={getStatusBadge(format.status)}
                   />
                 </motion.div>
 

@@ -10,9 +10,9 @@ import {
   Building,
   BarChart3,
   PieChart,
-  Activity,
-  Target
+  Activity
 } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
 interface Metric {
@@ -21,7 +21,7 @@ interface Metric {
   value: string | number
   change: number
   changeLabel: string
-  icon: any
+  icon: LucideIcon
   color: string
   suffix?: string
   prefix?: string
@@ -114,9 +114,6 @@ const itemVariants = {
     y: 0,
     scale: 1,
     transition: {
-      type: 'spring',
-      damping: 20,
-      stiffness: 100,
       duration: 0.6
     }
   }

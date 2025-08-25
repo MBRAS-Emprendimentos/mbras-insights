@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, PlayCircle, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { GoldParticles } from "@/components/animations/GoldParticles";
-import Image from "next/image";
 
 const taglines = [
   "O essencial, antes do consenso",
@@ -53,7 +52,6 @@ export function Hero() {
       y: 0,
       transition: {
         duration: 0.8,
-        ease: "easeOut",
       },
     },
   };

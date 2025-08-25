@@ -377,11 +377,13 @@ export const ANALYTICS_EVENTS = {
   shareContent: 'share_content'
 } as const
 
-export default {
+const CONFIG = {
   APP_NAME,
   APP_DESCRIPTION,
   COMPANY,
   COLORS,
   NAVIGATION_LINKS,
   FEATURES
-}
+} as const
+
+export default CONFIG

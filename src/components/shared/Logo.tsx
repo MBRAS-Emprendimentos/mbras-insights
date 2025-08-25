@@ -17,8 +17,7 @@ export function Logo({ className, variant = 'full', animated = true }: LogoProps
       opacity: 1,
       scale: 1,
       transition: {
-        duration: 0.6,
-        ease: 'easeOut'
+        duration: 0.6
       }
     }
   }
@@ -31,7 +30,7 @@ export function Logo({ className, variant = 'full', animated = true }: LogoProps
       transition: {
         duration: 0.8,
         delay: 0.3,
-        ease: 'easeOut'
+        // ease removed for TS compatibility
       }
     }
   }
@@ -42,8 +41,7 @@ export function Logo({ className, variant = 'full', animated = true }: LogoProps
       rotate: 0,
       opacity: 1,
       transition: {
-        duration: 0.8,
-        ease: 'easeOut'
+        duration: 0.8
       }
     }
   }

@@ -6,7 +6,6 @@ import { Mail, Phone, MapPin, Linkedin, Instagram, Youtube, Twitter } from 'luci
 import { Logo } from './Logo'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { Separator } from '@/components/ui/separator'
 import { COMPANY, FOOTER_LINKS } from '@/lib/constants'
 
 export function Footer() {
@@ -29,8 +28,7 @@ export function Footer() {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
-        ease: 'easeOut'
+        duration: 0.6
       }
     }
   }

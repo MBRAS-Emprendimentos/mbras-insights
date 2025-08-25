@@ -13,7 +13,8 @@ export function Providers({ children }: { children: React.ReactNode }) {
           queries: {
             staleTime: 60 * 1000, // 1 minute
             retry: (failureCount, error: unknown) => {
-              if ((error as any)?.status === 404) return false;
+              const status = (error as { status?: number } | undefined)?.status;
+              if (status === 404) return false;
               return failureCount < 3;
             },
           },
