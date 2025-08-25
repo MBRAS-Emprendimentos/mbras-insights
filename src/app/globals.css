@@ -2,7 +2,7 @@
 
 @layer base {
   :root {
-    /* MBRAS Light Theme */
+    /* MBRAS Light Theme Variables */
     --background: 0 0% 100%;
     --foreground: 215 65% 15%;
 
@@ -32,10 +32,27 @@
     --ring: 38 87% 65%; /* Gold ring */
 
     --radius: 0.5rem;
+
+    /* shadcn Chart Colors */
+    --chart-1: 215 65% 15%; /* Navy */
+    --chart-2: 189 36% 25%; /* Teal */
+    --chart-3: 38 87% 65%; /* Gold */
+    --chart-4: 215 40% 40%; /* Navy Light */
+    --chart-5: 189 36% 35%; /* Teal Light */
+
+    /* Sidebar Variables for shadcn components */
+    --sidebar: 0 0% 100%;
+    --sidebar-foreground: 215 65% 15%;
+    --sidebar-primary: 215 65% 15%;
+    --sidebar-primary-foreground: 44 87% 94%;
+    --sidebar-accent: 44 87% 94%;
+    --sidebar-accent-foreground: 215 65% 15%;
+    --sidebar-border: 44 30% 91%;
+    --sidebar-ring: 38 87% 65%;
   }
 
   .dark {
-    /* MBRAS Dark Theme */
+    /* MBRAS Dark Theme Variables */
     --background: 215 65% 8%; /* Deep Navy */
     --foreground: 44 87% 94%; /* Cream */
 
@@ -63,6 +80,23 @@
     --border: 215 50% 20%;
     --input: 215 50% 20%;
     --ring: 38 87% 65%;
+
+    /* shadcn Chart Colors for Dark Mode */
+    --chart-1: 38 87% 65%; /* Gold */
+    --chart-2: 189 36% 35%; /* Teal Light */
+    --chart-3: 215 65% 25%; /* Navy Light */
+    --chart-4: 44 60% 70%; /* Cream Muted */
+    --chart-5: 189 30% 45%; /* Teal Lighter */
+
+    /* Sidebar Variables for Dark Mode */
+    --sidebar: 215 60% 10%;
+    --sidebar-foreground: 44 87% 94%;
+    --sidebar-primary: 38 87% 65%;
+    --sidebar-primary-foreground: 215 65% 15%;
+    --sidebar-accent: 215 50% 20%;
+    --sidebar-accent-foreground: 44 87% 94%;
+    --sidebar-border: 215 50% 20%;
+    --sidebar-ring: 38 87% 65%;
   }
 
   /* Custom MBRAS Utilities */
@@ -83,6 +117,18 @@
 
   .glow-gold {
     filter: drop-shadow(0 0 20px rgba(243, 186, 87, 0.5));
+  }
+
+  /* Base styles for shadcn components */
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
   }
 }
 
@@ -111,4 +157,247 @@
   .border-gradient-gold {
     border-image: linear-gradient(45deg, #f3ba57, #f5c977) 1;
   }
+
+  /* MBRAS specific utilities for shadcn integration */
+  .bg-mbras-navy {
+    background-color: hsl(215 65% 15%);
+  }
+
+  .bg-mbras-teal {
+    background-color: hsl(189 36% 25%);
+  }
+
+  .bg-mbras-gold {
+    background-color: hsl(38 87% 65%);
+  }
+
+  .text-mbras-navy {
+    color: hsl(215 65% 15%);
+  }
+
+  .text-mbras-teal {
+    color: hsl(189 36% 25%);
+  }
+
+  .text-mbras-gold {
+    color: hsl(38 87% 65%);
+  }
+
+  .border-mbras-navy {
+    border-color: hsl(215 65% 15%);
+  }
+
+  .border-mbras-teal {
+    border-color: hsl(189 36% 25%);
+  }
+
+  .border-mbras-gold {
+    border-color: hsl(38 87% 65%);
+  }
+
+  /* Animation utilities */
+  .animate-glow-pulse {
+    animation: glowPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.5s ease-out;
+  }
+
+  .animate-fade-down {
+    animation: fadeDown 0.5s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.4s ease-out;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.4s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.35s ease-out;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-spotlight {
+    animation: spotlight 2s ease 0.75s 1 forwards;
+  }
+
+  .animate-marquee {
+    animation: marquee 25s linear infinite;
+  }
+
+  .animate-marquee2 {
+    animation: marquee2 25s linear infinite;
+  }
+}
+
+/* Keyframes for animations */
+@keyframes glowPulse {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 20px 5px rgba(243, 186, 87, 0.5);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 30px 10px rgba(243, 186, 87, 0.7);
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(-72%, -62%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -40%) scale(1);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee2 {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* Background patterns */
+.bg-navy-mesh {
+  background-image:
+    radial-gradient(at 40% 20%, hsla(215, 65%, 15%, 1) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, hsla(189, 36%, 25%, 0.8) 0px, transparent 50%);
+}
+
+.bg-gold-shimmer {
+  background-image: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(243, 186, 87, 0.7) 50%,
+    transparent 60%
+  );
+}
+
+.bg-gradient-radial {
+  background-image: radial-gradient(var(--tw-gradient-stops));
+}
+
+.bg-gradient-conic {
+  background-image: conic-gradient(
+    from 180deg at 50% 50%,
+    var(--tw-gradient-stops)
+  );
+}
+
+/* Shadow utilities */
+.shadow-gold-glow {
+  box-shadow: 0 0 30px rgba(243, 186, 87, 0.3);
+}
+
+.shadow-navy-depth {
+  box-shadow: 0 10px 40px rgba(10, 30, 60, 0.2);
 }
