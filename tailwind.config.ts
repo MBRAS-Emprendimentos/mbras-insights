@@ -9,111 +9,86 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // System colors using CSS variables
-        background: "hsl(var(--color-background))",
-        foreground: "hsl(var(--color-foreground))",
+        // System colors
+        background: "var(--color-background)",
+        foreground: "var(--color-foreground)",
         card: {
-          DEFAULT: "hsl(var(--color-card))",
-          foreground: "hsl(var(--color-card-foreground))",
+          DEFAULT: "var(--color-card)",
+          foreground: "var(--color-card-foreground)",
         },
         popover: {
-          DEFAULT: "hsl(var(--color-popover))",
-          foreground: "hsl(var(--color-popover-foreground))",
+          DEFAULT: "var(--color-popover)",
+          foreground: "var(--color-popover-foreground)",
         },
         primary: {
-          DEFAULT: "hsl(var(--color-primary))",
-          foreground: "hsl(var(--color-primary-foreground))",
+          DEFAULT: "var(--color-primary)",
+          foreground: "var(--color-primary-foreground)",
         },
         secondary: {
-          DEFAULT: "hsl(var(--color-secondary))",
-          foreground: "hsl(var(--color-secondary-foreground))",
+          DEFAULT: "var(--color-secondary)",
+          foreground: "var(--color-secondary-foreground)",
         },
         muted: {
-          DEFAULT: "hsl(var(--color-muted))",
-          foreground: "hsl(var(--color-muted-foreground))",
+          DEFAULT: "var(--color-muted)",
+          foreground: "var(--color-muted-foreground)",
         },
         accent: {
-          DEFAULT: "hsl(var(--color-accent))",
-          foreground: "hsl(var(--color-accent-foreground))",
+          DEFAULT: "var(--color-accent)",
+          foreground: "var(--color-accent-foreground)",
         },
         destructive: {
-          DEFAULT: "hsl(var(--color-destructive))",
-          foreground: "hsl(var(--color-destructive-foreground))",
+          DEFAULT: "var(--color-destructive)",
+          foreground: "var(--color-destructive-foreground)",
         },
-        border: "hsl(var(--color-border))",
-        input: "hsl(var(--color-input))",
-        ring: "hsl(var(--color-ring))",
+        border: "var(--color-border)",
+        input: "var(--color-input)",
+        ring: "var(--color-ring)",
+
+        // Sidebar colors
         sidebar: {
-          DEFAULT: "hsl(var(--color-sidebar))",
-          foreground: "hsl(var(--color-sidebar-foreground))",
-          primary: "hsl(var(--color-sidebar-primary))",
-          "primary-foreground": "hsl(var(--color-sidebar-primary-foreground))",
-          accent: "hsl(var(--color-sidebar-accent))",
-          "accent-foreground": "hsl(var(--color-sidebar-accent-foreground))",
-          border: "hsl(var(--color-sidebar-border))",
-          ring: "hsl(var(--color-sidebar-ring))",
+          DEFAULT: "var(--color-sidebar)",
+          foreground: "var(--color-sidebar-foreground)",
+          primary: "var(--color-sidebar-primary)",
+          "primary-foreground": "var(--color-sidebar-primary-foreground)",
+          accent: "var(--color-sidebar-accent)",
+          "accent-foreground": "var(--color-sidebar-accent-foreground)",
+          border: "var(--color-sidebar-border)",
+          ring: "var(--color-sidebar-ring)",
         },
+
+        // Chart colors
         chart: {
-          "1": "hsl(var(--color-chart-1))",
-          "2": "hsl(var(--color-chart-2))",
-          "3": "hsl(var(--color-chart-3))",
-          "4": "hsl(var(--color-chart-4))",
-          "5": "hsl(var(--color-chart-5))",
+          "1": "var(--color-chart-1)",
+          "2": "var(--color-chart-2)",
+          "3": "var(--color-chart-3)",
+          "4": "var(--color-chart-4)",
+          "5": "var(--color-chart-5)",
         },
-        // MBRAS Brand Colors using CSS variables
+
+        // MBRAS Brand Colors
         mbras: {
           navy: {
-            DEFAULT: "hsl(var(--color-mbras-navy))",
-            dark: "hsl(var(--color-mbras-navy-dark))",
-            light: "hsl(var(--color-mbras-navy-light))",
-            50: "#E6EBF3",
-            100: "#C2D0E3",
-            200: "#9AB3D1",
-            300: "#7296BF",
-            400: "#4A79AD",
-            500: "#2A5C9B",
-            600: "#1E4A82",
-            700: "#163868",
-            800: "#0E264E",
-            900: "#061428",
+            DEFAULT: "var(--color-mbras-navy)",
+            dark: "var(--color-mbras-navy-dark)",
+            light: "var(--color-mbras-navy-light)",
           },
           teal: {
-            DEFAULT: "hsl(var(--color-mbras-teal))",
-            light: "hsl(var(--color-mbras-teal-light))",
-            dark: "hsl(var(--color-mbras-teal-dark))",
-            50: "#E8F0F2",
-            100: "#C7DDE1",
-            200: "#A3C8CF",
-            300: "#7FB3BD",
-            400: "#5B9EAB",
-            500: "#3F8999",
-            600: "#337487",
-            700: "#28515A",
-            800: "#1E3D45",
-            900: "#142930",
+            DEFAULT: "var(--color-mbras-teal)",
+            light: "var(--color-mbras-teal-light)",
+            dark: "var(--color-mbras-teal-dark)",
           },
           gold: {
-            DEFAULT: "hsl(var(--color-mbras-gold))",
-            light: "hsl(var(--color-mbras-gold-light))",
-            dark: "hsl(var(--color-mbras-gold-dark))",
-            glow: "#FFD700",
-            50: "#FEF9EC",
-            100: "#FDF1D3",
-            200: "#FBE8B7",
-            300: "#F9DF9B",
-            400: "#F7D67F",
-            500: "#F3BA57",
-            600: "#F0A93C",
-            700: "#E9962A",
-            800: "#D7821E",
-            900: "#B86D19",
+            DEFAULT: "var(--color-mbras-gold)",
+            light: "var(--color-mbras-gold-light)",
+            dark: "var(--color-mbras-gold-dark)",
           },
-          cream: "hsl(var(--color-mbras-cream))",
-          pearl: "hsl(var(--color-mbras-pearl))",
-          graphite: "hsl(var(--color-mbras-graphite))",
-          charcoal: "hsl(var(--color-mbras-charcoal))",
+          cream: "var(--color-mbras-cream)",
+          pearl: "var(--color-mbras-pearl)",
+          graphite: "var(--color-mbras-graphite)",
+          charcoal: "var(--color-mbras-charcoal)",
         },
       },
+
       fontFamily: {
         sans: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
         display: [
@@ -129,6 +104,7 @@ const config: Config = {
           "serif",
         ],
       },
+
       fontSize: {
         "2xs": ["0.625rem", { lineHeight: "0.875rem" }],
         "3xl": ["2rem", { lineHeight: "2.5rem" }],
@@ -139,6 +115,7 @@ const config: Config = {
         "8xl": ["6rem", { lineHeight: "6.5rem" }],
         "9xl": ["8rem", { lineHeight: "8.5rem" }],
       },
+
       spacing: {
         "18": "4.5rem",
         "88": "22rem",
@@ -147,6 +124,7 @@ const config: Config = {
         "128": "32rem",
         "144": "36rem",
       },
+
       animation: {
         "fade-up": "fadeUp 0.5s ease-out",
         "fade-down": "fadeDown 0.5s ease-out",
@@ -161,6 +139,7 @@ const config: Config = {
         marquee: "marquee 25s linear infinite",
         marquee2: "marquee2 25s linear infinite",
       },
+
       keyframes: {
         fadeUp: {
           "0%": { opacity: "0", transform: "translateY(20px)" },
@@ -189,11 +168,11 @@ const config: Config = {
         glowPulse: {
           "0%, 100%": {
             opacity: "1",
-            boxShadow: "0 0 20px 5px rgba(243, 186, 87, 0.5)",
+            boxShadow: "0 0 20px 5px oklch(0.75 0.141 77.31 / 0.5)",
           },
           "50%": {
             opacity: "0.8",
-            boxShadow: "0 0 30px 10px rgba(243, 186, 87, 0.7)",
+            boxShadow: "0 0 30px 10px oklch(0.75 0.141 77.31 / 0.7)",
           },
         },
         shimmer: {
@@ -223,25 +202,30 @@ const config: Config = {
           "100%": { transform: "translateX(0%)" },
         },
       },
+
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "gold-shimmer":
-          "linear-gradient(105deg, transparent 40%, rgba(243, 186, 87, 0.7) 50%, transparent 60%)",
+          "linear-gradient(105deg, transparent 40%, oklch(0.75 0.141 77.31 / 0.7) 50%, transparent 60%)",
         "navy-mesh":
-          "radial-gradient(at 40% 20%, hsla(215, 65%, 15%, 1) 0px, transparent 50%), radial-gradient(at 80% 0%, hsla(189, 36%, 25%, 0.8) 0px, transparent 50%)",
+          "radial-gradient(at 40% 20%, oklch(0.32 0.089 254.13) 0px, transparent 50%), radial-gradient(at 80% 0%, oklch(0.45 0.061 201.25 / 0.8) 0px, transparent 50%)",
       },
+
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        lg: "var(--radius-lg)",
+        md: "var(--radius-md)",
+        sm: "var(--radius-sm)",
+        xl: "var(--radius-xl)",
       },
+
       boxShadow: {
-        "gold-glow": "0 0 30px rgba(243, 186, 87, 0.3)",
-        "navy-depth": "0 10px 40px rgba(10, 30, 60, 0.2)",
-        luxury: "0 20px 60px rgba(0, 0, 0, 0.15)",
+        "gold-glow": "0 0 30px oklch(0.75 0.141 77.31 / 0.3)",
+        "navy-depth": "0 10px 40px oklch(0.32 0.089 254.13 / 0.2)",
+        luxury: "0 20px 60px oklch(0 0 0 / 0.15)",
       },
+
       container: {
         center: true,
         padding: "2rem",

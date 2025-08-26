@@ -1,310 +1,298 @@
 @import "tailwindcss";
 
-@theme {
-  --font-sans: var(--font-inter), Inter, system-ui, sans-serif;
-  --font-display: var(--font-montserrat), Montserrat, system-ui, sans-serif;
-  --font-luxury: var(--font-playfair), "Playfair Display", Georgia, serif;
+@custom-variant dark (&:is(.dark *));
 
-  /* Brand colors */
-  --color-mbras-navy: 215 65% 15%;
-  --color-mbras-navy-dark: 215 65% 8%;
-  --color-mbras-navy-light: 215 65% 25%;
-  --color-mbras-teal: 189 36% 25%;
-  --color-mbras-teal-light: 189 36% 35%;
-  --color-mbras-teal-dark: 189 36% 15%;
-  --color-mbras-gold: 38 87% 65%;
-  --color-mbras-gold-light: 38 87% 75%;
-  --color-mbras-gold-dark: 38 87% 55%;
-  --color-mbras-cream: 44 87% 94%;
-  --color-mbras-pearl: 0 0% 98%;
-  --color-mbras-graphite: 0 0% 10%;
-  --color-mbras-charcoal: 0 0% 6%;
+:root {
+  /* Light theme colors */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.32 0.089 254.13);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.32 0.089 254.13);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.32 0.089 254.13);
+  --primary: oklch(0.32 0.089 254.13);
+  --primary-foreground: oklch(0.95 0.024 95.87);
+  --secondary: oklch(0.45 0.061 201.25);
+  --secondary-foreground: oklch(0.95 0.024 95.87);
+  --muted: oklch(0.95 0.024 95.87);
+  --muted-foreground: oklch(0.38 0.075 254.13);
+  --accent: oklch(0.75 0.141 77.31);
+  --accent-foreground: oklch(0.32 0.089 254.13);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.92 0.016 95.87);
+  --input: oklch(0.92 0.016 95.87);
+  --ring: oklch(0.75 0.141 77.31);
 
-  /* System colors */
-  --color-background: 0 0% 100%;
-  --color-foreground: 215 65% 15%;
-  --color-card: 0 0% 100%;
-  --color-card-foreground: 215 65% 15%;
-  --color-popover: 0 0% 100%;
-  --color-popover-foreground: 215 65% 15%;
-  --color-primary: 215 65% 15%;
-  --color-primary-foreground: 44 87% 94%;
-  --color-secondary: 189 36% 25%;
-  --color-secondary-foreground: 44 87% 94%;
-  --color-muted: 44 87% 94%;
-  --color-muted-foreground: 215 50% 20%;
-  --color-accent: 38 87% 65%;
-  --color-accent-foreground: 215 65% 15%;
-  --color-destructive: 0 84.2% 60.2%;
-  --color-destructive-foreground: 0 0% 98%;
-  --color-border: 44 30% 91%;
-  --color-input: 44 30% 91%;
-  --color-ring: 38 87% 65%;
+  /* Chart colors */
+  --chart-1: oklch(0.32 0.089 254.13);
+  --chart-2: oklch(0.45 0.061 201.25);
+  --chart-3: oklch(0.75 0.141 77.31);
+  --chart-4: oklch(0.48 0.073 254.13);
+  --chart-5: oklch(0.53 0.054 201.25);
+
+  /* Sidebar colors */
+  --sidebar: oklch(1 0 0);
+  --sidebar-foreground: oklch(0.32 0.089 254.13);
+  --sidebar-primary: oklch(0.32 0.089 254.13);
+  --sidebar-primary-foreground: oklch(0.95 0.024 95.87);
+  --sidebar-accent: oklch(0.95 0.024 95.87);
+  --sidebar-accent-foreground: oklch(0.32 0.089 254.13);
+  --sidebar-border: oklch(0.92 0.016 95.87);
+  --sidebar-ring: oklch(0.75 0.141 77.31);
+
+  /* MBRAS Brand Colors - OKLCH format */
+  --mbras-navy: oklch(0.32 0.089 254.13);
+  --mbras-navy-dark: oklch(0.18 0.089 254.13);
+  --mbras-navy-light: oklch(0.42 0.089 254.13);
+  --mbras-teal: oklch(0.45 0.061 201.25);
+  --mbras-teal-light: oklch(0.53 0.054 201.25);
+  --mbras-teal-dark: oklch(0.35 0.075 201.25);
+  --mbras-gold: oklch(0.75 0.141 77.31);
+  --mbras-gold-light: oklch(0.83 0.128 77.31);
+  --mbras-gold-dark: oklch(0.68 0.154 77.31);
+  --mbras-cream: oklch(0.95 0.024 95.87);
+  --mbras-pearl: oklch(0.98 0 0);
+  --mbras-graphite: oklch(0.15 0 0);
+  --mbras-charcoal: oklch(0.08 0 0);
+
+  /* Radius */
+  --radius: 0.625rem;
 }
 
-@layer theme {
-  :root {
-    /* MBRAS Light Theme Variables */
-    --color-background: 0 0% 100%;
-    --color-foreground: 215 65% 15%;
+.dark {
+  /* Dark theme colors */
+  --background: oklch(0.18 0.089 254.13);
+  --foreground: oklch(0.95 0.024 95.87);
+  --card: oklch(0.22 0.075 254.13);
+  --card-foreground: oklch(0.95 0.024 95.87);
+  --popover: oklch(0.22 0.075 254.13);
+  --popover-foreground: oklch(0.95 0.024 95.87);
+  --primary: oklch(0.75 0.141 77.31);
+  --primary-foreground: oklch(0.32 0.089 254.13);
+  --secondary: oklch(0.53 0.054 201.25);
+  --secondary-foreground: oklch(0.95 0.024 95.87);
+  --muted: oklch(0.38 0.075 254.13);
+  --muted-foreground: oklch(0.85 0.032 95.87);
+  --accent: oklch(0.75 0.141 77.31);
+  --accent-foreground: oklch(0.32 0.089 254.13);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.38 0.075 254.13);
+  --input: oklch(0.38 0.075 254.13);
+  --ring: oklch(0.75 0.141 77.31);
 
-    --color-card: 0 0% 100%;
-    --color-card-foreground: 215 65% 15%;
+  /* Chart colors for dark mode */
+  --chart-1: oklch(0.75 0.141 77.31);
+  --chart-2: oklch(0.53 0.054 201.25);
+  --chart-3: oklch(0.42 0.089 254.13);
+  --chart-4: oklch(0.78 0.044 95.87);
+  --chart-5: oklch(0.58 0.048 201.25);
 
-    --color-popover: 0 0% 100%;
-    --color-popover-foreground: 215 65% 15%;
+  /* Sidebar for dark mode */
+  --sidebar: oklch(0.22 0.075 254.13);
+  --sidebar-foreground: oklch(0.95 0.024 95.87);
+  --sidebar-primary: oklch(0.75 0.141 77.31);
+  --sidebar-primary-foreground: oklch(0.32 0.089 254.13);
+  --sidebar-accent: oklch(0.38 0.075 254.13);
+  --sidebar-accent-foreground: oklch(0.95 0.024 95.87);
+  --sidebar-border: oklch(0.38 0.075 254.13);
+  --sidebar-ring: oklch(0.75 0.141 77.31);
+}
 
-    --color-primary: 215 65% 15%; /* Navy */
-    --color-primary-foreground: 44 87% 94%; /* Cream */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
 
-    --color-secondary: 189 36% 25%; /* Teal */
-    --color-secondary-foreground: 44 87% 94%;
+  /* MBRAS Brand Colors */
+  --color-mbras-navy: var(--mbras-navy);
+  --color-mbras-navy-dark: var(--mbras-navy-dark);
+  --color-mbras-navy-light: var(--mbras-navy-light);
+  --color-mbras-teal: var(--mbras-teal);
+  --color-mbras-teal-light: var(--mbras-teal-light);
+  --color-mbras-teal-dark: var(--mbras-teal-dark);
+  --color-mbras-gold: var(--mbras-gold);
+  --color-mbras-gold-light: var(--mbras-gold-light);
+  --color-mbras-gold-dark: var(--mbras-gold-dark);
+  --color-mbras-cream: var(--mbras-cream);
+  --color-mbras-pearl: var(--mbras-pearl);
+  --color-mbras-graphite: var(--mbras-graphite);
+  --color-mbras-charcoal: var(--mbras-charcoal);
 
-    --color-muted: 44 87% 94%; /* Cream */
-    --color-muted-foreground: 215 50% 20%;
-
-    --color-accent: 38 87% 65%; /* Gold */
-    --color-accent-foreground: 215 65% 15%;
-
-    --color-destructive: 0 84.2% 60.2%;
-    --color-destructive-foreground: 0 0% 98%;
-
-    --color-border: 44 30% 91%;
-    --color-input: 44 30% 91%;
-    --color-ring: 38 87% 65%; /* Gold ring */
-
-    --radius: 0.5rem;
-
-    /* MBRAS Brand Colors */
-    --color-mbras-navy: 215 65% 15%;
-    --color-mbras-navy-dark: 215 65% 8%;
-    --color-mbras-navy-light: 215 65% 25%;
-    --color-mbras-teal: 189 36% 25%;
-    --color-mbras-teal-light: 189 36% 35%;
-    --color-mbras-teal-dark: 189 36% 15%;
-    --color-mbras-gold: 38 87% 65%;
-    --color-mbras-gold-light: 38 87% 75%;
-    --color-mbras-gold-dark: 38 87% 55%;
-    --color-mbras-cream: 44 87% 94%;
-    --color-mbras-pearl: 0 0% 98%;
-    --color-mbras-graphite: 0 0% 10%;
-    --color-mbras-charcoal: 0 0% 6%;
-
-    /* shadcn Chart Colors */
-    --color-chart-1: 215 65% 15%; /* Navy */
-    --color-chart-2: 189 36% 25%; /* Teal */
-    --color-chart-3: 38 87% 65%; /* Gold */
-    --color-chart-4: 215 40% 40%; /* Navy Light */
-    --color-chart-5: 189 36% 35%; /* Teal Light */
-
-    /* Sidebar Variables for shadcn components */
-    --color-sidebar: 0 0% 100%;
-    --color-sidebar-foreground: 215 65% 15%;
-    --color-sidebar-primary: 215 65% 15%;
-    --color-sidebar-primary-foreground: 44 87% 94%;
-    --color-sidebar-accent: 44 87% 94%;
-    --color-sidebar-accent-foreground: 215 65% 15%;
-    --color-sidebar-border: 44 30% 91%;
-    --color-sidebar-ring: 38 87% 65%;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root {
-      /* MBRAS Dark Theme Variables */
-      --color-background: 215 65% 8%; /* Deep Navy */
-      --color-foreground: 44 87% 94%; /* Cream */
-
-      --color-card: 215 60% 10%;
-      --color-card-foreground: 44 87% 94%;
-
-      --color-popover: 215 60% 10%;
-      --color-popover-foreground: 44 87% 94%;
-
-      --color-primary: 38 87% 65%; /* Gold */
-      --color-primary-foreground: 215 65% 15%;
-
-      --color-secondary: 189 36% 35%; /* Teal Light */
-      --color-secondary-foreground: 44 87% 94%;
-
-      --color-muted: 215 50% 20%;
-      --color-muted-foreground: 44 70% 80%;
-
-      --color-accent: 38 87% 65%; /* Gold */
-      --color-accent-foreground: 215 65% 15%;
-
-      --color-destructive: 0 62.8% 30.6%;
-      --color-destructive-foreground: 0 0% 98%;
-
-      --color-border: 215 50% 20%;
-      --color-input: 215 50% 20%;
-      --color-ring: 38 87% 65%;
-
-      /* shadcn Chart Colors for Dark Mode */
-      --color-chart-1: 38 87% 65%; /* Gold */
-      --color-chart-2: 189 36% 35%; /* Teal Light */
-      --color-chart-3: 215 65% 25%; /* Navy Light */
-      --color-chart-4: 44 60% 70%; /* Cream Muted */
-      --color-chart-5: 189 30% 45%; /* Teal Lighter */
-
-      /* Sidebar Variables for Dark Mode */
-      --color-sidebar: 215 60% 10%;
-      --color-sidebar-foreground: 44 87% 94%;
-      --color-sidebar-primary: 38 87% 65%;
-      --color-sidebar-primary-foreground: 215 65% 15%;
-      --color-sidebar-accent: 215 50% 20%;
-      --color-sidebar-accent-foreground: 44 87% 94%;
-      --color-sidebar-border: 215 50% 20%;
-      --color-sidebar-ring: 38 87% 65%;
-    }
-  }
-
-  .dark {
-    /* MBRAS Dark Theme Variables */
-    --color-background: 215 65% 8%; /* Deep Navy */
-    --color-foreground: 44 87% 94%; /* Cream */
-
-    --color-card: 215 60% 10%;
-    --color-card-foreground: 44 87% 94%;
-
-    --color-popover: 215 60% 10%;
-    --color-popover-foreground: 44 87% 94%;
-
-    --color-primary: 38 87% 65%; /* Gold */
-    --color-primary-foreground: 215 65% 15%;
-
-    --color-secondary: 189 36% 35%; /* Teal Light */
-    --color-secondary-foreground: 44 87% 94%;
-
-    --color-muted: 215 50% 20%;
-    --color-muted-foreground: 44 70% 80%;
-
-    --color-accent: 38 87% 65%; /* Gold */
-    --color-accent-foreground: 215 65% 15%;
-
-    --color-destructive: 0 62.8% 30.6%;
-    --color-destructive-foreground: 0 0% 98%;
-
-    --color-border: 215 50% 20%;
-    --color-input: 215 50% 20%;
-    --color-ring: 38 87% 65%;
-
-    /* shadcn Chart Colors for Dark Mode */
-    --color-chart-1: 38 87% 65%; /* Gold */
-    --color-chart-2: 189 36% 35%; /* Teal Light */
-    --color-chart-3: 215 65% 25%; /* Navy Light */
-    --color-chart-4: 44 60% 70%; /* Cream Muted */
-    --color-chart-5: 189 30% 45%; /* Teal Lighter */
-
-    /* Sidebar Variables for Dark Mode */
-    --color-sidebar: 215 60% 10%;
-    --color-sidebar-foreground: 44 87% 94%;
-    --color-sidebar-primary: 38 87% 65%;
-    --color-sidebar-primary-foreground: 215 65% 15%;
-    --color-sidebar-accent: 215 50% 20%;
-    --color-sidebar-accent-foreground: 44 87% 94%;
-    --color-sidebar-border: 215 50% 20%;
-    --color-sidebar-ring: 38 87% 65%;
-  }
+  /* Radius variables */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
 @layer base {
   * {
-    border-color: hsl(var(--color-border));
+    @apply border-border outline-ring/50;
   }
-
   body {
-    background-color: hsl(var(--color-background));
-    color: hsl(var(--color-foreground));
+    @apply bg-background text-foreground;
     font-feature-settings:
       "rlig" 1,
       "calt" 1;
   }
+}
 
-  /* Custom MBRAS Utilities */
+@layer utilities {
+  /* Glass Morphism Effects */
+  .glass {
+    backdrop-filter: blur(16px);
+    background-color: oklch(1 0 0 / 0.1);
+    border: 1px solid oklch(1 0 0 / 0.2);
+  }
+
+  .glass-dark {
+    backdrop-filter: blur(16px);
+    background-color: oklch(0 0 0 / 0.1);
+    border: 1px solid oklch(0 0 0 / 0.2);
+  }
+
+  /* Gradient Utilities */
   .gradient-gold {
-    background: linear-gradient(135deg, #f3ba57 0%, #f5c977 50%, #f3ba57 100%);
+    background: linear-gradient(
+      135deg,
+      oklch(0.75 0.141 77.31) 0%,
+      oklch(0.83 0.128 77.31) 50%,
+      oklch(0.75 0.141 77.31) 100%
+    );
   }
 
   .gradient-navy {
-    background: linear-gradient(135deg, #0a1e3c 0%, #28515a 100%);
+    background: linear-gradient(
+      135deg,
+      oklch(0.32 0.089 254.13) 0%,
+      oklch(0.45 0.061 201.25) 100%
+    );
   }
 
   .text-gradient-gold {
-    background: linear-gradient(to right, #f3ba57, #f5c977, #f3ba57);
+    background: linear-gradient(
+      to right,
+      oklch(0.75 0.141 77.31),
+      oklch(0.83 0.128 77.31),
+      oklch(0.75 0.141 77.31)
+    );
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
   }
 
+  /* Glow Effects */
   .glow-gold {
-    filter: drop-shadow(0 0 20px rgba(243, 186, 87, 0.5));
-  }
-}
-
-@layer utilities {
-  /* Glass Morphism */
-  .glass {
-    backdrop-filter: blur(16px);
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    filter: drop-shadow(0 0 20px oklch(0.75 0.141 77.31 / 0.5));
   }
 
-  .glass-dark {
-    backdrop-filter: blur(16px);
-    background-color: rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(0, 0, 0, 0.2);
-  }
-
-  /* Luxury Shadows */
+  /* Shadow Utilities */
   .shadow-luxury {
     box-shadow:
-      0 10px 40px rgba(10, 30, 60, 0.1),
-      0 2px 10px rgba(10, 30, 60, 0.06);
+      0 10px 40px oklch(0.32 0.089 254.13 / 0.1),
+      0 2px 10px oklch(0.32 0.089 254.13 / 0.06);
   }
 
-  /* Premium Borders */
+  .shadow-gold-glow {
+    box-shadow: 0 0 30px oklch(0.75 0.141 77.31 / 0.3);
+  }
+
+  .shadow-navy-depth {
+    box-shadow: 0 10px 40px oklch(0.32 0.089 254.13 / 0.2);
+  }
+
+  /* Border Utilities */
   .border-gradient-gold {
-    border-image: linear-gradient(45deg, #f3ba57, #f5c977) 1;
+    border-image: linear-gradient(
+        45deg,
+        oklch(0.75 0.141 77.31),
+        oklch(0.83 0.128 77.31)
+      )
+      1;
   }
 
-  /* MBRAS specific utilities for shadcn integration */
-  .bg-mbras-navy {
-    background-color: hsl(215 65% 15%);
+  /* Background Patterns */
+  .bg-navy-mesh {
+    background-image:
+      radial-gradient(
+        at 40% 20%,
+        oklch(0.32 0.089 254.13) 0px,
+        transparent 50%
+      ),
+      radial-gradient(
+        at 80% 0%,
+        oklch(0.45 0.061 201.25 / 0.8) 0px,
+        transparent 50%
+      );
   }
 
-  .bg-mbras-teal {
-    background-color: hsl(189 36% 25%);
+  .bg-gold-shimmer {
+    background-image: linear-gradient(
+      105deg,
+      transparent 40%,
+      oklch(0.75 0.141 77.31 / 0.7) 50%,
+      transparent 60%
+    );
   }
 
-  .bg-mbras-gold {
-    background-color: hsl(38 87% 65%);
+  .bg-grid-pattern {
+    background-image:
+      linear-gradient(
+        to right,
+        oklch(0.32 0.089 254.13 / 0.08) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        oklch(0.32 0.089 254.13 / 0.08) 1px,
+        transparent 1px
+      );
+    background-size: 24px 24px;
   }
 
-  .text-mbras-navy {
-    color: hsl(215 65% 15%);
+  .bg-gradient-radial {
+    background-image: radial-gradient(var(--tw-gradient-stops));
   }
 
-  .text-mbras-teal {
-    color: hsl(189 36% 25%);
+  .bg-gradient-conic {
+    background-image: conic-gradient(
+      from 180deg at 50% 50%,
+      var(--tw-gradient-stops)
+    );
   }
 
-  .text-mbras-gold {
-    color: hsl(38 87% 65%);
-  }
-
-  .border-mbras-navy {
-    border-color: hsl(215 65% 15%);
-  }
-
-  .border-mbras-teal {
-    border-color: hsl(189 36% 25%);
-  }
-
-  .border-mbras-gold {
-    border-color: hsl(38 87% 65%);
-  }
-
-  /* Animation utilities */
+  /* Animation Utilities */
   .animate-glow-pulse {
     animation: glowPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
@@ -352,61 +340,18 @@
   .animate-marquee2 {
     animation: marquee2 25s linear infinite;
   }
-
-  /* Shadow utilities */
-  .shadow-gold-glow {
-    box-shadow: 0 0 30px rgba(243, 186, 87, 0.3);
-  }
-
-  .shadow-navy-depth {
-    box-shadow: 0 10px 40px rgba(10, 30, 60, 0.2);
-  }
-
-  /* Background patterns */
-  .bg-navy-mesh {
-    background-image:
-      radial-gradient(at 40% 20%, hsla(215, 65%, 15%, 1) 0px, transparent 50%),
-      radial-gradient(at 80% 0%, hsla(189, 36%, 25%, 0.8) 0px, transparent 50%);
-  }
-
-  .bg-gold-shimmer {
-    background-image: linear-gradient(
-      105deg,
-      transparent 40%,
-      rgba(243, 186, 87, 0.7) 50%,
-      transparent 60%
-    );
-  }
-
-  .bg-grid-pattern {
-    background-image:
-      linear-gradient(to right, rgba(10, 30, 60, 0.08) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(10, 30, 60, 0.08) 1px, transparent 1px);
-    background-size: 24px 24px;
-  }
-
-  .bg-gradient-radial {
-    background-image: radial-gradient(var(--tw-gradient-stops));
-  }
-
-  .bg-gradient-conic {
-    background-image: conic-gradient(
-      from 180deg at 50% 50%,
-      var(--tw-gradient-stops)
-    );
-  }
 }
 
-/* Keyframes for animations */
+/* Animation Keyframes */
 @keyframes glowPulse {
   0%,
   100% {
     opacity: 1;
-    box-shadow: 0 0 20px 5px rgba(243, 186, 87, 0.5);
+    box-shadow: 0 0 20px 5px oklch(0.75 0.141 77.31 / 0.5);
   }
   50% {
     opacity: 0.8;
-    box-shadow: 0 0 30px 10px rgba(243, 186, 87, 0.7);
+    box-shadow: 0 0 30px 10px oklch(0.75 0.141 77.31 / 0.7);
   }
 }
 
