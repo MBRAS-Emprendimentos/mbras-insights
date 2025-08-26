@@ -637,7 +637,7 @@ export default function Home() {
               variants={fadeInScale}
               className="font-luxury text-5xl md:text-6xl lg:text-7xl text-white mb-8"
             >
-              Seja Parte do <span className="text-mbras-navy">Top 9%</span>
+              Seja Parte do <span className="text-mbras-navy">Top 1%</span>
             </motion.h2>
             <motion.p
               variants={fadeInUp}

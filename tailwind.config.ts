@@ -126,80 +126,60 @@ const config: Config = {
       },
 
       animation: {
-        "fade-up": "fadeUp 0.5s ease-out",
-        "fade-down": "fadeDown 0.5s ease-out",
-        "fade-in": "fadeIn 0.6s ease-out",
-        "slide-in-right": "slideInRight 0.4s ease-out",
-        "slide-in-left": "slideInLeft 0.4s ease-out",
-        "scale-in": "scaleIn 0.35s ease-out",
-        "glow-pulse": "glowPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-        shimmer: "shimmer 2s linear infinite",
-        float: "float 6s ease-in-out infinite",
-        spotlight: "spotlight 2s ease .75s 1 forwards",
-        marquee: "marquee 25s linear infinite",
-        marquee2: "marquee2 25s linear infinite",
+        "fade-in-up": "fade-in-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both",
+        "fade-in-down": "fade-in-down 0.6s cubic-bezier(0.22, 1, 0.36, 1) both",
+        "scale-in": "scale-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both",
+        "slide-in-right":
+          "slide-in-right 0.5s cubic-bezier(0.22, 1, 0.36, 1) both",
+        "slide-in-left":
+          "slide-in-left 0.5s cubic-bezier(0.22, 1, 0.36, 1) both",
+        "float-premium": "float-premium 6s ease-in-out infinite",
+        "pulse-premium": "pulse-premium 2s ease-in-out infinite",
+        "shimmer-premium": "shimmer-premium 3s linear infinite",
+        "gradient-shift": "gradient-shift 8s ease infinite",
+        "skeleton-premium": "skeleton-premium 2s ease-in-out infinite",
       },
 
       keyframes: {
-        fadeUp: {
-          "0%": { opacity: "0", transform: "translateY(20px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
+        "fade-in-up": {
+          from: { opacity: "0", transform: "translateY(20px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
         },
-        fadeDown: {
-          "0%": { opacity: "0", transform: "translateY(-20px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
+        "fade-in-down": {
+          from: { opacity: "0", transform: "translateY(-20px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
         },
-        fadeIn: {
-          "0%": { opacity: "0" },
-          "100%": { opacity: "1" },
+        "scale-in": {
+          from: { opacity: "0", transform: "scale(0.9)" },
+          to: { opacity: "1", transform: "scale(1)" },
         },
-        slideInRight: {
-          "0%": { transform: "translateX(100%)" },
-          "100%": { transform: "translateX(0)" },
+        "slide-in-right": {
+          from: { opacity: "0", transform: "translateX(20px)" },
+          to: { opacity: "1", transform: "translateX(0)" },
         },
-        slideInLeft: {
-          "0%": { transform: "translateX(-100%)" },
-          "100%": { transform: "translateX(0)" },
+        "slide-in-left": {
+          from: { opacity: "0", transform: "translateX(-20px)" },
+          to: { opacity: "1", transform: "translateX(0)" },
         },
-        scaleIn: {
-          "0%": { opacity: "0", transform: "scale(0.9)" },
-          "100%": { opacity: "1", transform: "scale(1)" },
+        "float-premium": {
+          "0%, 100%": { transform: "translateY(0) rotate(0deg)" },
+          "33%": { transform: "translateY(-10px) rotate(-2deg)" },
+          "66%": { transform: "translateY(-5px) rotate(2deg)" },
         },
-        glowPulse: {
-          "0%, 100%": {
-            opacity: "1",
-            boxShadow: "0 0 20px 5px oklch(0.75 0.141 77.31 / 0.5)",
-          },
-          "50%": {
-            opacity: "0.8",
-            boxShadow: "0 0 30px 10px oklch(0.75 0.141 77.31 / 0.7)",
-          },
+        "pulse-premium": {
+          "0%, 100%": { opacity: "1", transform: "scale(1)" },
+          "50%": { opacity: "0.8", transform: "scale(0.98)" },
         },
-        shimmer: {
+        "shimmer-premium": {
           "0%": { backgroundPosition: "-200% 0" },
           "100%": { backgroundPosition: "200% 0" },
         },
-        float: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-20px)" },
+        "gradient-shift": {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
         },
-        spotlight: {
-          "0%": {
-            opacity: "0",
-            transform: "translate(-72%, -62%) scale(0.5)",
-          },
-          "100%": {
-            opacity: "1",
-            transform: "translate(-50%,-40%) scale(1)",
-          },
-        },
-        marquee: {
-          "0%": { transform: "translateX(0%)" },
-          "100%": { transform: "translateX(-100%)" },
-        },
-        marquee2: {
-          "0%": { transform: "translateX(100%)" },
-          "100%": { transform: "translateX(0%)" },
+        "skeleton-premium": {
+          "100%": { transform: "translateX(100%)" },
         },
       },
 
@@ -221,17 +201,45 @@ const config: Config = {
       },
 
       boxShadow: {
-        "gold-glow": "0 0 30px oklch(0.75 0.141 77.31 / 0.3)",
-        "navy-depth": "0 10px 40px oklch(0.32 0.089 254.13 / 0.2)",
-        luxury: "0 20px 60px oklch(0 0 0 / 0.15)",
+        "premium-sm": "var(--shadow-elevation-low)",
+        "premium-md": "var(--shadow-elevation-medium)",
+        "premium-lg": "var(--shadow-elevation-high)",
+        "premium-xl": "var(--shadow-elevation-ultra)",
+        "gold-glow":
+          "0 0 20px oklch(0.75 0.141 77.31 / 0.3), 0 0 40px oklch(0.75 0.141 77.31 / 0.2), 0 0 60px oklch(0.75 0.141 77.31 / 0.1)",
+        "navy-glow":
+          "0 0 20px oklch(0.32 0.089 254.13 / 0.3), 0 0 40px oklch(0.32 0.089 254.13 / 0.2), 0 0 60px oklch(0.32 0.089 254.13 / 0.1)",
+        "inner-glow": "inset 0 1px 0 0 oklch(1 0 0 / 0.1)",
+        "button-luxury":
+          "0 2px 4px oklch(0 0 0 / 0.1), 0 4px 8px oklch(0 0 0 / 0.05)",
+        "button-luxury-hover":
+          "0 4px 8px oklch(0 0 0 / 0.15), 0 8px 16px oklch(0 0 0 / 0.1)",
       },
 
       container: {
         center: true,
-        padding: "2rem",
-        screens: {
-          "2xl": "1400px",
+        padding: {
+          DEFAULT: "1rem",
+          sm: "2rem",
+          lg: "4rem",
+          xl: "5rem",
+          "2xl": "6rem",
         },
+        screens: {
+          sm: "640px",
+          md: "768px",
+          lg: "1024px",
+          xl: "1280px",
+          "2xl": "1536px",
+        },
+      },
+
+      blur: {
+        xs: "2px",
+      },
+
+      saturate: {
+        200: "2",
       },
     },
   },
