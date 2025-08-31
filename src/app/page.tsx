@@ -34,6 +34,36 @@ const fadeInUp: Variants = {
   },
 };
 
+// Static data for mappings (outside component to avoid re-creation)
+const ORCHESTRATION_FLOWS = [
+  {
+    from: "Conecta",
+    to: "Podcast",
+    desc: "Relatórios exclusivos transformam-se em episódios aprofundados",
+  },
+  {
+    from: "Vídeos",
+    to: "Eventos",
+    desc: "Apresentações visuais enriquecem encontros presenciais",
+  },
+  {
+    from: "Eventos",
+    to: "Podcasts/Vídeos",
+    desc: "Momentos especiais documentados e compartilhados",
+  },
+  {
+    from: "Newsletter",
+    to: "CRM",
+    desc: "Engajamento direto com audiência qualificada",
+  },
+] as const;
+
+const ROADMAP_ITEMS = [
+  { phase: "0-3 meses", title: "MVP Launch", desc: "Podcast + Newsletter", side: "left" as const },
+  { phase: "3-6 meses", title: "Expansão Visual", desc: "Vídeos + 1º Evento", side: "right" as const },
+  { phase: "6-12 meses", title: "Consolidação 360°", desc: "Ciclo completo + expansão internacional", side: "left" as const },
+] as const;
+
 const fadeInScale: Variants = {
   hidden: { opacity: 0, scale: 0.95 },
   visible: {
@@ -435,28 +465,7 @@ export default function Home() {
             </motion.div>
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
-              {[
-                {
-                  from: "Conecta",
-                  to: "Podcast",
-                  desc: "Relatórios exclusivos transformam-se em episódios aprofundados",
-                },
-                {
-                  from: "Vídeos",
-                  to: "Eventos",
-                  desc: "Apresentações visuais enriquecem encontros presenciais",
-                },
-                {
-                  from: "Eventos",
-                  to: "Podcasts/Vídeos",
-                  desc: "Momentos especiais documentados e compartilhados",
-                },
-                {
-                  from: "Newsletter",
-                  to: "CRM",
-                  desc: "Engajamento direto com audiência qualificada",
-                },
-              ].map((flow, index) => (
+              {ORCHESTRATION_FLOWS.map((flow, index) => (
                 <motion.div
                   key={index}
                   variants={index % 2 === 0 ? slideInLeft : slideInRight}
