@@ -4,10 +4,8 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   compress: true,
-  swcMinify: true,
-  experimental: {
-    typedRoutes: true,
-  },
+  // Next 15+ defaults to SWC minify; remove deprecated flag
+  typedRoutes: true,
 };
 
 export default nextConfig;
