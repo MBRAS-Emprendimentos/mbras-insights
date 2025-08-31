@@ -1,8 +1,7 @@
 import { Inter, Montserrat, Playfair_Display } from "next/font/google";
 import "./globals.css";
-import { Navigation } from "@/components/shared/Navigation";
-import { Footer } from "@/components/shared/Footer";
-import { Providers } from "@/components/providers/Providers";
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,6 +21,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata = {
+  metadataBase: new URL(siteUrl),
   title: "MBRAS Conecta | O essencial, antes do consenso",
   description:
     "Hub de inteligência exclusiva do mercado imobiliário de alto padrão",
@@ -41,16 +41,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <body
-        className={`${inter.variable} ${montserrat.variable} ${playfair.variable} font-sans antialiased`}
-      >
-        <Providers>
-          <div className="relative min-h-screen bg-gradient-to-b from-mbras-pearl to-mbras-cream dark:from-mbras-navy-dark dark:to-mbras-navy">
-            <Navigation />
-            <main className="relative">{children}</main>
-            <Footer />
-          </div>
-        </Providers>
+      <body className={`${inter.variable} ${montserrat.variable} ${playfair.variable} font-sans antialiased`}>
+        <div className="min-h-screen bg-gradient-to-b from-mbras-pearl to-mbras-cream dark:from-mbras-navy-dark dark:to-mbras-navy">
+          <main>{children}</main>
+        </div>
       </body>
     </html>
   );
