@@ -203,8 +203,8 @@ export function MetricsDashboard() {
               {/* Change Indicator */}
               <div className={`flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-medium ${
                 metric.change > 0
-                  ? 'bg-green-500/10 text-green-600 dark:text-green-400'
-                  : 'bg-red-500/10 text-red-600 dark:text-red-400'
+                  ? 'bg-mbras-teal/10 text-mbras-teal'
+                  : 'bg-mbras-gold/10 text-mbras-gold-dark'
               }`}>
                 {metric.change > 0 ? (
                   <TrendingUp className="w-3 h-3" />
@@ -287,7 +287,7 @@ export function MetricsDashboard() {
 
             <div className="relative">
               <div className="flex items-center gap-3 mb-6">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-mbras-navy to-mbras-gold text-white">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-mbras-navy to-mbras-gold text-mbras-cream">
                   <Activity className="w-6 h-6" />
                 </div>
                 <div>
@@ -302,7 +302,7 @@ export function MetricsDashboard() {
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-green-600 dark:text-green-400 mb-1">
+                  <div className="text-2xl font-bold text-mbras-teal mb-1">
                     +12.5%
                   </div>
                   <div className="text-sm text-muted-foreground">

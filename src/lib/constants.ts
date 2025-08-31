@@ -62,20 +62,21 @@ export const COLORS = {
     dark: '#1E3D45'
   },
   gold: {
-    50: '#FEF9EC',
-    100: '#FDF1D3',
-    200: '#FBE8B7',
-    300: '#F9DF9B',
-    400: '#F7D67F',
-    DEFAULT: '#F3BA57',
-    500: '#F3BA57',
-    600: '#F0A93C',
-    700: '#E9962A',
-    800: '#D7821E',
-    900: '#B86D19',
-    light: '#F5C977',
-    dark: '#E9A83C',
-    glow: '#FFD700'
+    // Remapped to teal palette while keeping keys for backward compatibility
+    50: '#E8F0F2',
+    100: '#C7DDE1',
+    200: '#A3C8CF',
+    300: '#7FB3BD',
+    400: '#5B9EAB',
+    DEFAULT: '#28515A',
+    500: '#3F8999',
+    600: '#337487',
+    700: '#28515A',
+    800: '#1E3D45',
+    900: '#142930',
+    light: '#32616B',
+    dark: '#1E3D45',
+    glow: '#3F8999'
   },
   neutral: {
     cream: '#FEF9EC',

@@ -21,9 +21,9 @@ const buttonVariants = cva(
         // MBRAS Custom Variants
         gold: "bg-mbras-gold text-mbras-navy hover:bg-mbras-gold-dark shadow-gold-glow hover:shadow-navy-depth font-display font-semibold",
         navy: "bg-mbras-navy text-mbras-cream hover:bg-mbras-navy-dark shadow-navy-depth",
-        teal: "bg-mbras-teal text-white hover:bg-mbras-teal-dark shadow-luxury",
+        teal: "bg-mbras-teal text-mbras-cream hover:bg-mbras-teal-dark shadow-luxury",
         premium: "bg-gradient-gold text-mbras-navy hover:opacity-90 shadow-gold-glow animate-glow-pulse font-display font-bold",
-        glass: "glass text-foreground hover:bg-white/20 backdrop-blur-lg",
+        glass: "glass text-foreground hover:bg-mbras-pearl/20 backdrop-blur-lg",
       },
       size: {
         default: "h-10 px-4 py-2",

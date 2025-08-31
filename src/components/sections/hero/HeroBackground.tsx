@@ -67,7 +67,7 @@ export function HeroBackground() {
         // Draw dot
         ctx.beginPath()
         ctx.arc(dot.x, dot.y, dot.radius, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(243, 186, 87, ${Math.max(0.1, Math.min(0.8, dot.opacity))})`
+        ctx.fillStyle = `rgba(40, 81, 90, ${Math.max(0.1, Math.min(0.8, dot.opacity))})`
         ctx.fill()
 
         // Draw connections to nearby dots
@@ -81,7 +81,7 @@ export function HeroBackground() {
               ctx.beginPath()
               ctx.moveTo(dot.x, dot.y)
               ctx.lineTo(otherDot.x, otherDot.y)
-              ctx.strokeStyle = `rgba(243, 186, 87, ${0.1 * (1 - distance / 120)})`
+              ctx.strokeStyle = `rgba(40, 81, 90, ${0.1 * (1 - distance / 120)})`
               ctx.lineWidth = 0.5
               ctx.stroke()
             }

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, PlayCircle, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { GoldParticles } from "@/components/animations/GoldParticles";
+import { HeroBackground } from "./HeroBackground";
 
 const taglines = [
   "O essencial, antes do consenso",
@@ -15,7 +15,6 @@ const taglines = [
 export function Hero() {
   const [taglineIndex, setTaglineIndex] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     setIsLoaded(true);
@@ -23,16 +22,10 @@ export function Hero() {
       setTaglineIndex((prev) => (prev + 1) % taglines.length);
     }, 4000);
 
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", handleScroll);
-
     return () => {
       clearInterval(interval);
-      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  const parallaxOffset = scrollY * 0.5;
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -57,51 +50,12 @@ export function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Layers */}
-      <div className="absolute inset-0 bg-gradient-to-br from-mbras-navy via-mbras-navy-dark to-mbras-teal">
-        {/* Animated Background Mesh */}
-        <motion.div
-          className="absolute inset-0 bg-navy-mesh opacity-30"
-          style={{
-            transform: `translateY(${parallaxOffset}px)`,
-          }}
-        />
-        <GoldParticles />
-
-        {/* Spotlight Effect */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 0.4, scale: 1 }}
-          transition={{ duration: 3, delay: 1 }}
-          className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-        >
-          <div className="w-96 h-96 bg-mbras-gold rounded-full blur-3xl animate-pulse" />
-        </motion.div>
-
-        {/* Animated Rings */}
-        <div className="absolute inset-0 overflow-hidden">
-          {[...Array(3)].map((_, i) => (
-            <motion.div
-              key={i}
-              initial={{ scale: 0, opacity: 0 }}
-              animate={{ scale: [0, 2, 0], opacity: [0, 0.1, 0] }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-                delay: i * 2,
-                ease: "easeInOut",
-              }}
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-            >
-              <div className="w-96 h-96 border border-mbras-gold/20 rounded-full" />
-            </motion.div>
-          ))}
-        </div>
-      </div>
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Unifies background visuals across pages */}
+      <HeroBackground />
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-28">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -115,8 +69,8 @@ export function Hero() {
             className="inline-block"
           >
             <div className="relative">
-              <div className="w-32 h-32 bg-gradient-to-br from-mbras-gold to-mbras-gold-dark rounded-2xl flex items-center justify-center glow-gold mx-auto">
-                <span className="text-5xl font-luxury font-black text-mbras-navy">
+              <div className="w-28 h-28 md:w-32 md:h-32 bg-gradient-to-br from-mbras-gold to-mbras-gold-dark rounded-2xl flex items-center justify-center glow-gold mx-auto ring-1 ring-mbras-cream/20">
+                <span className="text-5xl md:text-6xl font-luxury font-black text-mbras-navy tracking-tight">
                   M
                 </span>
               </div>
@@ -132,16 +86,16 @@ export function Hero() {
           <div className="space-y-4">
             <motion.h1
               variants={itemVariants}
-              className="text-5xl sm:text-6xl lg:text-8xl font-luxury font-bold text-mbras-cream leading-tight"
+              className="text-5xl sm:text-6xl lg:text-8xl font-luxury font-bold text-mbras-cream leading-tight tracking-tight drop-shadow-[0_2px_16px_rgba(6,20,40,0.6)]"
             >
               MBRAS{" "}
               <motion.span
                 className="text-gradient-gold animate-glow-pulse inline-block"
                 animate={{
                   textShadow: [
-                    "0 0 20px rgba(243, 186, 87, 0.5)",
-                    "0 0 40px rgba(243, 186, 87, 0.8)",
-                    "0 0 20px rgba(243, 186, 87, 0.5)",
+                    "0 0 20px rgba(40, 81, 90, 0.5)",
+                    "0 0 40px rgba(40, 81, 90, 0.8)",
+                    "0 0 20px rgba(40, 81, 90, 0.5)",
                   ],
                 }}
                 transition={{ duration: 2, repeat: Infinity }}
@@ -160,7 +114,7 @@ export function Hero() {
                   exit={{ opacity: 0, y: -20, filter: "blur(10px)" }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
                 >
-                  <p className="text-2xl sm:text-3xl lg:text-4xl font-light text-white font-display">
+                  <p className="text-2xl sm:text-3xl lg:text-4xl font-light text-mbras-cream font-display tracking-tight">
                     {taglines[taglineIndex]}
                   </p>
                 </motion.p>
@@ -171,7 +125,7 @@ export function Hero() {
           {/* Description */}
           <motion.p
             variants={itemVariants}
-            className="max-w-3xl mx-auto text-lg sm:text-xl text-white leading-relaxed font-sans"
+            className="max-w-3xl mx-auto text-lg sm:text-xl text-mbras-cream/90 leading-relaxed font-sans"
           >
             Hub de inteligência exclusiva que conecta líderes do alto padrão
             através de análises proprietárias e insights acionáveis do mercado
@@ -181,13 +135,10 @@ export function Hero() {
           {/* CTAs */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-4"
+            className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-6"
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button
-                size="lg"
-                className="group bg-gradient-gold hover:shadow-gold-glow text-mbras-navy font-display font-bold px-10 py-6 text-lg transition-all duration-300 rounded-xl"
-              >
+              <Button size="xl" variant="premium" className="rounded-xl px-10">
                 <Sparkles className="w-5 h-5 mr-2 animate-pulse" />
                 Reserve seu lugar exclusivo
                 <motion.div
@@ -201,11 +152,7 @@ export function Hero() {
             </motion.div>
 
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-mbras-gold/50 text-mbras-pearl hover:bg-mbras-gold/10 hover:border-mbras-gold px-10 py-6 text-lg backdrop-blur-sm rounded-xl font-display font-semibold transition-all duration-300"
-              >
+              <Button size="xl" variant="glass" className="rounded-xl px-10 border-gradient-gold">
                 <PlayCircle className="w-5 h-5 mr-2" />
                 Assistir apresentação
               </Button>
@@ -215,7 +162,7 @@ export function Hero() {
           {/* Trust Indicators */}
           <motion.div
             variants={itemVariants}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-16 max-w-2xl mx-auto"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-16 max-w-3xl mx-auto"
           >
             {[
               { value: "300+", label: "Líderes do mercado", icon: "👥" },
@@ -224,16 +171,18 @@ export function Hero() {
             ].map((stat, index) => (
               <motion.div
                 key={index}
-                whileHover={{ scale: 1.1, y: -5 }}
-                className="text-center p-6 glass rounded-xl"
+                whileHover={{ y: -5 }}
+                className="text-center rounded-xl p-0.5 bg-gradient-to-br from-mbras-gold/40 via-mbras-teal/20 to-transparent"
               >
-                <div className="text-2xl mb-2">{stat.icon}</div>
-                <p className="text-3xl sm:text-4xl font-bold text-mbras-gold font-display">
-                  {stat.value}
-                </p>
-                <p className="text-sm text-white/90 font-sans mt-1">
-                  {stat.label}
-                </p>
+                <div className="glass rounded-xl p-6">
+                  <div className="text-2xl mb-2">{stat.icon}</div>
+                  <p className="text-3xl sm:text-4xl font-bold text-mbras-gold font-display">
+                    {stat.value}
+                  </p>
+                  <p className="text-sm text-mbras-cream/90 font-sans mt-1">
+                    {stat.label}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </motion.div>
@@ -249,7 +198,7 @@ export function Hero() {
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-            className="flex flex-col items-center text-white/80 cursor-pointer"
+            className="flex flex-col items-center text-mbras-cream/80 cursor-pointer"
             onClick={() => {
               const nextSection = document.querySelector("#formats");
               if (nextSection) {
@@ -260,7 +209,7 @@ export function Hero() {
             <span className="text-sm font-medium mb-2 font-display">
               Explore
             </span>
-            <div className="w-6 h-10 border-2 border-mbras-gold/50 rounded-full flex justify-center relative overflow-hidden">
+            <div className="w-6 h-10 border-2 border-mbras-gold/50 rounded-full flex justify-center relative overflow-hidden bg-mbras-cream/5">
               <motion.div
                 animate={{ y: [0, 16, 0] }}
                 transition={{

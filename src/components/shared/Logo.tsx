@@ -94,7 +94,7 @@ export function Logo({ className, variant = 'full', animated = true }: LogoProps
       animate={animated ? 'visible' : undefined}
       className="flex flex-col"
     >
-      <span className="text-xl font-luxury font-bold text-mbras-navy dark:text-white">
+      <span className="text-xl font-luxury font-bold text-mbras-navy dark:text-mbras-cream">
         MBRAS
       </span>
       <span className="text-sm font-display font-medium text-mbras-gold tracking-wider">
@@ -145,7 +145,7 @@ export function LogoSimple({ className }: { className?: string }) {
         <span className="text-mbras-navy font-bold text-lg">M</span>
       </div>
       <div className="flex flex-col">
-        <span className="text-lg font-bold text-mbras-navy dark:text-white">
+        <span className="text-lg font-bold text-mbras-navy dark:text-mbras-cream">
           MBRAS
         </span>
         <span className="text-xs text-mbras-gold font-medium tracking-wider">

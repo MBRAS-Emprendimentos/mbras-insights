@@ -104,7 +104,7 @@ export function RegistrationForm() {
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ type: 'spring', delay: 0.2 }}
-          className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-500/20 text-green-600 mb-6"
+          className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-mbras-teal/20 text-mbras-teal mb-6"
         >
           <CheckCircle className="w-10 h-10" />
         </motion.div>
@@ -121,7 +121,7 @@ export function RegistrationForm() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => setIsSuccess(false)}
-          className="px-6 py-3 bg-mbras-navy text-white rounded-lg font-semibold hover:bg-mbras-navy/90 transition-colors"
+          className="px-6 py-3 bg-mbras-navy text-mbras-cream rounded-lg font-semibold hover:bg-mbras-navy/90 transition-colors"
         >
           Novo Cadastro
         </motion.button>
@@ -138,7 +138,7 @@ export function RegistrationForm() {
       className="max-w-2xl mx-auto"
     >
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+        <div className="glass rounded-2xl p-8">
           {/* Personal Information */}
           <motion.div variants={itemVariants} className="space-y-6">
             <h3 className="text-xl font-display font-bold text-mbras-navy mb-6">
@@ -154,11 +154,11 @@ export function RegistrationForm() {
               <input
                 {...register('fullName')}
                 type="text"
-                className="w-full px-4 py-3 rounded-lg border border-mbras-navy/20 focus:border-mbras-gold focus:ring-2 focus:ring-mbras-gold/20 bg-white/50 text-mbras-navy placeholder-mbras-navy/60 transition-all duration-200"
+                className="w-full px-4 py-3 rounded-lg border border-mbras-navy/20 focus:border-mbras-gold focus:ring-2 focus:ring-mbras-gold/20 bg-mbras-pearl/60 text-mbras-navy placeholder-mbras-navy/60 transition-all duration-200"
                 placeholder="Seu nome completo"
               />
               {errors.fullName && (
-                <p className="text-red-600 text-sm mt-1">{errors.fullName.message}</p>
+                <p className="text-destructive text-sm mt-1">{errors.fullName.message}</p>
               )}
             </div>
 
@@ -171,11 +171,11 @@ export function RegistrationForm() {
               <input
                 {...register('email')}
                 type="email"
-                className="w-full px-4 py-3 rounded-lg border border-mbras-navy/20 focus:border-mbras-gold focus:ring-2 focus:ring-mbras-gold/20 bg-white/50 text-mbras-navy placeholder-mbras-navy/60 transition-all duration-200"
+                className="w-full px-4 py-3 rounded-lg border border-mbras-navy/20 focus:border-mbras-gold focus:ring-2 focus:ring-mbras-gold/20 bg-mbras-pearl/60 text-mbras-navy placeholder-mbras-navy/60 transition-all duration-200"
                 placeholder="seu@email.com"
               />
               {errors.email && (
-                <p className="text-red-600 text-sm mt-1">{errors.email.message}</p>
+                <p className="text-destructive text-sm mt-1">{errors.email.message}</p>
               )}
             </div>
 
@@ -189,11 +189,11 @@ export function RegistrationForm() {
                 <input
                   {...register('company')}
                   type="text"
-                  className="w-full px-4 py-3 rounded-lg border border-mbras-navy/20 focus:border-mbras-gold focus:ring-2 focus:ring-mbras-gold/20 bg-white/50 text-mbras-navy placeholder-mbras-navy/60 transition-all duration-200"
+                  className="w-full px-4 py-3 rounded-lg border border-mbras-navy/20 focus:border-mbras-gold focus:ring-2 focus:ring-mbras-gold/20 bg-mbras-pearl/60 text-mbras-navy placeholder-mbras-navy/60 transition-all duration-200"
                   placeholder="Sua empresa"
                 />
                 {errors.company && (
-                  <p className="text-red-600 text-sm mt-1">{errors.company.message}</p>
+                  <p className="text-destructive text-sm mt-1">{errors.company.message}</p>
                 )}
               </div>
 
@@ -205,11 +205,11 @@ export function RegistrationForm() {
                 <input
                   {...register('position')}
                   type="text"
-                  className="w-full px-4 py-3 rounded-lg border border-mbras-navy/20 focus:border-mbras-gold focus:ring-2 focus:ring-mbras-gold/20 bg-white/50 text-mbras-navy placeholder-mbras-navy/60 transition-all duration-200"
+                  className="w-full px-4 py-3 rounded-lg border border-mbras-navy/20 focus:border-mbras-gold focus:ring-2 focus:ring-mbras-gold/20 bg-mbras-pearl/60 text-mbras-navy placeholder-mbras-navy/60 transition-all duration-200"
                   placeholder="Seu cargo"
                 />
                 {errors.position && (
-                  <p className="text-red-600 text-sm mt-1">{errors.position.message}</p>
+                  <p className="text-destructive text-sm mt-1">{errors.position.message}</p>
                 )}
               </div>
             </div>
@@ -223,7 +223,7 @@ export function RegistrationForm() {
               <input
                 {...register('phone')}
                 type="tel"
-                className="w-full px-4 py-3 rounded-lg border border-mbras-navy/20 focus:border-mbras-gold focus:ring-2 focus:ring-mbras-gold/20 bg-white/50 text-mbras-navy placeholder-mbras-navy/60 transition-all duration-200"
+                className="w-full px-4 py-3 rounded-lg border border-mbras-navy/20 focus:border-mbras-gold focus:ring-2 focus:ring-mbras-gold/20 bg-mbras-pearl/60 text-mbras-navy placeholder-mbras-navy/60 transition-all duration-200"
                 placeholder="(11) 99999-9999"
               />
             </div>
@@ -239,7 +239,7 @@ export function RegistrationForm() {
               {interestOptions.map((interest) => (
                 <label
                   key={interest.id}
-                  className="flex items-center gap-3 p-4 rounded-lg border border-mbras-navy/20 bg-white/30 hover:bg-white/50 cursor-pointer transition-all duration-200"
+                  className="flex items-center gap-3 p-4 rounded-lg border border-mbras-navy/20 bg-mbras-pearl/20 hover:bg-mbras-pearl/40 cursor-pointer transition-all duration-200"
                 >
                   <input
                     {...register('interests')}
@@ -254,7 +254,7 @@ export function RegistrationForm() {
               ))}
             </div>
             {errors.interests && (
-              <p className="text-red-600 text-sm mt-2">{errors.interests.message}</p>
+              <p className="text-destructive text-sm mt-2">{errors.interests.message}</p>
             )}
           </motion.div>
 
@@ -278,7 +278,7 @@ export function RegistrationForm() {
               </span>
             </label>
             {errors.acceptTerms && (
-              <p className="text-red-600 text-sm mt-2">{errors.acceptTerms.message}</p>
+              <p className="text-destructive text-sm mt-2">{errors.acceptTerms.message}</p>
             )}
           </motion.div>
 
@@ -289,7 +289,7 @@ export function RegistrationForm() {
               disabled={isSubmitting}
               whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
               whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
-              className="w-full bg-mbras-navy text-white py-4 rounded-lg font-display font-bold text-lg hover:bg-mbras-navy/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center gap-2"
+              className="w-full bg-mbras-navy text-mbras-cream py-4 rounded-lg font-display font-bold text-lg hover:bg-mbras-navy/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center gap-2"
             >
               {isSubmitting ? (
                 <>

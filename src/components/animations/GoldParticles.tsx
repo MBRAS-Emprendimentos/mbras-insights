@@ -38,17 +38,17 @@ export function GoldParticles() {
     // Initialize particles
     const initParticles = () => {
       particles.current = [];
-      for (let i = 0; i < 50; i++) {
+      for (let i = 0; i < 36; i++) {
         particles.current.push(createParticle());
       }
     };
 
     const createParticle = (): Particle => {
       const colors = [
-        "rgba(243, 186, 87, 0.8)", // Gold
-        "rgba(245, 201, 119, 0.6)", // Gold Light
-        "rgba(233, 168, 60, 0.7)", // Gold Dark
-        "rgba(255, 215, 0, 0.5)", // Gold Glow
+        "rgba(40, 81, 90, 0.8)", // Teal
+        "rgba(50, 97, 107, 0.6)", // Teal Light
+        "rgba(30, 61, 69, 0.7)", // Teal Dark
+        "rgba(50, 97, 107, 0.5)", // Teal Glow
       ];
 
       return {
@@ -56,10 +56,10 @@ export function GoldParticles() {
         y: Math.random() * canvas.height,
         vx: (Math.random() - 0.5) * 0.5,
         vy: (Math.random() - 0.5) * 0.5,
-        size: Math.random() * 3 + 1,
-        opacity: Math.random() * 0.8 + 0.2,
+        size: Math.random() * 2.5 + 0.8,
+        opacity: Math.random() * 0.6 + 0.2,
         life: 0,
-        maxLife: Math.random() * 200 + 100,
+        maxLife: Math.random() * 220 + 120,
         color: colors[Math.floor(Math.random() * colors.length)],
       };
     };
@@ -139,10 +139,10 @@ export function GoldParticles() {
           const dy = particle.y - otherParticle.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 150) {
+          if (distance < 120) {
             ctx.save();
-            ctx.globalAlpha = (1 - distance / 150) * 0.1;
-            ctx.strokeStyle = "rgba(243, 186, 87, 0.3)";
+            ctx.globalAlpha = (1 - distance / 120) * 0.1;
+            ctx.strokeStyle = "rgba(40, 81, 90, 0.3)";
             ctx.lineWidth = 0.5;
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
@@ -209,7 +209,7 @@ export function SimpleGoldParticles() {
           }}
           style={{
             filter: "blur(0.5px)",
-            boxShadow: "0 0 6px rgba(243, 186, 87, 0.6)",
+            boxShadow: "0 0 6px rgba(40, 81, 90, 0.6)",
           }}
         />
       ))}

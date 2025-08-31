@@ -167,7 +167,7 @@ export function EventTimeline() {
                 className={`relative flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-br ${getEventTypeColor(event.type)} p-0.5 shadow-lg z-10`}
               >
                 <div
-                  className={`flex items-center justify-center w-full h-full rounded-full ${isCompleted ? "bg-white/90" : "bg-white"} transition-all duration-300`}
+                  className={`flex items-center justify-center w-full h-full rounded-full ${isCompleted ? "bg-mbras-cream/90" : "bg-mbras-cream"} transition-all duration-300`}
                 >
                   <event.icon
                     className={`w-6 h-6 ${isCompleted ? "text-mbras-navy" : "text-mbras-teal"}`}
@@ -194,12 +194,12 @@ export function EventTimeline() {
               {/* Event Card */}
               <motion.div whileHover={{ x: 8 }} className="flex-1 min-h-0">
                 <div
-                  className={`relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 transition-all duration-300 ${isSelected ? "shadow-2xl bg-white/20" : "hover:bg-white/15 hover:shadow-xl"}`}
+                  className={`relative glass rounded-2xl p-6 transition-all duration-300 ${isSelected ? "shadow-2xl" : "hover:shadow-xl"}`}
                 >
                   {/* Date Badge */}
                   <div className="absolute -top-3 right-4">
                     <div
-                      className={`bg-gradient-to-br ${getEventTypeColor(event.type)} text-white px-4 py-2 rounded-lg shadow-lg text-sm font-display font-semibold`}
+                      className={`bg-gradient-to-br ${getEventTypeColor(event.type)} text-mbras-cream px-4 py-2 rounded-lg shadow-lg text-sm font-display font-semibold`}
                     >
                       <div className="text-center">
                         <div className="text-lg leading-none">
@@ -216,21 +216,21 @@ export function EventTimeline() {
                   <div className="pr-16">
                     <div className="flex items-center gap-2 mb-2">
                       <span
-                        className={`px-3 py-1 rounded-full text-xs font-medium ${isCompleted ? "bg-green-500/20 text-green-300" : "bg-amber-500/20 text-amber-300"}`}
+                        className={`px-3 py-1 rounded-full text-xs font-medium ${isCompleted ? "bg-mbras-teal/20 text-mbras-teal-light" : "bg-mbras-gold/20 text-mbras-gold-light"}`}
                       >
                         {isCompleted ? "Concluído" : "Próximo"}
                       </span>
                     </div>
 
-                    <h3 className="text-xl font-display font-bold text-white mb-3 group-hover:text-mbras-cream transition-colors duration-300">
+                    <h3 className="text-xl font-display font-bold text-mbras-cream mb-3 group-hover:text-mbras-cream transition-colors duration-300">
                       {event.title}
                     </h3>
 
-                    <p className="text-white leading-relaxed mb-4">
+                    <p className="text-mbras-cream leading-relaxed mb-4">
                       {event.description}
                     </p>
 
-                    <div className="flex items-center gap-4 text-sm text-white/60">
+                    <div className="flex items-center gap-4 text-sm text-mbras-cream/60">
                       <div className="flex items-center gap-1">
                         <MapPin className="w-4 h-4" />
                         <span>{event.location}</span>
@@ -252,14 +252,14 @@ export function EventTimeline() {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <div className="border-t border-white/20 mt-4 pt-4">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-white/80">
+                    <div className="border-t border-mbras-pearl/20 mt-4 pt-4">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-mbras-cream/80">
                         <div>
-                          <strong className="text-white">Tipo:</strong>{" "}
+                          <strong className="text-mbras-cream">Tipo:</strong>{" "}
                           {event.type}
                         </div>
                         <div>
-                          <strong className="text-white">Status:</strong>{" "}
+                          <strong className="text-mbras-cream">Status:</strong>{" "}
                           {event.status === "completed"
                             ? "Concluído"
                             : "Em breve"}
@@ -286,7 +286,7 @@ export function EventTimeline() {
         transition={{ delay: 1 }}
         className="mt-12 text-center"
       >
-        <p className="text-white/60 text-sm">
+        <p className="text-mbras-cream/60 text-sm">
           Clique nos eventos para mais detalhes
         </p>
       </motion.div>

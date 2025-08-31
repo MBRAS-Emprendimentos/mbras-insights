@@ -188,9 +188,9 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "gold-shimmer":
-          "linear-gradient(105deg, transparent 40%, oklch(0.75 0.141 77.31 / 0.7) 50%, transparent 60%)",
+          "linear-gradient(105deg, transparent 40%, color-mix(in srgb, var(--color-mbras-gold) 70%, transparent) 50%, transparent 60%)",
         "navy-mesh":
-          "radial-gradient(at 40% 20%, oklch(0.32 0.089 254.13) 0px, transparent 50%), radial-gradient(at 80% 0%, oklch(0.45 0.061 201.25 / 0.8) 0px, transparent 50%)",
+          "radial-gradient(at 40% 20%, var(--color-mbras-navy) 0px, transparent 50%), radial-gradient(at 80% 0%, color-mix(in srgb, var(--color-mbras-teal) 80%, transparent) 0px, transparent 50%)",
       },
 
       borderRadius: {
@@ -206,14 +206,14 @@ const config: Config = {
         "premium-lg": "var(--shadow-elevation-high)",
         "premium-xl": "var(--shadow-elevation-ultra)",
         "gold-glow":
-          "0 0 20px oklch(0.75 0.141 77.31 / 0.3), 0 0 40px oklch(0.75 0.141 77.31 / 0.2), 0 0 60px oklch(0.75 0.141 77.31 / 0.1)",
+          "0 0 20px color-mix(in srgb, var(--color-mbras-gold) 30%, transparent), 0 0 40px color-mix(in srgb, var(--color-mbras-gold) 20%, transparent), 0 0 60px color-mix(in srgb, var(--color-mbras-gold) 10%, transparent)",
         "navy-glow":
-          "0 0 20px oklch(0.32 0.089 254.13 / 0.3), 0 0 40px oklch(0.32 0.089 254.13 / 0.2), 0 0 60px oklch(0.32 0.089 254.13 / 0.1)",
-        "inner-glow": "inset 0 1px 0 0 oklch(1 0 0 / 0.1)",
+          "0 0 20px color-mix(in srgb, var(--color-mbras-navy) 30%, transparent), 0 0 40px color-mix(in srgb, var(--color-mbras-navy) 20%, transparent), 0 0 60px color-mix(in srgb, var(--color-mbras-navy) 10%, transparent)",
+        "inner-glow": "inset 0 1px 0 0 color-mix(in srgb, var(--color-mbras-pearl) 10%, transparent)",
         "button-luxury":
-          "0 2px 4px oklch(0 0 0 / 0.1), 0 4px 8px oklch(0 0 0 / 0.05)",
+          "0 2px 4px color-mix(in srgb, var(--color-mbras-charcoal) 10%, transparent), 0 4px 8px color-mix(in srgb, var(--color-mbras-charcoal) 5%, transparent)",
         "button-luxury-hover":
-          "0 4px 8px oklch(0 0 0 / 0.15), 0 8px 16px oklch(0 0 0 / 0.1)",
+          "0 4px 8px color-mix(in srgb, var(--color-mbras-charcoal) 15%, transparent), 0 8px 16px color-mix(in srgb, var(--color-mbras-charcoal) 10%, transparent)",
       },
 
       container: {

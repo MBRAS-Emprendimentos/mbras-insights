@@ -43,11 +43,11 @@ export function Navigation() {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         scrolled
-          ? 'bg-background/95 backdrop-blur-md border-b border-border shadow-luxury'
+          ? 'bg-background/95 supports-[backdrop-filter]:bg-background/60 backdrop-blur-md border-b border-border/60 shadow-luxury'
           : 'bg-transparent'
       )}
     >
-      <nav className="container mx-auto px-4 py-4">
+      <nav className={cn('container mx-auto px-4', scrolled ? 'py-2' : 'py-4')}>
         <div className="flex items-center justify-between">
           {/* Logo */}
           <motion.div
@@ -75,15 +75,15 @@ export function Navigation() {
                         onClick={() => handleLinkClick(link.href)}
                         className={cn(
                           'group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors',
-                          'hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none',
+                          'hover:bg-accent/30 hover:text-foreground focus:bg-accent/30 focus:text-foreground focus:outline-none',
                           'disabled:pointer-events-none disabled:opacity-50 cursor-pointer',
                           pathname === link.href && 'bg-accent text-accent-foreground'
                         )}
                       >
-                        <span className="relative">
+                        <span className="relative text-foreground/90">
                           {link.label}
                           <motion.div
-                            className="absolute -bottom-1 left-0 right-0 h-0.5 bg-mbras-gold rounded-full"
+                            className="absolute -bottom-1 left-0 right-0 h-0.5 bg-mbras-gold/70 rounded-full"
                             initial={{ scaleX: 0 }}
                             whileHover={{ scaleX: 1 }}
                             transition={{ duration: 0.2 }}
@@ -178,7 +178,7 @@ export function Navigation() {
               transition={{ duration: 0.3, ease: 'easeInOut' }}
               className="md:hidden mt-4 overflow-hidden"
             >
-              <div className="glass rounded-lg p-4 space-y-2">
+              <div className="glass rounded-lg p-4 space-y-2 border border-border/60">
                 {NAVIGATION_LINKS.map((link, index) => (
                   <motion.div
                     key={link.href}
@@ -233,6 +233,9 @@ export function Navigation() {
           )}
         </AnimatePresence>
       </nav>
+      {/* Shimmering bottom border accent */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[1px] bg-gradient-to-r from-transparent via-mbras-gold/40 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 -bottom-px h-[2px] bg-gold-shimmer animate-shimmer opacity-10" />
     </header>
   )
 }

@@ -82,7 +82,7 @@ export function PremiumShowcase() {
             <button className="btn-luxury">
               Primary Luxury
             </button>
-            <button className="px-6 py-3 rounded-lg bg-gradient-to-r from-mbras-navy to-mbras-teal text-white font-medium shadow-premium-md hover:shadow-premium-lg transition-all duration-300 hover:-translate-y-1">
+            <button className="px-6 py-3 rounded-lg bg-gradient-to-r from-mbras-navy to-mbras-teal text-mbras-cream font-medium shadow-premium-md hover:shadow-premium-lg transition-all duration-300 hover:-translate-y-1">
               Gradient Button
             </button>
             <button className="px-6 py-3 rounded-lg bg-transparent border-2 border-mbras-gold text-mbras-gold font-medium hover:bg-mbras-gold hover:text-mbras-navy transition-all duration-300">
@@ -168,7 +168,7 @@ export function PremiumShowcase() {
               <div className="glow-premium-gold p-6 rounded-lg bg-mbras-gold text-mbras-navy">
                 Gold Glow Effect
               </div>
-              <div className="glow-premium-navy p-6 rounded-lg bg-mbras-navy text-white">
+              <div className="glow-premium-navy p-6 rounded-lg bg-mbras-navy text-mbras-cream">
                 Navy Glow Effect
               </div>
             </div>
@@ -227,11 +227,11 @@ export function PremiumShowcase() {
               <span>⭐</span>
               <span>Premium</span>
             </span>
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded-full bg-mbras-navy text-white">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded-full bg-mbras-navy text-mbras-cream">
               <span>🎯</span>
               <span>Featured</span>
             </span>
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded-full bg-mbras-teal text-white">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded-full bg-mbras-teal text-mbras-cream">
               <span>🚀</span>
               <span>New</span>
             </span>

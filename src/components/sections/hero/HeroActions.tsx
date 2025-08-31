@@ -50,7 +50,7 @@ export function HeroActions() {
         onClick={() => setIsVideoModalOpen(true)}
         className="
           group relative px-8 py-4
-          bg-transparent border-2 border-mbras-gold/50 text-white
+          bg-transparent border-2 border-mbras-gold/50 text-mbras-cream
           font-display font-semibold text-lg
           rounded-xl backdrop-blur-sm
           hover:border-mbras-gold hover:bg-mbras-gold/10
@@ -74,9 +74,9 @@ export function HeroActions() {
         onClick={() => handleScroll('formats')}
         className="
           group relative px-6 py-4
-          bg-transparent text-white/80
+          bg-transparent text-mbras-cream/80
           font-display font-medium text-base
-          hover:text-white
+          hover:text-mbras-cream
           transition-all duration-300
           flex items-center gap-2
         "
@@ -109,7 +109,7 @@ export function HeroActions() {
           >
             <button
               onClick={() => setIsVideoModalOpen(false)}
-              className="absolute top-4 right-4 text-white/60 hover:text-white transition-colors"
+              className="absolute top-4 right-4 text-mbras-cream/60 hover:text-mbras-cream transition-colors"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -119,10 +119,10 @@ export function HeroActions() {
             <div className="aspect-video bg-mbras-teal/20 rounded-xl flex items-center justify-center">
               <div className="text-center">
                 <Play className="w-16 h-16 text-mbras-gold mx-auto mb-4" />
-                <h3 className="text-xl font-display text-white mb-2">
+                <h3 className="text-xl font-display text-mbras-cream mb-2">
                   Demonstração da Plataforma
                 </h3>
-                <p className="text-white/70">
+                <p className="text-mbras-cream/70">
                   Vídeo em breve - Conheça os recursos premium da MBRAS Conecta
                 </p>
               </div>

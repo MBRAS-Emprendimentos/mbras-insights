@@ -53,31 +53,6 @@ Cor secundária que complementa o navy, trazendo sofisticação e modernidade.
 - `text-mbras-teal-50` até `text-mbras-teal-900`
 - `border-mbras-teal-50` até `border-mbras-teal-900`
 
-### Gold Collection
-Cor de destaque que representa luxo, exclusividade e valor premium.
-
-```css
-/* Variações Gold */
---mbras-gold-50: #FEF9EC;
---mbras-gold-100: #FDF1D3;
---mbras-gold-200: #FBE8B7;
---mbras-gold-300: #F9DF9B;
---mbras-gold-400: #F7D67F;
---mbras-gold: #F3BA57;       /* DEFAULT */
---mbras-gold-600: #F0A93C;
---mbras-gold-700: #E9962A;
---mbras-gold-800: #D7821E;
---mbras-gold-900: #B86D19;
---mbras-gold-light: #F5C977;
---mbras-gold-dark: #E9A83C;
---mbras-gold-glow: #FFD700;
-```
-
-**Classes Tailwind:**
-- `bg-mbras-gold-50` até `bg-mbras-gold-900`
-- `text-mbras-gold-50` até `text-mbras-gold-900`
-- `border-mbras-gold-50` até `border-mbras-gold-900`
-
 ### Neutral Collection
 Cores neutras para complementar a paleta principal.
 
@@ -103,10 +78,10 @@ Cores neutras para complementar a paleta principal.
   --primary: 215 65% 15%;            /* Navy */
   --primary-foreground: 44 87% 94%;  /* Cream */
   --secondary: 189 36% 25%;          /* Teal */
-  --accent: 38 87% 65%;              /* Gold */
+  --accent: 189 36% 25%;             /* Teal */
   --muted: 44 87% 94%;               /* Cream */
   --border: 44 30% 91%;              /* Cream escurecido */
-  --ring: 38 87% 65%;                /* Gold para focus */
+  --ring: 189 36% 25%;               /* Teal para focus */
 }
 ```
 
@@ -115,13 +90,13 @@ Cores neutras para complementar a paleta principal.
 .dark {
   --background: 215 65% 8%;          /* Navy muito escuro */
   --foreground: 44 87% 94%;          /* Cream para texto */
-  --primary: 38 87% 65%;             /* Gold invertido */
+  --primary: 189 36% 35%;            /* Teal destacado */
   --primary-foreground: 215 65% 15%; /* Navy */
   --secondary: 189 36% 35%;          /* Teal mais claro */
-  --accent: 38 87% 65%;              /* Gold */
+  --accent: 189 36% 35%;             /* Teal */
   --muted: 215 50% 20%;              /* Navy médio */
   --border: 215 50% 20%;             /* Navy médio */
-  --ring: 38 87% 65%;                /* Gold para focus */
+  --ring: 189 36% 35%;               /* Teal para focus */
 }
 ```
 
@@ -129,9 +104,9 @@ Cores neutras para complementar a paleta principal.
 
 ### Gradientes
 ```css
-/* Gradiente dourado */
+/* Gradiente teal (mapeado do "gold") */
 .gradient-gold {
-  background: linear-gradient(135deg, #F3BA57 0%, #F5C977 50%, #F3BA57 100%);
+  background: linear-gradient(135deg, #28515A 0%, #32616B 50%, #28515A 100%);
 }
 
 /* Gradiente navy */
@@ -139,9 +114,9 @@ Cores neutras para complementar a paleta principal.
   background: linear-gradient(135deg, #0A1E3C 0%, #28515A 100%);
 }
 
-/* Texto com gradiente dourado */
+/* Texto com gradiente teal (mapeado do "gold") */
 .text-gradient-gold {
-  background: linear-gradient(to right, #F3BA57, #F5C977, #F3BA57);
+  background: linear-gradient(to right, #28515A, #32616B, #28515A);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -167,9 +142,9 @@ Cores neutras para complementar a paleta principal.
 
 ### Sombras Luxuosas
 ```css
-/* Brilho dourado */
+/* Brilho teal (mapeado do "gold") */
 .shadow-gold-glow {
-  box-shadow: 0 0 30px rgba(243, 186, 87, 0.3);
+  box-shadow: 0 0 30px rgba(40, 81, 90, 0.3);
 }
 
 /* Profundidade navy */
@@ -184,9 +159,9 @@ Cores neutras para complementar a paleta principal.
     0 2px 10px rgba(10, 30, 60, 0.06);
 }
 
-/* Brilho dourado dinâmico */
+/* Brilho teal dinâmico */
 .glow-gold {
-  filter: drop-shadow(0 0 20px rgba(243, 186, 87, 0.5));
+  filter: drop-shadow(0 0 20px rgba(40, 81, 90, 0.5));
 }
 ```
 
@@ -207,7 +182,7 @@ animate-slide-in-left   /* Slide da esquerda */
 animate-scale-in     /* Escala crescendo */
 
 /* Special effects */
-animate-glow-pulse   /* Pulso dourado */
+animate-glow-pulse   /* Pulso teal */
 animate-shimmer      /* Efeito shimmer */
 animate-float        /* Flutuação suave */
 animate-spotlight    /* Spotlight effect */
@@ -220,7 +195,7 @@ animate-marquee      /* Marquee scroll */
 ```css
 bg-gradient-radial   /* Gradiente radial */
 bg-gradient-conic    /* Gradiente cônico */
-bg-gold-shimmer      /* Shimmer dourado */
+bg-gold-shimmer      /* Shimmer teal */
 bg-navy-mesh         /* Mesh navy/teal */
 ```
 
@@ -315,25 +290,25 @@ document.documentElement.classList.remove('dark')
 | `foreground` | Navy | Cream | Texto principal |
 | `primary` | Navy | Gold | Botões primários |
 | `secondary` | Teal | Teal Light | Botões secundários |
-| `accent` | Gold | Gold | Destaques |
+| `accent` | Teal | Teal | Destaques |
 | `muted` | Cream | Navy Médio | Backgrounds suaves |
 | `border` | Cream Escuro | Navy Médio | Bordas |
 
 ## 🚀 Dicas de Implementação
 
 1. **Use variáveis CSS**: Sempre prefira `bg-background` a cores fixas
-2. **Combine cores**: Navy + Gold para contraste premium
+2. **Combine cores**: Navy + Teal para contraste premium
 3. **Aplique animações**: Use `animate-fade-up` em elementos importantes
 4. **Utilize sombras**: `shadow-luxury` para elevação
 5. **Glass morphism**: Use `glass` em overlays e modais
-6. **Gradientes**: `gradient-gold` para CTAs importantes
+6. **Gradientes**: `gradient-gold` (teal) para CTAs importantes
 
 ## 🔧 Configuração do Tailwind
 
 O arquivo `tailwind.config.ts` já está configurado com todas as cores e utilitários. Para usar:
 
 1. Importe as cores: `import './globals.css'`
-2. Use as classes: `bg-mbras-navy text-mbras-gold`
+2. Use as classes: `bg-mbras-navy text-mbras-gold` (mapeado para teal)
 3. Ative dark mode: `className="dark"`
 
 ---

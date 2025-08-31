@@ -42,14 +42,14 @@ export default function MarketingPage() {
       </section>
 
       {/* Events Timeline Section */}
-      <section id="events" className="py-24 bg-mbras-navy text-white relative overflow-hidden">
+      <section id="events" className="py-24 bg-mbras-navy text-mbras-cream relative overflow-hidden">
         <div className="absolute inset-0 bg-navy-mesh opacity-30"></div>
         <div className="container mx-auto px-4 relative">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-luxury text-gradient-gold mb-6">
               Cronograma de Eventos
             </h2>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto">
+            <p className="text-xl text-mbras-cream/80 max-w-3xl mx-auto">
               Acompanhe os principais eventos e marcos do mercado imobiliário
             </p>
           </div>

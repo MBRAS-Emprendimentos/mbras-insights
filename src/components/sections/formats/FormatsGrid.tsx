@@ -365,7 +365,7 @@ export function FormatsGrid() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 bg-gradient-to-r from-mbras-navy to-mbras-teal text-white font-display font-semibold rounded-xl shadow-luxury hover:shadow-2xl transition-all duration-300"
+            className="px-8 py-4 bg-gradient-to-r from-mbras-navy to-mbras-teal text-mbras-cream font-display font-semibold rounded-xl shadow-luxury hover:shadow-2xl transition-all duration-300"
           >
             Falar com especialista
           </motion.button>

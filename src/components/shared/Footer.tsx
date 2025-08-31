@@ -84,7 +84,7 @@ export function Footer() {
               <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
                 <Input
                   placeholder="Seu melhor e-mail"
-                  className="flex-1 h-12 bg-mbras-navy-light/50 border-mbras-gold/30 text-white placeholder:text-mbras-pearl/50 focus:border-mbras-gold"
+                  className="flex-1 h-12 bg-mbras-navy-light/50 border-mbras-gold/30 text-mbras-cream placeholder:text-mbras-pearl/50 focus:border-mbras-gold"
                 />
                 <Button
                   size="lg"

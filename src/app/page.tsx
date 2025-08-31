@@ -84,7 +84,7 @@ const floatAnimation: Variants = {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-mbras-pearl via-white to-mbras-cream">
+    <div className="min-h-screen bg-gradient-to-b from-mbras-pearl via-mbras-pearl to-mbras-cream">
       {/* Hero Section */}
       <section className="relative overflow-hidden min-h-[90vh] flex items-center">
         <div className="absolute inset-0 bg-navy-mesh opacity-5" />
@@ -163,14 +163,14 @@ export default function Home() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-8 py-4 bg-gradient-to-r from-mbras-gold to-mbras-gold-light text-white rounded-lg font-display font-semibold hover:shadow-luxury transition-all duration-300 hover:shadow-mbras-gold/20"
+                className="px-8 py-4 bg-gradient-to-r from-mbras-gold to-mbras-gold-light text-mbras-cream rounded-lg font-display font-semibold hover:shadow-luxury transition-all duration-300 hover:shadow-mbras-gold/20"
               >
                 Tornar-se Sócio
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-8 py-4 border-2 border-mbras-navy text-mbras-navy rounded-lg font-display font-semibold hover:bg-mbras-navy hover:text-white transition-all duration-300"
+                className="px-8 py-4 border-2 border-mbras-navy text-mbras-navy rounded-lg font-display font-semibold hover:bg-mbras-navy hover:text-mbras-cream transition-all duration-300"
               >
                 Conhecer Blueprint
               </motion.button>
@@ -182,7 +182,7 @@ export default function Home() {
       {/* Core Concept Section */}
       <section className="py-24 lg:py-36 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-mbras-navy/5 to-mbras-teal/5" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-mbras-pearl/50 to-transparent" />
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial="hidden"
@@ -207,9 +207,9 @@ export default function Home() {
                 whileHover={{ y: -8, scale: 1.02 }}
                 className="group relative bg-gradient-to-br from-mbras-navy to-mbras-teal p-0.5 rounded-2xl shadow-luxury"
               >
-                <div className="bg-white rounded-2xl p-8 h-full">
+                <div className="bg-card rounded-2xl p-8 h-full">
                   <div className="w-16 h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-mbras-gold to-mbras-teal rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <Building2 className="w-8 h-8 lg:w-10 lg:h-10 text-white" />
+                    <Building2 className="w-8 h-8 lg:w-10 lg:h-10 text-mbras-cream" />
                   </div>
                   <h3 className="text-2xl lg:text-3xl font-bold text-mbras-navy mb-4">
                     Incorporadoras Premium
@@ -227,9 +227,9 @@ export default function Home() {
                 whileHover={{ y: -8, scale: 1.02 }}
                 className="group relative bg-gradient-to-br from-mbras-teal to-mbras-gold p-0.5 rounded-2xl shadow-luxury"
               >
-                <div className="bg-white rounded-2xl p-8 h-full">
+                <div className="bg-card rounded-2xl p-8 h-full">
                   <div className="w-16 h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-mbras-navy to-mbras-gold rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <Users className="w-8 h-8 lg:w-10 lg:h-10 text-white" />
+                    <Users className="w-8 h-8 lg:w-10 lg:h-10 text-mbras-cream" />
                   </div>
                   <h3 className="text-2xl lg:text-3xl font-bold text-mbras-navy mb-4">
                     Conexão Estratégica
@@ -246,9 +246,9 @@ export default function Home() {
                 whileHover={{ y: -8, scale: 1.02 }}
                 className="group relative bg-gradient-to-br from-mbras-gold to-mbras-navy p-0.5 rounded-2xl shadow-luxury"
               >
-                <div className="bg-white rounded-2xl p-8 h-full">
+                <div className="bg-card rounded-2xl p-8 h-full">
                   <div className="w-16 h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-mbras-teal to-mbras-navy rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <TrendingUp className="w-8 h-8 lg:w-10 lg:h-10 text-white" />
+                    <TrendingUp className="w-8 h-8 lg:w-10 lg:h-10 text-mbras-cream" />
                   </div>
                   <h3 className="text-2xl lg:text-3xl font-bold text-mbras-navy mb-4">
                     Inteligência Acionável
@@ -265,7 +265,7 @@ export default function Home() {
       </section>
 
       {/* Structure Section */}
-      <section className="py-32 lg:py-40 bg-gradient-to-br from-mbras-cream to-white relative overflow-hidden">
+      <section className="py-32 lg:py-40 bg-gradient-to-br from-mbras-cream to-mbras-pearl relative overflow-hidden">
         <div className="absolute inset-0 bg-gold-shimmer opacity-30" />
 
         <div className="container mx-auto px-6 relative">
@@ -289,11 +289,11 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
               <motion.div
                 variants={slideInLeft}
-                className="group bg-white/95 backdrop-blur-sm rounded-2xl p-10 shadow-luxury hover:shadow-2xl transition-all border border-mbras-gold/10 hover:border-mbras-gold/30"
+                className="group bg-card backdrop-blur-sm rounded-2xl p-10 shadow-luxury hover:shadow-2xl transition-all border border-mbras-gold/10 hover:border-mbras-gold/30"
               >
                 <div className="flex items-start gap-4 mb-6">
                   <div className="w-12 h-12 bg-gradient-to-br from-mbras-navy to-mbras-teal rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mic className="w-6 h-6 text-white" />
+                    <Mic className="w-6 h-6 text-mbras-cream" />
                   </div>
                   <div>
                     <h3 className="font-display text-xl font-bold text-mbras-navy mb-2">
@@ -314,11 +314,11 @@ export default function Home() {
               <motion.div
                 variants={fadeInScale}
                 whileHover={{ scale: 1.03 }}
-                className="group bg-white/98 backdrop-blur-sm rounded-2xl p-8 shadow-luxury border border-mbras-teal/20 hover:border-mbras-teal/40 transition-all duration-300"
+                className="group bg-card backdrop-blur-sm rounded-2xl p-8 shadow-luxury border border-mbras-teal/20 hover:border-mbras-teal/40 transition-all duration-300"
               >
                 <div className="flex items-start gap-4 mb-6">
                   <div className="w-12 h-12 bg-gradient-to-br from-mbras-teal to-mbras-gold rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Video className="w-6 h-6 text-white" />
+                    <Video className="w-6 h-6 text-mbras-cream" />
                   </div>
                   <div>
                     <h3 className="font-display text-xl font-bold text-mbras-navy mb-2">
@@ -338,11 +338,11 @@ export default function Home() {
 
               <motion.div
                 variants={fadeInScale}
-                className="group bg-white/95 backdrop-blur-sm rounded-2xl p-10 shadow-luxury hover:shadow-2xl transition-all border border-mbras-navy/10 hover:border-mbras-navy/30"
+                className="group bg-card backdrop-blur-sm rounded-2xl p-10 shadow-luxury hover:shadow-2xl transition-all border border-mbras-navy/10 hover:border-mbras-navy/30"
               >
                 <div className="flex items-start gap-4 mb-6">
                   <div className="w-12 h-12 bg-gradient-to-br from-mbras-gold to-mbras-navy rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Calendar className="w-6 h-6 text-white" />
+                    <Calendar className="w-6 h-6 text-mbras-cream" />
                   </div>
                   <div>
                     <h3 className="font-display text-xl font-bold text-mbras-navy mb-2">
@@ -362,11 +362,11 @@ export default function Home() {
 
               <motion.div
                 variants={fadeInScale}
-                className="group bg-white/95 backdrop-blur-sm rounded-2xl p-10 shadow-luxury hover:shadow-2xl transition-all border border-mbras-gold/10 hover:border-mbras-gold/30"
+                className="group bg-card backdrop-blur-sm rounded-2xl p-10 shadow-luxury hover:shadow-2xl transition-all border border-mbras-gold/10 hover:border-mbras-gold/30"
               >
                 <div className="flex items-start gap-4 mb-6">
                   <div className="w-12 h-12 bg-gradient-to-br from-mbras-navy to-mbras-gold rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-white" />
+                    <Mail className="w-6 h-6 text-mbras-cream" />
                   </div>
                   <div>
                     <h3 className="font-display text-xl font-bold text-mbras-navy mb-2">
@@ -389,7 +389,7 @@ export default function Home() {
       </section>
 
       {/* 360 Orchestration Section */}
-      <section className="py-28 lg:py-40 bg-gradient-to-br from-mbras-navy to-mbras-teal text-white relative overflow-hidden">
+      <section className="py-28 lg:py-40 bg-gradient-to-br from-mbras-navy to-mbras-teal text-mbras-cream relative overflow-hidden">
         <div className="absolute inset-0 bg-navy-mesh opacity-20" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
 
@@ -404,11 +404,11 @@ export default function Home() {
             <motion.div variants={fadeInUp} className="text-center mb-16">
               <div className="inline-flex items-center gap-3 mb-6">
                 <Globe className="w-8 h-8 text-mbras-gold" />
-                <h2 className="font-luxury text-4xl md:text-5xl text-white">
+                <h2 className="font-luxury text-4xl md:text-5xl text-mbras-cream">
                   Orquestração 360°
                 </h2>
               </div>
-              <p className="text-lg text-white/80 max-w-2xl mx-auto">
+              <p className="text-lg text-mbras-cream/80 max-w-2xl mx-auto">
                 Integração completa entre todas as vertentes, criando um fluxo
                 contínuo de valor
               </p>
@@ -441,18 +441,18 @@ export default function Home() {
                   key={index}
                   variants={index % 2 === 0 ? slideInLeft : slideInRight}
                   whileHover={{ scale: 1.02 }}
-                  className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
+                  className="bg-mbras-cream/10 backdrop-blur-md rounded-xl p-8 border border-mbras-cream/20 hover:bg-mbras-cream/15 transition-all duration-300"
                 >
                   <div className="flex items-center gap-3 mb-3">
                     <span className="text-mbras-gold font-semibold">
                       {flow.from}
                     </span>
-                    <ChevronRight className="w-5 h-5 text-white/50" />
+                    <ChevronRight className="w-5 h-5 text-mbras-cream/50" />
                     <span className="text-mbras-cream font-semibold">
                       {flow.to}
                     </span>
                   </div>
-                  <p className="text-white/80 text-sm leading-relaxed">
+                  <p className="text-mbras-cream/80 text-sm leading-relaxed">
                     {flow.desc}
                   </p>
                 </motion.div>
@@ -463,7 +463,7 @@ export default function Home() {
       </section>
 
       {/* Roadmap Section */}
-      <section className="py-24 lg:py-36 bg-gradient-to-b from-mbras-cream to-white">
+      <section className="py-24 lg:py-36 bg-gradient-to-b from-mbras-cream to-mbras-pearl">
         <div className="container mx-auto px-6">
           <motion.div
             initial="hidden"
@@ -513,7 +513,7 @@ export default function Home() {
                       className={`w-1/2 ${item.side === "left" ? "text-right pr-8" : "pl-8"}`}
                     >
                       <div
-                        className={`inline-block p-6 bg-white rounded-xl shadow-luxury ${item.side === "left" ? "text-right" : ""}`}
+                        className={`inline-block p-6 bg-card rounded-xl shadow-luxury ${item.side === "left" ? "text-right" : ""}`}
                       >
                         <div className="text-mbras-gold font-semibold text-sm mb-2">
                           {item.phase}
@@ -524,7 +524,7 @@ export default function Home() {
                         <p className="text-mbras-navy/70">{item.desc}</p>
                       </div>
                     </div>
-                    <div className="w-6 h-6 bg-gradient-to-br from-mbras-gold to-mbras-teal rounded-full z-10 border-4 border-white" />
+                    <div className="w-6 h-6 bg-gradient-to-br from-mbras-gold to-mbras-teal rounded-full z-10 border-4 border-mbras-cream" />
                     <div className="w-1/2" />
                   </motion.div>
                 ))}
@@ -535,7 +535,7 @@ export default function Home() {
       </section>
 
       {/* Glossary Section */}
-      <section className="py-24 lg:py-36 bg-mbras-navy text-white">
+      <section className="py-24 lg:py-36 bg-mbras-navy text-mbras-cream">
         <div className="container mx-auto px-6">
           <motion.div
             initial="hidden"
@@ -545,10 +545,10 @@ export default function Home() {
             className="max-w-5xl mx-auto"
           >
             <motion.div variants={fadeInScale} className="text-center mb-16">
-              <h2 className="font-luxury text-4xl md:text-5xl lg:text-6xl text-white mb-6">
+              <h2 className="font-luxury text-4xl md:text-5xl lg:text-6xl text-mbras-cream mb-6">
                 Glossário Premium
               </h2>
-              <p className="text-lg text-white/80">
+              <p className="text-lg text-mbras-cream/80">
                 Conceitos-chave que definem nossa abordagem premium
               </p>
             </motion.div>
@@ -556,12 +556,12 @@ export default function Home() {
             <div className="space-y-8">
               <motion.div
                 variants={fadeInUp}
-                className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20"
+                className="bg-mbras-cream/10 backdrop-blur-sm rounded-xl p-8 border border-mbras-cream/20"
               >
                 <h3 className="font-display text-2xl font-bold text-mbras-gold mb-4">
                   Regra de Chatham House
                 </h3>
-                <p className="text-white/90 leading-relaxed">
+                <p className="text-mbras-cream/90 leading-relaxed">
                   Utilizada em fóruns e think tanks globais, permite que os
                   participantes falem livremente e compartilhem informações
                   sensíveis. O conteúdo (insights, visões, aprendizados) pode
@@ -574,12 +574,12 @@ export default function Home() {
 
               <motion.div
                 variants={fadeInUp}
-                className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20"
+                className="bg-mbras-cream/10 backdrop-blur-sm rounded-xl p-8 border border-mbras-cream/20"
               >
                 <h3 className="font-display text-2xl font-bold text-mbras-gold mb-4">
                   Trusted Circles
                 </h3>
-                <p className="text-white/90 leading-relaxed">
+                <p className="text-mbras-cream/90 leading-relaxed">
                   Conceito de círculos de confiança formados por UHNWI, C-levels
                   e gestores, nos quais a informação circula de forma
                   controlada, reforçando a credibilidade e fortalecendo as
@@ -589,12 +589,12 @@ export default function Home() {
 
               <motion.div
                 variants={fadeInUp}
-                className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20"
+                className="bg-mbras-cream/10 backdrop-blur-sm rounded-xl p-8 border border-mbras-cream/20"
               >
                 <h3 className="font-display text-2xl font-bold text-mbras-gold mb-4">
                   Pipeline Off-Market
                 </h3>
-                <p className="text-white/90 leading-relaxed">
+                <p className="text-mbras-cream/90 leading-relaxed">
                   Oportunidades de negócios não publicamente listadas,
                   acessíveis apenas por meio de relacionamentos estratégicos e
                   curadoria discreta. Esse elemento é central para o
@@ -615,7 +615,7 @@ export default function Home() {
           variants={floatAnimation}
           initial="initial"
           animate="animate"
-          className="absolute top-10 left-10 w-32 h-32 bg-white/20 rounded-full blur-2xl"
+          className="absolute top-10 left-10 w-32 h-32 bg-mbras-cream/20 rounded-full blur-2xl"
         />
         <motion.div
           variants={floatAnimation}
@@ -635,13 +635,13 @@ export default function Home() {
           >
             <motion.h2
               variants={fadeInScale}
-              className="font-luxury text-5xl md:text-6xl lg:text-7xl text-white mb-8"
+              className="font-luxury text-5xl md:text-6xl lg:text-7xl text-mbras-cream mb-8"
             >
               Seja Parte do <span className="text-mbras-navy">Top 1%</span>
             </motion.h2>
             <motion.p
               variants={fadeInUp}
-              className="text-xl md:text-2xl text-white/90 mb-16 leading-relaxed"
+              className="text-xl md:text-2xl text-mbras-cream/90 mb-16 leading-relaxed"
             >
               Acesso exclusivo ao blueprint dos empreendimentos de alta
               performance
@@ -657,7 +657,7 @@ export default function Home() {
                   boxShadow: "0 20px 40px rgba(0,0,0,0.15)",
                 }}
                 whileTap={{ scale: 0.98 }}
-                className="group px-12 py-5 bg-white text-mbras-gold rounded-xl font-display font-bold text-lg shadow-lg hover:shadow-luxury transition-all duration-300"
+                className="group px-12 py-5 bg-mbras-cream text-mbras-gold rounded-xl font-display font-bold text-lg shadow-lg hover:shadow-luxury transition-all duration-300"
               >
                 Tornar-se Sócio
                 <ArrowRight className="inline-block ml-2 w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
@@ -665,9 +665,9 @@ export default function Home() {
             </motion.div>
 
             <motion.div variants={fadeInUp} className="mt-12">
-              <div className="inline-flex items-center gap-3 px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-                <Sparkles className="w-5 h-5 text-white" />
-                <p className="text-white/90 font-medium">
+              <div className="inline-flex items-center gap-3 px-6 py-3 bg-mbras-cream/10 backdrop-blur-sm rounded-full border border-mbras-cream/20">
+                <Sparkles className="w-5 h-5 text-mbras-cream" />
+                <p className="text-mbras-cream/90 font-medium">
                   Vagas limitadas • Processo seletivo criterioso
                 </p>
               </div>
@@ -686,7 +686,7 @@ export default function Home() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-10 py-5 bg-mbras-navy text-white rounded-lg font-display font-bold text-lg hover:bg-mbras-navy-dark transition-all duration-300 shadow-luxury flex items-center gap-3 mx-auto"
+                className="px-10 py-5 bg-mbras-navy text-mbras-cream rounded-lg font-display font-bold text-lg hover:bg-mbras-navy-dark transition-all duration-300 shadow-luxury flex items-center gap-3 mx-auto"
               >
                 Solicitar Acesso Exclusivo
                 <ArrowRight className="w-5 h-5" />
