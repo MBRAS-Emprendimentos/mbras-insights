@@ -8,7 +8,6 @@ export const dynamic = "force-static";
 // Icon imports
 import {
   ArrowRight,
-  Sparkles,
   Building2,
   Target,
   Globe,
@@ -116,7 +115,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-mbras-pearl via-mbras-pearl to-mbras-cream">
       {/* Hero Section */}
-      <section className="relative overflow-hidden min-h-screen flex items-center">
+      <section id="hero" className="relative overflow-hidden min-h-screen flex items-center">
         {/* Premium layered background */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-mbras-pearl via-mbras-cream/30 to-mbras-pearl" />
@@ -131,19 +130,19 @@ export default function Home() {
         {/* Animated golden orbs */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <motion.div
-            animate={{ 
+            animate={shouldAnimate ? { 
               x: [0, 100, 0],
               y: [0, -100, 0],
-            }}
-            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            } : undefined}
+            transition={shouldAnimate ? { duration: 20, repeat: Infinity, ease: "linear" } : undefined}
             className="absolute -top-40 -left-40 w-[40rem] h-[40rem] bg-gradient-radial from-mbras-gold/8 to-transparent blur-3xl"
           />
           <motion.div
-            animate={{ 
+            animate={shouldAnimate ? { 
               x: [0, -100, 0],
               y: [0, 100, 0],
-            }}
-            transition={{ duration: 25, repeat: Infinity, ease: "linear", delay: 5 }}
+            } : undefined}
+            transition={shouldAnimate ? { duration: 25, repeat: Infinity, ease: "linear", delay: 5 } : undefined}
             className="absolute -bottom-40 -right-40 w-[40rem] h-[40rem] bg-gradient-radial from-mbras-navy/8 to-transparent blur-3xl"
           />
         </div>
@@ -169,9 +168,9 @@ export default function Home() {
                 </span>
                 {/* Elegant underline */}
                 <motion.div 
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
+                  initial={shouldAnimate ? { scaleX: 0 } : undefined}
+                  animate={shouldAnimate ? { scaleX: 1 } : undefined}
+                  transition={shouldAnimate ? { duration: 1.2, delay: 0.5, ease: "easeOut" } : undefined}
                   className="absolute -bottom-2 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-mbras-gold to-transparent"
                 />
               </div>
@@ -199,9 +198,11 @@ export default function Home() {
 
             {/* Premium CTA buttons */}
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row justify-center gap-6 mb-16">
-              <motion.button
-                whileHover={{ scale: 1.02, y: -2 }}
-                whileTap={{ scale: 0.98 }}
+              <motion.a
+                href="#pilares"
+                aria-label="Conhecer o Conecta — ir para Pilares do Conecta"
+                whileHover={shouldAnimate ? { scale: 1.02, y: -2 } : undefined}
+                whileTap={shouldAnimate ? { scale: 0.98 } : undefined}
                 className="group relative px-12 py-5 overflow-hidden rounded-2xl font-display font-medium text-base tracking-wide transition-all duration-500"
               >
                 {/* Button gradient background */}
@@ -215,11 +216,9 @@ export default function Home() {
                 {/* Button content */}
                 <span className="relative z-10 text-mbras-cream flex items-center gap-3">
                   Conhecer o Conecta
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight aria-hidden="true" focusable="false" className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>
-              </motion.button>
-              
-              
+              </motion.a>
             </motion.div>
      
           </motion.div>
@@ -237,9 +236,9 @@ export default function Home() {
         </div>
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+            initial={shouldAnimate ? "hidden" : undefined}
+            whileInView={shouldAnimate ? "visible" : undefined}
+            viewport={shouldAnimate ? { once: true } : undefined}
             variants={staggerContainer}
             className="max-w-6xl mx-auto"
           >
@@ -257,12 +256,12 @@ export default function Home() {
             <div className="grid md:grid-cols-3 gap-8">
               <motion.div
                 variants={fadeInUp}
-                whileHover={{ y: -6 }}
+                whileHover={shouldAnimate ? { y: -6 } : undefined}
                 className="group relative rounded-2xl p-0.5 bg-gradient-to-br from-mbras-gold/40 via-mbras-teal/20 to-transparent shadow-luxury"
               >
                 <div className="rounded-2xl glass border border-mbras-gold/20 p-8 h-full">
                   <div className="w-14 h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-mbras-navy to-mbras-teal rounded-xl flex items-center justify-center mb-6 ring-1 ring-mbras-navy/10">
-                    <Building2 className="w-8 h-8 text-mbras-cream" />
+                    <Building2 aria-hidden="true" focusable="false" className="w-8 h-8 text-mbras-cream" />
                   </div>
                   <h3 className="text-2xl lg:text-3xl font-bold text-mbras-navy mb-3 tracking-tight">
                     Clareza, não volume
@@ -277,12 +276,12 @@ export default function Home() {
 
               <motion.div
                 variants={fadeInUp}
-                whileHover={{ y: -6 }}
+                whileHover={shouldAnimate ? { y: -6 } : undefined}
                 className="group relative rounded-2xl p-0.5 bg-gradient-to-br from-mbras-gold/40 via-mbras-teal/20 to-transparent shadow-luxury"
               >
                 <div className="rounded-2xl glass border border-mbras-gold/20 p-8 h-full">
                   <div className="w-14 h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-mbras-navy to-mbras-gold rounded-xl flex items-center justify-center mb-6 ring-1 ring-mbras-navy/10">
-                    <Users className="w-8 h-8 text-mbras-cream" />
+                    <Users aria-hidden="true" focusable="false" className="w-8 h-8 text-mbras-cream" />
                   </div>
                   <h3 className="text-2xl lg:text-3xl font-bold text-mbras-navy mb-3 tracking-tight">
                     Relações com lastro
@@ -297,12 +296,12 @@ export default function Home() {
 
               <motion.div
                 variants={fadeInUp}
-                whileHover={{ y: -6 }}
+                whileHover={shouldAnimate ? { y: -6 } : undefined}
                 className="group relative rounded-2xl p-0.5 bg-gradient-to-br from-mbras-gold/40 via-mbras-teal/20 to-transparent shadow-luxury"
               >
                 <div className="rounded-2xl glass border border-mbras-gold/20 p-8 h-full">
                   <div className="w-14 h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-mbras-teal to-mbras-navy rounded-xl flex items-center justify-center mb-6 ring-1 ring-mbras-navy/10">
-                    <TrendingUp className="w-8 h-8 text-mbras-cream" />
+                    <TrendingUp aria-hidden="true" focusable="false" className="w-8 h-8 text-mbras-cream" />
                   </div>
                   <h3 className="text-2xl lg:text-3xl font-bold text-mbras-navy mb-3 tracking-tight">
                     Negócios que nascem prontos
@@ -320,7 +319,7 @@ export default function Home() {
       </section>
 
       {/* Structure Section */}
-      <section className="py-32 lg:py-40 relative overflow-hidden">
+      <section id="pilares" className="py-32 lg:py-40 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-mbras-pearl/40 to-transparent" />
         <div className="absolute inset-0 bg-navy-mesh opacity-[0.02]" />
         <div className="absolute inset-0 pointer-events-none">
@@ -330,9 +329,9 @@ export default function Home() {
 
         <div className="container mx-auto px-6 relative">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+            initial={shouldAnimate ? "hidden" : undefined}
+            whileInView={shouldAnimate ? "visible" : undefined}
+            viewport={shouldAnimate ? { once: true } : undefined}
             variants={staggerContainer}
             className="max-w-6xl mx-auto"
           >
@@ -355,7 +354,7 @@ export default function Home() {
                 <div className="bg-card glass rounded-2xl p-8 h-full border border-mbras-gold/20">
                   <div className="flex items-start gap-4 mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-mbras-navy to-mbras-teal rounded-lg flex items-center justify-center flex-shrink-0 ring-1 ring-mbras-navy/10">
-                      <TrendingUp className="w-6 h-6 text-mbras-cream" />
+                      <TrendingUp aria-hidden="true" focusable="false" className="w-6 h-6 text-mbras-cream" />
                     </div>
                     <div>
                       <h3 className="font-display text-xl font-bold text-mbras-navy mb-2 tracking-tight">
@@ -368,7 +367,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="flex items-center gap-2 text-sm text-mbras-gold">
-                    <Star className="w-4 h-4" />
+                    <Star aria-hidden="true" focusable="false" className="w-4 h-4" />
                     <span>Contexto acionável</span>
                   </div>
                 </div>
@@ -381,7 +380,7 @@ export default function Home() {
                 <div className="bg-card glass rounded-2xl p-8 h-full border border-mbras-gold/20">
                   <div className="flex items-start gap-4 mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-mbras-teal to-mbras-gold rounded-lg flex items-center justify-center flex-shrink-0 ring-1 ring-mbras-navy/10">
-                      <Users className="w-6 h-6 text-mbras-cream" />
+                      <Users aria-hidden="true" focusable="false" className="w-6 h-6 text-mbras-cream" />
                     </div>
                     <div>
                       <h3 className="font-display text-xl font-bold text-mbras-navy mb-2 tracking-tight">
@@ -394,7 +393,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="flex items-center gap-2 text-sm text-mbras-teal">
-                    <Zap className="w-4 h-4" />
+                    <Zap aria-hidden="true" focusable="false" className="w-4 h-4" />
                     <span>Conexões qualificadas</span>
                   </div>
                 </div>
@@ -407,7 +406,7 @@ export default function Home() {
                 <div className="bg-card glass rounded-2xl p-8 h-full border border-mbras-gold/20">
                   <div className="flex items-start gap-4 mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-mbras-gold to-mbras-navy rounded-lg flex items-center justify-center flex-shrink-0 ring-1 ring-mbras-navy/10">
-                      <Target className="w-6 h-6 text-mbras-cream" />
+                      <Target aria-hidden="true" focusable="false" className="w-6 h-6 text-mbras-cream" />
                     </div>
                     <div>
                       <h3 className="font-display text-xl font-bold text-mbras-navy mb-2 tracking-tight">
@@ -420,7 +419,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="flex items-center gap-2 text-sm text-mbras-navy">
-                    <Award className="w-4 h-4" />
+                    <Award aria-hidden="true" focusable="false" className="w-4 h-4" />
                     <span>Execução elegante</span>
                   </div>
                 </div>
@@ -433,7 +432,7 @@ export default function Home() {
                 <div className="bg-card glass rounded-2xl p-8 h-full border border-mbras-gold/20">
                   <div className="flex items-start gap-4 mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-mbras-navy to-mbras-gold rounded-lg flex items-center justify-center flex-shrink-0 ring-1 ring-mbras-navy/10">
-                      <Zap className="w-6 h-6 text-mbras-cream" />
+                      <Zap aria-hidden="true" focusable="false" className="w-6 h-6 text-mbras-cream" />
                     </div>
                     <div>
                       <h3 className="font-display text-xl font-bold text-mbras-navy mb-2 tracking-tight">
@@ -447,7 +446,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="flex items-center gap-2 text-sm text-mbras-gold">
-                    <Target className="w-4 h-4" />
+                    <Target aria-hidden="true" focusable="false" className="w-4 h-4" />
                     <span>Integração inteligente</span>
                   </div>
                 </div>
@@ -458,7 +457,7 @@ export default function Home() {
       </section>
 
       {/* 360 Orchestration Section */}
-      <section className="py-28 lg:py-40 bg-gradient-to-br from-mbras-navy to-mbras-teal text-mbras-cream relative overflow-hidden">
+      <section id="orquestracao" className="py-28 lg:py-40 bg-gradient-to-br from-mbras-navy to-mbras-teal text-mbras-cream relative overflow-hidden">
         <div className="absolute inset-0 bg-navy-mesh opacity-[0.08]" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
         <div className="absolute inset-0 pointer-events-none">
@@ -467,15 +466,15 @@ export default function Home() {
 
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+            initial={shouldAnimate ? "hidden" : undefined}
+            whileInView={shouldAnimate ? "visible" : undefined}
+            viewport={shouldAnimate ? { once: true } : undefined}
             variants={staggerContainer}
             className="max-w-5xl mx-auto"
           >
             <motion.div variants={fadeInUp} className="text-center mb-16">
               <div className="inline-flex items-center gap-3 mb-4">
-                <Globe className="w-8 h-8 text-mbras-gold" />
+                <Globe aria-hidden="true" focusable="false" className="w-8 h-8 text-mbras-gold" />
                 <h2 className="font-luxury text-4xl md:text-5xl text-mbras-cream tracking-tight">
                   Orquestração 360°
                 </h2>
@@ -499,7 +498,7 @@ export default function Home() {
                       <span className="text-mbras-gold font-semibold">
                       {flow.from}
                       </span>
-                      <ChevronRight className="w-5 h-5 text-mbras-cream/50" />
+                      <ChevronRight aria-hidden="true" focusable="false" className="w-5 h-5 text-mbras-cream/50" />
                       <span className="text-mbras-cream font-semibold">
                       {flow.to}
                       </span>
@@ -516,14 +515,14 @@ export default function Home() {
       </section>
 
       {/* Glossary Section */}
-      <section className="py-24 lg:py-36 bg-mbras-navy text-mbras-cream relative overflow-hidden">
+      <section id="glossario" className="py-24 lg:py-36 bg-mbras-navy text-mbras-cream relative overflow-hidden">
         <div className="absolute inset-0 bg-navy-mesh opacity-[0.08]" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-transparent" />
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            initial={shouldAnimate ? "hidden" : undefined}
+            whileInView={shouldAnimate ? "visible" : undefined}
+            viewport={shouldAnimate ? { once: true, margin: "-100px" } : undefined}
             variants={staggerContainer}
             className="max-w-5xl mx-auto"
           >
@@ -540,7 +539,7 @@ export default function Home() {
             <div className="space-y-8">
               <motion.div
                 variants={fadeInUp}
-                whileHover={{ y: -6 }}
+                whileHover={shouldAnimate ? { y: -6 } : undefined}
                 className="rounded-xl p-0.5 bg-gradient-to-br from-mbras-gold/40 via-mbras-teal/20 to-transparent"
               >
                 <div className="bg-mbras-cream/10 backdrop-blur-sm rounded-xl p-8 border border-mbras-cream/25">
@@ -566,7 +565,7 @@ export default function Home() {
 
               <motion.div
                 variants={fadeInUp}
-                whileHover={{ y: -6 }}
+                whileHover={shouldAnimate ? { y: -6 } : undefined}
                 className="rounded-xl p-0.5 bg-gradient-to-br from-mbras-gold/40 via-mbras-teal/20 to-transparent"
               >
                 <div className="bg-mbras-cream/10 backdrop-blur-sm rounded-xl p-8 border border-mbras-cream/25">
@@ -589,7 +588,7 @@ export default function Home() {
 
               <motion.div
                 variants={fadeInUp}
-                whileHover={{ y: -6 }}
+                whileHover={shouldAnimate ? { y: -6 } : undefined}
                 className="rounded-xl p-0.5 bg-gradient-to-br from-mbras-gold/40 via-mbras-teal/20 to-transparent"
               >
                 <div className="bg-mbras-cream/10 backdrop-blur-sm rounded-xl p-8 border border-mbras-cream/25">
@@ -615,7 +614,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 lg:py-44 relative overflow-hidden bg-gradient-to-br from-mbras-cream via-mbras-pearl to-mbras-cream">
+      <section id="cta" className="py-32 lg:py-44 relative overflow-hidden bg-gradient-to-br from-mbras-cream via-mbras-pearl to-mbras-cream">
         <div className="absolute inset-0 bg-navy-mesh opacity-[0.02]" />
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -top-32 right-1/3 w-[40rem] h-[40rem] bg-gradient-radial from-mbras-gold/10 via-transparent to-transparent blur-3xl" />
@@ -639,9 +638,9 @@ export default function Home() {
 
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            initial={shouldAnimate ? "hidden" : undefined}
+            whileInView={shouldAnimate ? "visible" : undefined}
+            viewport={shouldAnimate ? { once: true, margin: "-100px" } : undefined}
             variants={staggerContainer}
             className="max-w-3xl mx-auto text-center"
           >
@@ -656,26 +655,15 @@ export default function Home() {
               variants={fadeInUp}
               className="flex gap-4 justify-center"
             >
-              <motion.button whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.98 }} className="group px-12 py-5 rounded-xl bg-gradient-to-r from-mbras-gold to-mbras-gold-light text-mbras-cream font-display font-bold text-lg shadow-gold-glow hover:shadow-luxury transition-all duration-300">
+              <motion.button whileHover={shouldAnimate ? { scale: 1.04 } : undefined} whileTap={shouldAnimate ? { scale: 0.98 } : undefined} className="group px-12 py-5 rounded-xl bg-gradient-to-r from-mbras-gold to-mbras-gold-light text-mbras-cream font-display font-bold text-lg shadow-gold-glow hover:shadow-luxury transition-all duration-300">
                 Tornar-se Sócio
-                <ArrowRight className="inline-block ml-2 w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
+                <ArrowRight aria-hidden="true" focusable="false" className="inline-block ml-2 w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
               </motion.button>
-            </motion.div>
-
-            <motion.div variants={fadeInUp} className="mt-12">
-              <div className="inline-flex items-center gap-3 px-6 py-3 glass rounded-full border border-mbras-gold/30 text-mbras-navy">
-                <Sparkles className="w-5 h-5 text-mbras-gold" />
-                <p className="text-mbras-navy/80 font-medium">Vagas limitadas • Processo seletivo criterioso</p>
-              </div>
-            </motion.div>
-
-            <motion.div variants={fadeInUp}>
-              <h2 className="font-luxury text-4xl md:text-5xl text-mbras-navy mb-3 tracking-tight">Faça Parte do Círculo</h2>
-              <p className="text-xl text-mbras-navy/80 mb-8 [text-wrap:balance]">MBRAS Conecta não é apenas uma plataforma – é um movimento de transformação do mercado imobiliário brasileiro através da conexão estratégica entre os principais players do setor.</p>
-
-              <motion.button whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.98 }} className="px-10 py-5 rounded-xl font-display font-bold text-lg glass border border-mbras-gold/30 text-mbras-navy hover:bg-mbras-pearl/60 transition-all duration-300 flex items-center gap-3 mx-auto">
-                Solicitar Acesso Exclusivo
-                <ArrowRight className="w-5 h-5" />
+              <motion.button whileHover={shouldAnimate ? { scale: 1.02 } : undefined} whileTap={shouldAnimate ? { scale: 0.98 } : undefined} className="group px-10 py-5 rounded-xl glass border border-mbras-gold/30 text-mbras-navy hover:bg-mbras-cream/60 transition-all duration-300">
+                <span className="inline-flex items-center gap-2 font-display font-semibold">
+                  Solicitar Acesso Exclusivo
+                  <ArrowRight aria-hidden="true" focusable="false" className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                </span>
               </motion.button>
             </motion.div>
           </motion.div>
