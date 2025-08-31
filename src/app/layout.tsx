@@ -1,3 +1,4 @@
+import type { Metadata, Viewport } from "next";
 import { Inter, Montserrat, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
@@ -20,7 +21,7 @@ const playfair = Playfair_Display({
   variable: "--font-playfair",
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "MBRAS Conecta | O essencial, antes do consenso",
   description:
@@ -28,10 +29,40 @@ export const metadata = {
   keywords:
     "real estate, luxury, insights, São Paulo, Faria Lima, investimento",
   openGraph: {
+    url: siteUrl,
+    siteName: "MBRAS Conecta",
     title: "MBRAS Conecta",
     description: "Inteligência exclusiva que move mercados",
-    images: ["/og-image.jpg"],
+    type: "website",
+    locale: "pt_BR",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        type: "image/png",
+      },
+      {
+        url: "/og-image.svg",
+        width: 1200,
+        height: 630,
+        type: "image/svg+xml",
+      },
+    ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "MBRAS Conecta",
+    description: "Inteligência exclusiva que move mercados",
+    images: ["/twitter-image", "/og-image.svg"],
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0A1E3C",
+  width: "device-width",
+  initialScale: 1,
+  colorScheme: "light dark",
 };
 
 export default function RootLayout({

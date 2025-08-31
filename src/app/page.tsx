@@ -3,6 +3,8 @@
 // External imports
 import { motion, Variants } from "framer-motion";
 
+export const dynamic = "force-static";
+
 // Icon imports
 import {
   ArrowRight,
@@ -83,6 +85,14 @@ const floatAnimation: Variants = {
 };
 
 export default function Home() {
+  const shouldAnimate = (() => {
+    if (typeof window === "undefined") return true;
+    try {
+      return !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    } catch {
+      return true;
+    }
+  })();
   return (
     <div className="min-h-screen bg-gradient-to-b from-mbras-pearl via-mbras-pearl to-mbras-cream">
       {/* Hero Section */}
@@ -93,22 +103,22 @@ export default function Home() {
         {/* Floating decorative elements */}
         <motion.div
           variants={floatAnimation}
-          initial="initial"
-          animate="animate"
+          initial={shouldAnimate ? "initial" : undefined}
+          animate={shouldAnimate ? "animate" : undefined}
           className="absolute top-20 right-10 w-64 h-64 bg-gradient-to-br from-mbras-gold/10 to-mbras-teal/10 rounded-full blur-3xl"
         />
         <motion.div
           variants={floatAnimation}
-          initial="initial"
-          animate="animate"
+          initial={shouldAnimate ? "initial" : undefined}
+          animate={shouldAnimate ? "animate" : undefined}
           style={{ animationDelay: "2s" }}
           className="absolute bottom-20 left-10 w-96 h-96 bg-gradient-to-tr from-mbras-navy/10 to-mbras-gold/10 rounded-full blur-3xl"
         />
 
         <div className="container mx-auto px-6 py-24 lg:py-32 relative z-10">
           <motion.div
-            initial="hidden"
-            animate="visible"
+            initial={shouldAnimate ? "hidden" : undefined}
+            animate={shouldAnimate ? "visible" : undefined}
             variants={staggerContainer}
             className="max-w-5xl mx-auto text-center"
           >
@@ -613,14 +623,14 @@ export default function Home() {
         {/* Animated background elements */}
         <motion.div
           variants={floatAnimation}
-          initial="initial"
-          animate="animate"
+          initial={shouldAnimate ? "initial" : undefined}
+          animate={shouldAnimate ? "animate" : undefined}
           className="absolute top-10 left-10 w-32 h-32 bg-mbras-cream/20 rounded-full blur-2xl"
         />
         <motion.div
           variants={floatAnimation}
-          initial="initial"
-          animate="animate"
+          initial={shouldAnimate ? "initial" : undefined}
+          animate={shouldAnimate ? "animate" : undefined}
           style={{ animationDelay: "3s" }}
           className="absolute bottom-10 right-10 w-48 h-48 bg-mbras-navy/10 rounded-full blur-2xl"
         />
