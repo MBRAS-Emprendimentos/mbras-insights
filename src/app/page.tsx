@@ -14,14 +14,10 @@ import {
   Globe,
   Users,
   TrendingUp,
-  Calendar,
   ChevronRight,
   Zap,
   Award,
-  Mic,
   Star,
-  Video,
-  Mail,
 } from "lucide-react";
 
 // Animation variants with proper typing
@@ -37,31 +33,25 @@ const fadeInUp: Variants = {
 // Static data for mappings (outside component to avoid re-creation)
 const ORCHESTRATION_FLOWS = [
   {
-    from: "Conecta",
-    to: "Podcast",
-    desc: "Relatórios exclusivos transformam-se em episódios aprofundados",
+    from: "Dashboard",
+    to: "Insights",
+    desc: "Indicadores curados viram contexto acionável",
   },
   {
-    from: "Vídeos",
-    to: "Eventos",
-    desc: "Apresentações visuais enriquecem encontros presenciais",
+    from: "Insights",
+    to: "Conexões",
+    desc: "Análises conectam você a quem decide",
   },
   {
-    from: "Eventos",
-    to: "Podcasts/Vídeos",
-    desc: "Momentos especiais documentados e compartilhados",
+    from: "Conexões",
+    to: "Propostas",
+    desc: "Interações evoluem em deals com rastro e histórico",
   },
   {
-    from: "Newsletter",
+    from: "Propostas",
     to: "CRM",
-    desc: "Engajamento direto com audiência qualificada",
+    desc: "Integração e follow-up organizado",
   },
-] as const;
-
-const ROADMAP_ITEMS = [
-  { phase: "0-3 meses", title: "MVP Launch", desc: "Podcast + Newsletter", side: "left" as const },
-  { phase: "3-6 meses", title: "Expansão Visual", desc: "Vídeos + 1º Evento", side: "right" as const },
-  { phase: "6-12 meses", title: "Consolidação 360°", desc: "Ciclo completo + expansão internacional", side: "left" as const },
 ] as const;
 
 const fadeInScale: Variants = {
@@ -126,82 +116,112 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-mbras-pearl via-mbras-pearl to-mbras-cream">
       {/* Hero Section */}
-      <section className="relative overflow-hidden min-h-[90vh] flex items-center">
-        <div className="absolute inset-0 bg-navy-mesh opacity-[0.035]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-mbras-pearl/40 to-transparent" />
-
-        {/* Subtle radial spotlight for a refined, luxury feel */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[60rem] h-[60rem] bg-gradient-radial from-mbras-gold/10 via-transparent to-transparent blur-3xl" />
-          <div className="absolute bottom-[-20rem] right-[-10rem] w-[42rem] h-[42rem] bg-gradient-radial from-mbras-navy/10 via-transparent to-transparent blur-3xl" />
+      <section className="relative overflow-hidden min-h-screen flex items-center">
+        {/* Premium layered background */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-mbras-pearl via-mbras-cream/30 to-mbras-pearl" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-mbras-gold/5 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-mbras-navy/5 via-transparent to-transparent" />
         </div>
 
-        <div className="container mx-auto px-6 py-24 lg:py-32 relative z-10">
+        {/* Luxury pattern overlay */}
+        <div className="absolute inset-0 opacity-[0.015]" 
+             style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231A2332' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")` }} />
+        
+        {/* Animated golden orbs */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <motion.div
+            animate={{ 
+              x: [0, 100, 0],
+              y: [0, -100, 0],
+            }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            className="absolute -top-40 -left-40 w-[40rem] h-[40rem] bg-gradient-radial from-mbras-gold/8 to-transparent blur-3xl"
+          />
+          <motion.div
+            animate={{ 
+              x: [0, -100, 0],
+              y: [0, 100, 0],
+            }}
+            transition={{ duration: 25, repeat: Infinity, ease: "linear", delay: 5 }}
+            className="absolute -bottom-40 -right-40 w-[40rem] h-[40rem] bg-gradient-radial from-mbras-navy/8 to-transparent blur-3xl"
+          />
+        </div>
+
+        <div className="container mx-auto px-6 py-32 lg:py-40 relative z-10">
           <motion.div
             initial={shouldAnimate ? "hidden" : undefined}
             animate={shouldAnimate ? "visible" : undefined}
             variants={staggerContainer}
-            className="max-w-5xl mx-auto text-center"
+            className="max-w-6xl mx-auto text-center"
           >
-            <motion.div variants={fadeInUp} className="mb-8">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-mbras-gold/20">
-                <Sparkles className="w-4 h-4 text-mbras-gold" />
-                <span className="text-xs uppercase tracking-[0.18em] text-mbras-gold font-semibold">
-                  Blueprint Exclusivo
-                </span>
-              </span>
-            </motion.div>
-
+            {/* Main title with premium typography */}
             <motion.h1
               variants={fadeInUp}
-              className="font-luxury text-5xl md:text-7xl lg:text-8xl text-mbras-navy mb-6 leading-tight tracking-tight"
+              className="mb-8"
             >
-              <span className="block">MBRAS</span>
-              <span className="block text-3xl md:text-5xl lg:text-6xl mt-3 bg-gradient-to-r from-mbras-gold via-mbras-gold to-mbras-teal bg-clip-text text-transparent font-semibold tracking-tight">
-                Conecta
+              <span className="block font-luxury text-6xl md:text-8xl lg:text-9xl font-light tracking-[0.02em] text-mbras-navy mb-2">
+                MBRAS
               </span>
+              <div className="relative inline-block">
+                <span className="relative z-10 block text-4xl md:text-6xl lg:text-7xl font-luxury font-medium bg-gradient-to-r from-mbras-gold via-mbras-gold-light to-mbras-gold bg-clip-text text-transparent tracking-wide">
+                  Conecta
+                </span>
+                {/* Elegant underline */}
+                <motion.div 
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
+                  className="absolute -bottom-2 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-mbras-gold to-transparent"
+                />
+              </div>
             </motion.h1>
 
+            {/* Tagline discreta sob o título */}
             <motion.p
               variants={fadeInUp}
-              className="text-lg md:text-xl lg:text-2xl text-mbras-navy/80 max-w-3xl mx-auto mb-12 font-light leading-relaxed [text-wrap:balance]"
+              className="text-mbras-navy/60 text-xs md:text-sm font-light uppercase tracking-[0.3em] mb-8"
             >
-              A plataforma definitiva de inteligência imobiliária premium que
-              conecta
-              <span className="text-mbras-gold font-semibold">
-                {" "}
-                incorporadoras
-              </span>
-              ,
-              <span className="text-mbras-teal font-semibold">
-                {" "}
-                investidores
-              </span>{" "}
-              e
-              <span className="text-mbras-navy font-semibold">
-                {" "}
-                especialistas
-              </span>{" "}
-              do setor em um ecossistema exclusivo de oportunidades e
-              conhecimento estratégico.
+              A Inteligência do Mercado em um Só Lugar
             </motion.p>
 
-            <motion.div variants={fadeInUp} className="flex justify-center gap-4">
+            {/* Hero description with improved typography */}
+            <motion.p
+              variants={fadeInUp}
+              className="text-lg md:text-xl lg:text-2xl text-mbras-navy/70 max-w-4xl mx-auto mb-16 font-light leading-loose [text-wrap:balance]"
+            >
+              <span className="text-mbras-navy/90 font-normal">No mercado de altíssimo padrão,</span>{" "}
+              informação nunca faltou. O que falta é{" "}
+              <span className="text-mbras-gold font-medium">clareza</span>.
+              A decisão certa não nasce de planilhas, mas de{" "}
+              <span className="italic">contexto, timing e confiança</span>.
+            </motion.p>
+
+            {/* Premium CTA buttons */}
+            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row justify-center gap-6 mb-16">
               <motion.button
-                whileHover={{ scale: 1.04 }}
+                whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-10 py-4 rounded-xl bg-gradient-to-r from-mbras-gold to-mbras-gold-light text-mbras-cream font-display font-semibold shadow-gold-glow hover:shadow-luxury transition-all duration-300"
+                className="group relative px-12 py-5 overflow-hidden rounded-2xl font-display font-medium text-base tracking-wide transition-all duration-500"
               >
-                Tornar-se Sócio
+                {/* Button gradient background */}
+                <div className="absolute inset-0 bg-gradient-to-r from-mbras-gold via-mbras-gold-light to-mbras-gold" />
+                
+                {/* Animated shine effect */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
+                </div>
+                
+                {/* Button content */}
+                <span className="relative z-10 text-mbras-cream flex items-center gap-3">
+                  Conhecer o Conecta
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </span>
               </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.04 }}
-                whileTap={{ scale: 0.98 }}
-                className="px-10 py-4 rounded-xl font-display font-semibold text-mbras-navy glass border border-mbras-gold/30 hover:bg-mbras-pearl/60 transition-all duration-300"
-              >
-                Conhecer Blueprint
-              </motion.button>
+              
+              
             </motion.div>
+     
           </motion.div>
         </div>
       </section>
@@ -225,7 +245,7 @@ export default function Home() {
           >
             <motion.div variants={fadeInUp} className="text-center mb-16">
               <h2 className="font-luxury text-4xl md:text-5xl text-mbras-navy mb-3 tracking-tight">
-                Conceito Central
+                Onde a Clareza Substitui o Ruído
               </h2>
               <div className="mx-auto mb-5 h-px w-24 bg-gradient-to-r from-transparent via-mbras-gold/60 to-transparent rounded-full" />
               <p className="text-lg text-mbras-navy/70 max-w-2xl mx-auto [text-wrap:balance]">
@@ -245,12 +265,12 @@ export default function Home() {
                     <Building2 className="w-8 h-8 text-mbras-cream" />
                   </div>
                   <h3 className="text-2xl lg:text-3xl font-bold text-mbras-navy mb-3 tracking-tight">
-                    Incorporadoras Premium
+                    Clareza, não volume
                   </h3>
                   <p className="text-mbras-navy/80 leading-relaxed text-base lg:text-lg">
-                    Acesso exclusivo a investidores qualificados, análises de
-                    mercado em tempo real e ferramentas avançadas de
-                    precificação e viabilidade.
+                    Aqui os números ganham vida. Análises revelam padrões antes
+                    de virarem consenso e um dashboard curado mostra apenas o que
+                    importa ao seu perfil.
                   </p>
                 </div>
               </motion.div>
@@ -265,11 +285,12 @@ export default function Home() {
                     <Users className="w-8 h-8 text-mbras-cream" />
                   </div>
                   <h3 className="text-2xl lg:text-3xl font-bold text-mbras-navy mb-3 tracking-tight">
-                    Conexão Estratégica
+                    Relações com lastro
                   </h3>
                   <p className="text-mbras-navy/80 leading-relaxed text-base lg:text-lg">
-                    Trusted circles que geram pipeline off-market e
-                    oportunidades exclusivas.
+                    Cada contato passa por curadoria. Do outro lado, quem decide:
+                    family offices, diretores de novas frentes e investidores de
+                    alto tíquete.
                   </p>
                 </div>
               </motion.div>
@@ -284,11 +305,12 @@ export default function Home() {
                     <TrendingUp className="w-8 h-8 text-mbras-cream" />
                   </div>
                   <h3 className="text-2xl lg:text-3xl font-bold text-mbras-navy mb-3 tracking-tight">
-                    Inteligência Acionável
+                    Negócios que nascem prontos
                   </h3>
                   <p className="text-mbras-navy/80 leading-relaxed text-base lg:text-lg">
-                    Análise sem ruído, dados precisos e insights que direcionam
-                    decisões estratégicas.
+                    Propostas com modelos interativos, análises de sensibilidade e
+                    acesso direto aos responsáveis. Cada interação tem rastro e
+                    histórico.
                   </p>
                 </div>
               </motion.div>
@@ -316,7 +338,7 @@ export default function Home() {
           >
             <motion.div variants={fadeInUp} className="text-center mb-16">
               <h2 className="font-luxury text-4xl md:text-5xl text-mbras-navy mb-3 tracking-tight">
-                Estrutura MBRAS Conecta
+                Pilares do Conecta
               </h2>
               <div className="mx-auto mb-5 h-px w-24 bg-gradient-to-r from-transparent via-mbras-gold/60 to-transparent rounded-full" />
               <p className="text-lg text-mbras-navy/70 max-w-2xl mx-auto [text-wrap:balance]">
@@ -333,21 +355,21 @@ export default function Home() {
                 <div className="bg-card glass rounded-2xl p-8 h-full border border-mbras-gold/20">
                   <div className="flex items-start gap-4 mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-mbras-navy to-mbras-teal rounded-lg flex items-center justify-center flex-shrink-0 ring-1 ring-mbras-navy/10">
-                      <Mic className="w-6 h-6 text-mbras-cream" />
+                      <TrendingUp className="w-6 h-6 text-mbras-cream" />
                     </div>
                     <div>
                       <h3 className="font-display text-xl font-bold text-mbras-navy mb-2 tracking-tight">
-                        Podcast – &ldquo;MBRAS Conecta: O Podcast&rdquo;
+                        Clareza que guia decisões
                       </h3>
                       <p className="text-mbras-navy/80">
-                        Conversas Chatham House com líderes do mercado, insights
-                        exclusivos e análises profundas
+                        Indicadores curados e leituras de contexto que antecipam
+                        movimentos de mercado e reduzem ruído.
                       </p>
                     </div>
                   </div>
                   <div className="flex items-center gap-2 text-sm text-mbras-gold">
                     <Star className="w-4 h-4" />
-                    <span>Episódios quinzenais</span>
+                    <span>Contexto acionável</span>
                   </div>
                 </div>
               </motion.div>
@@ -359,21 +381,21 @@ export default function Home() {
                 <div className="bg-card glass rounded-2xl p-8 h-full border border-mbras-gold/20">
                   <div className="flex items-start gap-4 mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-mbras-teal to-mbras-gold rounded-lg flex items-center justify-center flex-shrink-0 ring-1 ring-mbras-navy/10">
-                      <Video className="w-6 h-6 text-mbras-cream" />
+                      <Users className="w-6 h-6 text-mbras-cream" />
                     </div>
                     <div>
                       <h3 className="font-display text-xl font-bold text-mbras-navy mb-2 tracking-tight">
-                        Vídeos – &ldquo;MBRAS Conecta: Insights&rdquo;
+                        Relações com lastro
                       </h3>
                       <p className="text-mbras-navy/80">
-                        Mini-documentários (5-8min) com análises visuais e tours
-                        exclusivos de propriedades
+                        Curadoria rigorosa conecta você a quem decide —
+                        relações que começam sólidas e evoluem em negócios.
                       </p>
                     </div>
                   </div>
                   <div className="flex items-center gap-2 text-sm text-mbras-teal">
                     <Zap className="w-4 h-4" />
-                    <span>Conteúdo semanal</span>
+                    <span>Conexões qualificadas</span>
                   </div>
                 </div>
               </motion.div>
@@ -385,21 +407,21 @@ export default function Home() {
                 <div className="bg-card glass rounded-2xl p-8 h-full border border-mbras-gold/20">
                   <div className="flex items-start gap-4 mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-mbras-gold to-mbras-navy rounded-lg flex items-center justify-center flex-shrink-0 ring-1 ring-mbras-navy/10">
-                      <Calendar className="w-6 h-6 text-mbras-cream" />
+                      <Target className="w-6 h-6 text-mbras-cream" />
                     </div>
                     <div>
                       <h3 className="font-display text-xl font-bold text-mbras-navy mb-2 tracking-tight">
-                        Eventos – &ldquo;MBRAS Conecta: Experience&rdquo;
+                        Negócios que nascem prontos
                       </h3>
                       <p className="text-mbras-navy/80">
-                        Encontros exclusivos com 20-50 convidados selecionados,
-                        networking premium
+                        Propostas com modelos interativos, análises e acesso
+                        direto aos responsáveis. Menos retrabalho. Mais execução.
                       </p>
                     </div>
                   </div>
                   <div className="flex items-center gap-2 text-sm text-mbras-navy">
                     <Award className="w-4 h-4" />
-                    <span>Eventos trimestrais</span>
+                    <span>Execução elegante</span>
                   </div>
                 </div>
               </motion.div>
@@ -411,21 +433,22 @@ export default function Home() {
                 <div className="bg-card glass rounded-2xl p-8 h-full border border-mbras-gold/20">
                   <div className="flex items-start gap-4 mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-mbras-navy to-mbras-gold rounded-lg flex items-center justify-center flex-shrink-0 ring-1 ring-mbras-navy/10">
-                      <Mail className="w-6 h-6 text-mbras-cream" />
+                      <Zap className="w-6 h-6 text-mbras-cream" />
                     </div>
                     <div>
                       <h3 className="font-display text-xl font-bold text-mbras-navy mb-2 tracking-tight">
-                        Newsletter – &ldquo;MBRAS Conecta: Weekly Brief&rdquo;
+                        Tecnologia a serviço da confiança
                       </h3>
                       <p className="text-mbras-navy/80">
-                        One-pager curado e minimalista com os principais insights
-                        da semana
+                        O Conecta aprende com seus usuários, sugere conexões e se
+                        integra às ferramentas de gestão — sem perder a elegância
+                        na execução.
                       </p>
                     </div>
                   </div>
                   <div className="flex items-center gap-2 text-sm text-mbras-gold">
                     <Target className="w-4 h-4" />
-                    <span>Envio semanal</span>
+                    <span>Integração inteligente</span>
                   </div>
                 </div>
               </motion.div>
@@ -626,7 +649,7 @@ export default function Home() {
               Faça Parte do Top 1%
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-xl md:text-2xl text-mbras-navy/80 mb-16 leading-relaxed [text-wrap:balance]">
-              Acesso exclusivo ao blueprint dos empreendimentos de alta performance
+              MBRAS Conecta. Menos ruído. Mais visão. Melhores negócios.
             </motion.p>
 
             <motion.div

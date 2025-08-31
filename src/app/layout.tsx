@@ -25,14 +25,14 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "MBRAS Conecta | O essencial, antes do consenso",
   description:
-    "Hub de inteligência exclusiva do mercado imobiliário de alto padrão",
+    "MBRAS Conecta. Menos ruído. Mais visão. Melhores negócios.",
   keywords:
     "real estate, luxury, insights, São Paulo, Faria Lima, investimento",
   openGraph: {
     url: siteUrl,
     siteName: "MBRAS Conecta",
     title: "MBRAS Conecta",
-    description: "Inteligência exclusiva que move mercados",
+    description: "MBRAS Conecta. Menos ruído. Mais visão. Melhores negócios.",
     type: "website",
     locale: "pt_BR",
     images: [
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "MBRAS Conecta",
-    description: "Inteligência exclusiva que move mercados",
+    description: "MBRAS Conecta. Menos ruído. Mais visão. Melhores negócios.",
     images: ["/twitter-image", "/og-image.svg"],
   },
 };
